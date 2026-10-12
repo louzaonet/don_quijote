@@ -1,0 +1,21 @@
+look
+inventory
+help
+exits
+x books
+pick up a book
+read the book
+think about a name
+go east
+take the lance
+pick up the buckler
+examine the lance
+go up
+get everything
+i
+score
+say "hello"
+talk to sancho
+throw the lance out of the window
+quit
+n

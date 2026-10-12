@@ -1,0 +1,1329 @@
+# =====================================================================
+#  SEGUNDA PARTE: EL INGENIOSO CABALLERO
+#  Vocabulario nuevo, flags, localidades, objetos y mensajes largos
+#
+#  Recorrido: casa (Sansón Carrasco y la tercera salida) -> El Toboso
+#  (Dulcinea encantada) -> Cortes de la Muerte -> Caballero de los Espejos
+#  (puzle de 1989) -> leones (puzle de 1989: CANTAR, la joya) -> bodas de
+#  Camacho -> cueva de Montesinos (con un laberinto, en homenaje al de
+#  1989) -> retablo de maese Pedro -> barco encantado -> los duques,
+#  la Dolorida y Clavileño -> Barataria (se juega como Sancho) -> la sima
+#  -> Barcelona y el Caballero de la Blanca Luna -> vuelta a casa.
+#  Dos finales: el del libro (Alonso Quijano el Bueno) y el de 1989 (con
+#  la joya, ante las dos muchachas que dicen ser Dulcinea).
+# =====================================================================
+
+/VOC
+N SANSON CARRASCO
+N SALARIO SUELDO SOLDADA
+N IGLESIA TEMPLO TORRE
+N PALACIO ALCAZAR
+N CAMPESINA CAMPESINAS ALDEANA ALDEANAS
+N BORRICA BORRICAS POLLINA POLLINAS
+N CARRETA COMEDIANTES COMICOS FARSANTES ACTORES
+N MUERTE ANGEL CUPIDO EMPERADOR
+N DIABLO DEMONIO MOJIGANGA BOJIGANGA
+N ESPEJOS ESPEJO
+N CASILDEA VANDALIA
+N NARIZ NARICES
+N LEON LEONES LEONERO
+N JOYA JOYAS ALHAJA
+N GABAN MIRANDA
+N CAMACHO
+N BASILIO
+N QUITERIA NOVIA
+N BODA BODAS
+N PRIMO ESTUDIANTE HUMANISTA GUIA
+N OLLAS ESPUMA GALLINAS GANSOS
+N CUEVA BOCA
+N MONTESINOS
+N DURANDARTE BELERMA CORAZON
+N ZARZAS MALEZA MALEZAS CAMBRONES BREÑAS
+N RETABLO TITERES MUÑECOS FUNCION
+N MOROS MARSILIO
+N MONO MONA
+N MELISENDRA GAIFEROS
+N BARCO BARCA
+N RIO EBRO AGUA
+N PESCADORES PESCADOR
+N DUQUE DUQUES DUQUESA AZOR
+N ECLESIASTICO CLERIGO
+N CLAVILEÑO CLAVILENO CLAVIJA
+N PAÑUELO PANUELO VENDA
+N OJOS
+N DOLORIDA TRIFALDI CONDESA DUEÑAS DUENAS BARBAS
+N GOBIERNO
+N BACULO CAÑA CANA
+N VIEJO VIEJOS ANCIANO ANCIANOS
+N MEDICO DOCTOR RECIO
+N ENEMIGOS PAVES PAVESES
+N SIMA HOYO AGUJERO
+N BARCELONA CIUDAD
+N MAR PLAYA OLAS GALERAS
+N LUNA
+N CABEZA BUSTO
+N ANTONIO MORENO
+N TESTAMENTO ESCRIBANO
+N GRILLOS LIEBRE
+V ARRODILLARSE ARRODILLATE ARRODILLO HINCARSE HINCATE POSTRARSE POSTRATE
+V VENDAR VENDATE TAPAR TAPATE
+V TORCER TUERCE TUERZO GIRAR GIRA GIRO
+V RENUNCIAR RENUNCIA RENUNCIO DIMITIR DIMITE DIMITO
+V JUZGAR JUZGA JUZGO SENTENCIAR SENTENCIA
+V VER VEO VEAMOS
+V TOCAR TOCA TOCO
+
+/FLAGS
+# casa y tercera salida
+parte2 reales_hallados carrasco_hablado salario sancho2 tercera
+# El Toboso
+toboso_iglesia toboso_labrador sancho_busca encantada
+# Cortes de la Muerte, Espejos, leones
+carreta_vista carreta_piedras carreta_hablada espejos espejos_t espejos_hecho
+leon leon_t leones_hecho joya_cogida requesones
+# bodas y cueva
+bodas_comido bodas_trampa bodas_hecho primo_guia zarzas soga_atada
+cueva_dormido montesinos_hablado reales_dados cueva_hecha
+# retablo, Ebro, duques
+retablo mono_hablado ebro_atado barco_desatado barco_hecho
+duquesa_invita castillo_visto eclesiastico_hecho dolorida clavileno_hecho
+# Barataria (como Sancho)
+gob baculo baculo_hecho medico_t medico_hecho gob_comido ronda_hecha gob_noche
+invasion gob_fin coselete_dq bacia_dq panuelo_dq
+# sima, Barcelona, vuelta
+sima_hecha moreno_hecho blanca_luna vencido vuelta_vista final_1989 cuerdo testamento
+
+# ------------------------------------------------------------- la casa
+/LOC alcoba2 pic=INTERIOR
+Tu aposento. Casi un mes llevas en esta cama, tan seco y amojamado
+que no pareces sino hecho de carne momia. La puerta da al sur, a la
+sala.
+=> S:sala2
+
+/LOC sala2 pic=INTERIOR
+La sala de tu casa. En el astillero, como siempre, hay sitio para una
+lanza. Al norte está tu aposento y al sur se sale al corral. Donde
+estaba la biblioteca sigue la pared encalada.
+=> N:alcoba2 S:corral3
+
+/LOC corral3 pic=CORRAL
+El corral de tu casa. Rocinante, que ha engordado un poco en este mes,
+lo nota en el alma. La puerta falsa, desclavada hace tiempo, da al
+campo por el este. La sala queda al norte.
+
+# ------------------------------------------------------------- El Toboso
+=> N:sala2 E:camino_toboso
+
+
+/LOC camino_toboso pic=NOCHE
+El camino del Toboso. Vais solos, tú y Sancho, sin que nadie os vea:
+tú hablando de Dulcinea y Sancho temblando, porque nunca la ha visto y
+lo sabe. Hacia el este se ve un bulto de casas.
+=> E:toboso
+
+/LOC toboso pic=TOBOSO
+La gran ciudad del Toboso, a medianoche. No se oye en todo el lugar
+sino ladrar de perros, que atruenan los oídos: de cuando en cuando
+rebuzna un jumento, gruñen puercos y mayan gatos. Al norte se alza un
+gran edificio; al este se mete una callejuela; al sur, fuera del
+pueblo, hay un encinar. El camino vuelve al oeste.
+=> O:camino_toboso N:iglesia E:callejuela S:encinar_toboso
+
+/LOC iglesia pic=TOBOSO
+Una gran torre que hace sombra en mitad de la noche. Tú buscabas un
+alcázar. Esto es la iglesia principal del pueblo. La plaza queda al
+sur.
+=> S:toboso
+
+/LOC callejuela pic=TOBOSO
+Una callejuela sin salida, estrecha y oscura. Por aquí no hay palacios
+ni alcázares, solo casas bajas de labradores. La plaza queda al oeste.
+=> O:toboso
+
+/LOC encinar_toboso pic=BOSQUE
+Un encinar a media legua del Toboso. Es de día. Desde aquí se ve el
+pueblo, al norte, y el camino que sigue hacia el este.
+
+# ------------------------------------------------------------- de camino
+=> N:toboso E:camino_carreta
+
+
+/LOC camino_carreta pic=CAMINO
+Un camino ancho entre viñas. El camino vuelve al oeste, al encinar, y
+sigue hacia el este.
+=> O:encinar_toboso E:bosque_espejos
+
+
+/LOC bosque_espejos pic=BOSQUE_NOCHE
+Una noche oscura bajo unos altos y sombríos árboles. Os habéis apeado
+para dormir. Muy cerca, al pie de un árbol, alguien suspira de amores
+y templa un laúd. El camino sigue hacia el este.
+=> O:camino_carreta E:camino_leones
+
+
+/LOC camino_leones pic=LEONES
+Un camino real, a la vista de la casa del Caballero del Verde Gabán,
+don Diego de Miranda, que va contigo. Por él viene un carro con
+banderas del rey. El camino sigue hacia el este.
+=> O:bosque_espejos E:prado_bodas
+
+
+/LOC prado_bodas pic=BODAS
+Un prado a la entrada de un pueblo, convertido en cocina. Hay un
+novillo entero espetado en un asador de olmo, seis ollas como tinajas
+y montañas de pan blanco. Todo es de Camacho el rico, que hoy se casa.
+Al norte, bajo una enramada, se celebra la boda. El camino sigue hacia
+el este.
+=> N:enramada O:camino_leones E:boca_cueva
+
+
+/LOC enramada pic=BODAS
+Una enramada de árboles adornada como para una fiesta. Aquí están los
+novios, el cura y medio pueblo. El prado de las ollas queda al sur.
+=> S:prado_bodas
+
+# ------------------------------------------------------------- la cueva
+/LOC boca_cueva pic=CUEVA
+La boca de la cueva de Montesinos, ancha y espaciosa, pero llena de
+cambroneras, cabrahígos, zarzas y malezas, tan espesas y entricadas
+que de todo en todo la ciegan y encubren. El camino vuelve al oeste,
+a las bodas, y sigue hacia el este.
+=> O:prado_bodas E:venta_retablo BAJAR:cueva1
+
+
+/LOC cueva1
+Está oscuro como boca de lobo. Cuelgas de la soga, que Sancho y el
+primo van soltando poco a poco. Se puede seguir bajando.
+=> SUBIR:boca_cueva BAJAR:cueva2
+
+/LOC cueva2
+Un pasadizo negro y húmedo. El eco te devuelve tu propia voz, que
+llama a Dulcinea. Hay galerías hacia todas partes.
+=> SUBIR:cueva1 N:cueva2 S:cueva1 O:cueva2 E:cueva3
+
+/LOC cueva3
+Otro pasadizo, igual de negro que el anterior. O es el mismo. Hay
+galerías hacia todas partes.
+=> O:cueva2 S:cueva3 E:cueva2 N:cueva4
+
+/LOC cueva4
+Una concavidad en un lado de la cueva, capaz de caber en ella un carro
+con sus mulas. Entra una poca luz por unos resquicios. Hay galerías
+hacia todas partes.
+=> S:cueva3 N:cueva3 E:cueva2 O:cueva4
+
+/LOC palacio_cristal pic=PALACIO
+Un prado, el más bello que pudo criar la naturaleza. En mitad de él se
+levanta un real y suntuoso palacio, cuyos muros parecen de
+transparente cristal fabricados. Por sus puertas sale un venerable
+anciano con un capuz de bayeta morada: Montesinos.
+
+# ------------------------------------------------------------- de camino al Ebro
+/LOC venta_retablo pic=VENTA
+Una venta, que esta vez, milagrosamente, tomas por venta. En el patio,
+maese Pedro, un titerero con un parche de tafetán verde que le cubre
+medio rostro, ha montado su retablo. A su hombro lleva un mono sin
+cola. El camino sigue al este.
+=> O:boca_cueva E:orilla_ebro
+
+
+/LOC orilla_ebro pic=RIO
+Las riberas del Ebro, de aguas mansas y abundantes. Junto a la orilla,
+atado al tronco de un árbol, hay un barco pequeño sin remos ni otras
+jarcias. El camino sigue hacia el este.
+=> O:venta_retablo E:prado_caza ENTRAR:barco_rio
+
+
+/LOC barco_rio pic=RIO
+Vais en el barco encantado, río abajo, despacio, sin remos ni velas.
+Tú dices que habéis navegado setecientas u ochocientas leguas. Sancho
+dice que todavía ve a Rocinante y al rucio en la orilla. Delante se ven
+unas grandes aceñas en mitad del río.
+
+# ------------------------------------------------------------- los duques
+/LOC prado_caza pic=BOSQUE
+Un verde prado al salir de un bosque, al poner del sol. Hay gente de
+caza: una gallarda señora sobre un palafrén blanquísimo, con un azor
+en la mano izquierda. Es una gran señora. El camino sigue hacia el
+este, a un castillo.
+=> O:orilla_ebro E:castillo_patio
+
+
+/LOC castillo_patio pic=CASTILLO
+El patio del castillo de los duques. Esta es la primera vez que
+conoces y crees ser caballero andante verdadero, y no fantástico. Al
+norte está el gran salón y al este el jardín. El camino sale hacia el
+sur.
+=> N:castillo_salon E:jardin S:camino_sima
+
+
+/LOC castillo_salon pic=INTERIOR
+Una gran sala adornada de telas riquísimas de oro y de brocado. La
+mesa está puesta. Los duques comen con un grave eclesiástico de esos
+que gobiernan las casas de los príncipes. El patio queda al sur.
+=> S:castillo_patio
+
+/LOC jardin pic=CASTILLO
+El jardín del castillo, a la caída de la tarde. Fuentes, laberintos de
+arrayán y unos criados que disimulan muy mal la risa. El patio queda al
+oeste.
+=> O:castillo_patio
+
+# ------------------------------------------------------------- Barataria
+/LOC barataria pic=BARATARIA
+La ínsula Barataria, que es un lugar de hasta mil vecinos, de los
+mejores que tiene el duque. Ser ínsula, lo que se dice ínsula, no lo es
+mucho: no tiene mar. Al norte está el juzgado, al este el palacio del
+gobernador y al oeste las calles del pueblo.
+=> N:juzgado E:comedor O:ronda
+
+/LOC juzgado pic=INTERIOR
+La sala del juzgado. Te sientan en la silla del juez. En la pared hay
+escritas unas letras que dicen que en tal día tomó posesión de esta
+ínsula el señor don Sancho Panza. La salida está al sur.
+=> S:barataria
+
+/LOC comedor pic=INTERIOR
+Una sala del palacio, con una mesa real y limpísima. Junto a ti, en
+pie, un personaje con una varilla de ballena en la mano: el doctor
+Pedro Recio de Agüero, natural de Tirteafuera. Al norte está tu
+aposento y al oeste la plaza.
+=> O:barataria N:alcoba_gob
+
+/LOC alcoba_gob pic=INTERIOR
+El aposento del gobernador: una cama blanda, tan blanda que no te
+fías. La salida está al sur.
+=> S:comedor
+
+/LOC ronda pic=NOCHE
+Las calles de la ínsula, de noche. Haces la ronda con el mayordomo, el
+secretario, el maestresala y un cronista que lo apunta todo. La plaza
+queda al este.
+=> E:barataria
+
+# ------------------------------------------------------------- la sima y Barcelona
+/LOC camino_sima pic=CAMINO
+Un camino a media legua del castillo de los duques. A un lado se abre
+una sima honda y oscura. El castillo queda al norte y el camino sigue
+hacia el este, hacia Barcelona.
+=> N:castillo_patio E:ciudad
+
+
+/LOC ciudad pic=PLAYA
+Barcelona: archivo de la cortesía, albergue de los extranjeros,
+hospital de los pobres, patria de los valientes. Te hospeda don Antonio
+Moreno, caballero rico y discreto, en su casa. Al sur se baja a la
+playa.
+=> S:playa O:camino_sima
+
+
+/LOC playa pic=PLAYA
+La playa de Barcelona. Ves el mar, que hasta entonces no habías visto:
+te parece espaciosísimo y largo, harto más que las lagunas de Ruidera.
+En el puerto hay galeras con flámulas y gallardetes. La ciudad queda
+al norte.
+=> N:ciudad
+
+# ------------------------------------------------------------- la vuelta
+/LOC camino_vuelta pic=CAMINO
+El camino de vuelta a la Mancha. Vas desarmado y de camino; Sancho va a
+pie, porque el rucio lleva tus armas, como trofeo al revés. El camino
+sigue hacia el oeste.
+=> O:vuelta_toboso
+
+/LOC vuelta_toboso pic=TOBOSO
+Un cruce a la vista del Toboso. Desde aquí se ve la torre de la
+iglesia con la que diste aquella noche. Hacia el norte, entre olivos,
+va el camino del Toboso; hacia el oeste, el de tu aldea.
+=> E:camino_vuelta O:aldea2
+
+/LOC dos_muchachas pic=TOBOSO
+Te encuentras frente a dos muchachas: una ricamente vestida, como una
+princesa; la otra es una campesina. Las dos dicen ser Dulcinea del
+Toboso.
+
+/LOC aldea2 pic=NOCHE
+La entrada de tu aldea. Unos muchachos discuten en las eras, una liebre
+pasa huyendo de unos galgos y se esconde bajo el rucio. Tu casa está
+al norte.
+=> E:vuelta_toboso N:alcoba2
+
+
+# =====================================================================
+#  OBJETOS DE LA SEGUNDA PARTE
+#  (las armas son las de la Primera Parte: lanza, adarga, espada,
+#  coselete y el yelmo de Mambrino; al empezar, el proceso 21 las deja
+#  repartidas por la casa)
+# =====================================================================
+/OBJ reales @NOTCREATED noun=REALES w=0
+los cuatro reales
+/OBJ soga @NOTCREATED noun=SOGA w=2
+la soga de cien brazas
+/OBJ joya @NOTCREATED noun=JOYA w=0
+la joya
+/OBJ panuelo @castillo_salon noun=PAÑUELO w=0 wear
+un pañuelo de holanda
+/OBJ baculo @NOTCREATED noun=BACULO w=1
+el báculo del viejo
+
+# =====================================================================
+#  MENSAJES: LA CASA Y LA TERCERA SALIDA
+# =====================================================================
+/MSG segunda_parte
+{i6}{b1}      SEGUNDA PARTE{b0}{i7}{n}{n}{i5}  El ingenioso caballero{n}  don Quijote de la Mancha{i7}
+
+/MSG visita_cura
+Casi un mes pasa sin que el cura y el barbero te visiten, por no
+traerte a la memoria las cosas pasadas. Al cabo vienen. Hablas con
+ellos de razón de estado y modos de gobierno con tanta discreción que
+creen que estás del todo bueno.
+
+Hasta que el cura, por probarte, saca la noticia de que el Turco baja
+con una poderosa armada. {i4}«Lo que su majestad ha de hacer es mandar
+juntar en la corte para un día señalado a todos los caballeros andantes
+que vagan por España, que aunque no viniesen sino media docena, tal
+podría venir entre ellos que solo bastase a destruir toda la potestad
+del Turco.»{i7}
+
+El barbero suspira. El cura se santigua. Y se van.
+
+/MSG sancho_noticia
+En esto se oyen voces en el zaguán: el ama y la sobrina no quieren dejar
+entrar a Sancho, que viene a ver a su señor. Sancho entra de todas
+formas.
+
+{i5}«Anoche llegó el hijo de Bartolomé Carrasco, que viene de estudiar
+en Salamanca, hecho bachiller, y me dijo que andaba ya en libros la
+historia de vuestra merced, con nombre de {i6}El ingenioso hidalgo don
+Quijote de la Mancha{i5}. Y que me mientan a mí en ella con mi mismo
+nombre de Sancho Panza, y a la señora Dulcinea del Toboso, con otras
+cosas que pasamos nosotros a solas, que me hice cruces de espantado
+cómo las pudo saber el historiador.»{i7}
+
+Y sale corriendo a buscar al bachiller.
+
+/MSG sanson_habla
+El bachiller Sansón Carrasco es de cuerpo no muy grande, aunque muy
+gran socarrón, de color macilenta, pero de muy buen entendimiento. Se
+pone de rodillas ante ti: {i6}«Deme vuestra grandeza las manos, señor
+don Quijote de la Mancha.»{i7}
+
+Te cuenta que de tu historia hay impresos más de doce mil libros: en
+Portugal, en Barcelona, en Valencia, y aun en Amberes. Que los niños la
+manosean, los mozos la leen, los hombres la entienden y los viejos la
+celebran. Y que algunos le hallan faltas: que el autor se olvidó de
+contar quién hurtó el rucio a Sancho, y que luego, sin decir cómo, sale
+Sancho otra vez a caballo sobre el mismo jumento.
+
+{i5}«¡Eso fue Ginés de Pasamonte!»{i7}, grita Sancho. {i6}«Y ya se
+dice que habrá segunda parte»{i7}, añade el bachiller. {i6}«Mi consejo
+es que vuestra merced vaya a Zaragoza, a las justas del arnés de San
+Jorge.»{i7} Al despedirse, sin que lo veas, le guiña un ojo al cura.
+
+/MSG pide_salario
+Sancho se planta delante de ti y se rasca la nuca: {i5}«Teresa dice que
+ate bien mi dedo con vuestra merced, que más vale un toma que dos te
+daré. Y así, querría que vuestra merced me señalase salario conocido
+de lo que me ha de dar cada mes el tiempo que le sirviere.»{i7}
+
+/MSG sin_salario
+{i4}«Mira, Sancho: yo he leído todas o las más historias de los
+caballeros andantes, y no me acuerdo de haber leído que ningún
+caballero andante haya señalado conocido salario a su escudero. Si no
+quieres venir a merced conmigo, a Dios quedes, que escuderos no me
+faltarán.»{i7}
+
+Sancho se queda cortado, y más cuando el bachiller, que pasa por allí,
+se ofrece a ser tu escudero. Se le anublan los ojos: {i5}«Aquí estoy,
+señor, para servirle fiel y legalmente, tan bien y mejor que cuantos
+escuderos han servido a caballeros andantes en los pasados y presentes
+tiempos.»{i7} Y te deja en el suelo unas alforjas nuevas.
+
+/MSG tercera_salida
+Al anochecer, sin que lo sepa nadie más que el bachiller, que os
+acompaña media legua, salís camino del Toboso. Tú sobre tu buen
+Rocinante y Sancho sobre su antiguo rucio, las alforjas bien proveídas
+de cosas tocantes a la bucólica. Sansón os abraza, os desea buen viaje
+y se vuelve al pueblo. Sonríe más de la cuenta.
+
+Rocinante relincha y el rucio rebuzna, cosa que los dos tenéis por buena
+señal.
+
+# =====================================================================
+#  MENSAJES: EL TOBOSO
+# =====================================================================
+/MSG toboso_llega
+{i4}«Sancho hijo, guía al palacio de Dulcinea, que quizá podrá ser que
+la hallemos despierta.»{i7}
+
+{i5}«¿A qué palacio tengo de guiar, cuerpo del sol, que en el que yo vi
+a su grandeza no era sino casa muy pequeña?»{i7}
+
+Sancho no ha visto a Dulcinea en su vida, ni tú tampoco, aunque esto
+último se te olvida a menudo.
+
+/MSG iglesia
+Guías hacia el gran bulto que hace sombra y das con una gran torre.
+{i4}«Con la iglesia hemos dado, Sancho.»{i7}
+
+{i5}«Ya lo veo, y plega a Dios que no demos con nuestra sepultura, que
+no es buena señal andar por los cementerios a tales horas.»{i7}
+
+/MSG labrador_toboso
+Por la callejuela viene un labrador con dos mulas, que va a arar muy de
+madrugada, cantando el romance de {i6}«Mala la hubistes, franceses, en
+esa de Roncesvalles»{i7}.
+
+/MSG labrador_responde
+{i6}«Señor, yo soy forastero y ha pocos días que estoy en este pueblo,
+sirviendo a un labrador rico en la labranza del campo. Aquí no hay
+princesa ninguna. Muchas señoras principales sí, que cada una en su
+casa puede ser princesa.»{i7}
+
+Y se va, picando las mulas, sin esperar más preguntas.
+
+/MSG sancho_busca
+{i5}«Señor, ya viene el día, y no será acertado dejar que nos halle el
+sol en la calle. Mejor será que nos salgamos fuera de la ciudad, y que
+vuestra merced se embosque en alguna floresta aquí cercana, y yo
+volveré de día y no dejaré ostugo en todo este lugar donde no busque
+la casa, alcázar o palacio de mi señora.»{i7}
+
+Sancho se va al pueblo. Al salir, lo oyes hablar solo: {i5}«Este mi amo
+por mil señales he visto que es un loco de atar... Y siéndolo, no será
+muy difícil hacerle creer que una labradora, la primera que me topare
+por aquí, es la señora Dulcinea.»{i7}
+
+/MSG tres_labradoras
+Al cabo de un buen rato vuelve Sancho corriendo: {i5}«¡Albricias,
+señor! Que no hay más que hacer sino que vuestra merced pique a
+Rocinante y salga a lo raso a ver a la señora Dulcinea del Toboso, que
+con otras dos doncellas suyas viene a ver a vuestra merced.»{i7}
+
+Por el camino vienen tres labradoras sobre tres pollinos. Tú solo ves
+tres labradoras sobre tres borricos. Sancho ve a tres princesas sobre
+tres cananeas remendadas.
+
+/MSG encantada
+Te hincas de rodillas junto a Sancho ante una de ellas, que es de cara
+redonda, chata y algo carirrellena. {i6}«¡Apártense nora en tal del
+camino, y déjennos pasar, que vamos de priesa!»{i7}, dice la labradora.
+
+Pica a su pollina, que da con ella en el suelo. Ella, sin esperar a
+nadie, toma una corridica, pone las manos sobre las ancas de la
+pollina y da con su cuerpo, más ligero que un halcón, sobre la albarda.
+Y se van las tres a todo correr. Te llega un olor de ajos crudos que te
+encalabrina y atosiga el alma.
+
+{i4}«¿Ves, Sancho, cuán mal quisto soy de encantadores? Mira hasta
+dónde se ha extendido su malicia: han transformado a mi Dulcinea en una
+labradora.»{i7} Sancho se tapa la boca para no reírse.
+
+{i6}Dulcinea está encantada. Y la campesina es Dulcinea.{i7}
+
+# =====================================================================
+#  MENSAJES: CORTES DE LA MUERTE, ESPEJOS Y LEONES
+# =====================================================================
+/MSG carreta
+Atraviesa el camino una carreta cargada de los más diversos y extraños
+personajes. Quien guía las mulas es un feo demonio. Va la carreta
+descubierta al cielo abierto: la primera figura es la de la misma
+Muerte, con rostro humano; junto a ella, un ángel con unas grandes
+alas pintadas; a un lado, un emperador con una corona, al parecer de
+oro, y a los pies de la Muerte, el dios Cupido, sin venda en los ojos,
+pero con su arco y su carcaj.
+
+/MSG cortes
+{i6}«Señor, nosotros somos recitantes de la compañía de Angulo el Malo.
+Hemos hecho esta mañana el auto de {i5}Las Cortes de la Muerte{i6}, y
+hémosle de hacer esta tarde en aquel lugar que desde aquí se parece. Y
+por estar tan cerca, venimos vestidos con los mismos vestidos que
+representamos.»{i7}
+
+{i4}«Andad con Dios, buena gente, y haced vuestra fiesta.»{i7}
+
+En esto llega uno de la compañía vestido de bojiganga, con muchos
+cascabeles y tres vejigas de vaca hinchadas en la punta de un palo.
+Sacude las vejigas junto a Rocinante, que se espanta y da contigo en
+el suelo. El demonio de la carreta salta sobre el rucio y sale
+corriendo hacia el lugar. Al poco, el rucio lo tira y se vuelve solo
+con su amo.
+
+/MSG piedras
+Los de la carreta, que te ven venir, se apean de un salto y se ponen en
+ala, con piedras en las manos: la Muerte, el emperador, el diablo
+carretero, el ángel, la reina y el dios Cupido.
+
+{i5}«Mire, señor, que entre todos los que allí están, aunque parecen
+reyes, príncipes y emperadores, no hay ningún caballero andante. Y
+vuestra merced no ha de poner mano a la espada contra quien no fuere
+armado caballero.»{i7}
+
+/MSG muerte_piedras
+Vuelves a la carga. Los recitantes no son caballeros, pero apuntan como
+si lo fueran. Una lluvia de guijarros te deja tendido bajo la carreta,
+y la Muerte, muy en su papel, te cierra los ojos. {i2}Estás muerto, y
+esta vez no es teatro.{i7}
+
+/MSG espejos_llega
+Al pie de un árbol, otro caballero canta al son de un laúd un soneto a
+su señora: {i6}«Dadme, señora, un término que siga...»{i7} Lleva una
+sobrevista que parece de finísimo oro, sembrada de muchas lunas
+pequeñas de relucientes espejos. Aquí hay otro caballero junto a su
+montura.
+
+/MSG espejos_hola
+{i6}«Soy el caballero de los Espejos.»{i7}
+
+{i6}«Dígame vuesa merced: ¿acaso Casildea de Vandalia no es la más
+bella doncella? Responda usted.»{i7}
+
+/MSG espejos_no
+{i6}«¡¡Cómo que no, preparaos para entrar en combate!!»{i7}
+
+Se calan las celadas. Tu escudero y el del de los Espejos, que tiene
+unas narices espantables, se apartan a una distancia prudente.
+
+/MSG espejos_si
+{i6}«Bien sabía yo que no lucharíais, vuesa merced es un
+cobarde.»{i7}
+
+Te arrepientes de tu cobardía y decides dejar la orden de la
+caballería. Vuelves a tu casa y allí te quedas llorando tu decisión.
+
+/MSG espejos_gana
+Das con tu lanza en el pecho del caballero y lo derribas.
+
+{i6}«Me rindo. Conozco vuestras gloriosas hazañas: la más bella es sin
+duda Dulcinea del Toboso.»{i7}
+
+Le quitas la celada para ver si es vivo y te encuentras... el mismo
+rostro, la misma figura, el mismo aspecto, la misma fisonomía, la
+misma efigie, la perspectiva misma del bachiller Sansón Carrasco. Su
+escudero se quita las narices, que eran de pasta, y resulta ser Tomé
+Cecial, vecino y compadre de Sancho.
+
+{i4}«¡Encantadores! Han tomado la figura del bachiller por quitarme la
+gloria del vencimiento.»{i7} Sancho no sabe qué pensar. Tú sí.
+
+/MSG espejos_huye
+Intentas escapar y el caballero de los Espejos te atraviesa con su
+lanza por la espalda. {i2}Estás muerto.{i7}
+
+/MSG espejos_vence
+El caballero de los Espejos te vence. Vuelves a tu pueblo y dejas la
+orden de la caballería.
+
+/MSG leones_llega
+Por el camino viene un carro coronado de banderas reales. Sancho, que
+había comprado unos requesones a unos pastores, no sabe dónde echarlos
+cuando lo llamas con prisa, y los mete en tu yelmo, que te habías
+quitado un momento por el calor.
+
+/MSG requesones
+Te encajas el yelmo y empieza a correrte el suero por todo el rostro y
+las barbas. {i4}«¿Qué será esto, Sancho, que parece que se me ablandan
+los cascos, o se me derriten los sesos, o que sudo de los pies a la
+cabeza?»{i7}
+
+/MSG leonero
+El carretero, que es el leonero, te explica: {i6}«En el carro van dos
+bravos leones enjaulados, que el general de Orán envía a la corte, presentados
+a su majestad. Hambrientos, porque no han comido hoy.»{i7}
+
+{i4}«¿Leoncitos a mí? ¿A mí leoncitos, y a tales horas? Pues, ¡por Dios
+que han de ver esos señores que acá los envían si soy yo hombre que se
+espanta de leones! Abrid esas jaulas.»{i7}
+
+/MSG jaula_abierta
+El leonero, temblando, abre de par en par la primera jaula. Don Diego
+de Miranda pica a su yegua, Sancho a su rucio y el carretero a sus
+mulas, y se ponen a salvo lejos de allí.
+
+El león se revuelve en la jaula, tiende la garra, se despereza, abre la
+boca y bosteza muy despacio. Luego saca la cabeza fuera y mira a todas
+partes con los ojos hechos brasas. Aquí hay un león con cara de hambre.
+
+/MSG cantar_leon
+{i2}«La donna è mobile qual piuma al vento...»{i7}
+
+El león empieza a dormirse y se va a buscar un lugar más cómodo donde
+echar un sueñecito. Puedes ver una joya en el suelo.
+
+/MSG caballero_leones
+El leonero cierra la jaula. Vuelven todos y das al leonero dos escudos
+de oro para que cuente a su majestad lo que ha visto. {i4}«Si su
+majestad acaso preguntare quién la hizo, diréisle que el Caballero de
+los Leones, que de aquí adelante quiero que en este se trueque, cambie,
+vuelva y mude el que hasta aquí he tenido de el de la Triste
+Figura.»{i7}
+
+/MSG leon_come
+El león te come y acaba con tu gloriosa carrera de caballero.
+
+/MSG leon_mata
+Atacas al león, pero su fuerza es superior y te mata. {i2}Estás muerto y
+devorado.{i7}
+
+/MSG joya_coger
+Una joya de oro con una piedra que brilla como un pedazo de sol. Te la
+guardas: es digna de Dulcinea. De la de antes, la que no olía a ajos.
+
+# =====================================================================
+#  MENSAJES: BODAS DE CAMACHO Y CUEVA DE MONTESINOS
+# =====================================================================
+/MSG bodas_prado
+Sancho se queda mirando las ollas como un niño mira un escaparate. De
+los olmos cuelgan liebres ya sin pellejo y gallinas sin pluma. Hay más
+de cincuenta cocineros, todos limpios, todos diligentes y todos
+contentos.
+
+/MSG espuma
+Sancho se llega a uno de los cocineros y le pide, con corteses y
+hambrientas razones, que le deje mojar un mendrugo de pan en una de
+aquellas ollas. {i6}«Hermano, este día no es de aquellos sobre quien
+tiene jurisdicción la hambre. Espumad una gallina o dos, y buen
+provecho os hagan.»{i7}
+
+El cocinero toma un caldero, lo encaja en una de las tinajas y saca de
+ella tres gallinas y dos gansos. Sancho se sienta a comer con más gana
+que en toda la Primera Parte.
+
+/MSG boda
+Llegan los novios. Quiteria viene hermosísima, con sus corales y su
+terciopelo. Camacho, rico y contento. En esto entra un hombre vestido
+de negro, con una corona de funesto ciprés y un gran bastón en las
+manos: es Basilio, el pastor pobre que quería a Quiteria desde niño.
+
+{i6}«Bien sabes, desconocida Quiteria, que tú me prometiste ser mi
+esposa. Pues mi muerte desembarazará el camino a tu dicha.»{i7} Clava el
+bastón en el suelo; dentro llevaba escondido un estoque, y se arroja
+sobre él. Cae bañado en sangre.
+
+Con la voz que le queda, pide que Quiteria le dé la mano de esposa
+antes de morir. Camacho no sabe qué decir.
+
+/MSG camacho_consiente
+{i4}«Justa y razonable cosa es, señor Camacho, la que este mozo pide. Y
+vuestra merced quedará tan honrado recibiendo a Quiteria viuda de tan
+valeroso marido como si la recibiera del lado de su padre.»{i7}
+
+Camacho, pensando que el herido se muere en dos credos, consiente. El
+cura los casa. Y apenas dice el sí Quiteria, se levanta Basilio con
+presta ligereza y se saca el estoque del cuerpo, que iba por un cañón
+de hierro lleno de sangre preparada. {i6}«¡No milagro, milagro, sino
+industria, industria!»{i7}
+
+Los amigos de Camacho echan mano a las espadas.
+
+/MSG bodas_paz
+Te pones en medio, a caballo, con la lanza sobre el brazo: {i4}«Tened,
+señores, tened, que no es razón toméis venganza de los agravios que el
+amor nos hace. Quiteria era de Basilio, y Basilio de Quiteria, por
+justa y favorable disposición de los cielos. Y a los dos que Dios
+junta no podrá separar el hombre.»{i7}
+
+Camacho, que ve que Quiteria no le quiere, decide que más le valen sus
+ollas. Las bodas siguen como si nada. Basilio te lo agradece con un
+primo suyo, famoso estudiante y grande humanista, que se ofrece a
+guiarte a la cueva de Montesinos. Y te regala una soga de cien brazas,
+que para bajar a una cueva hace mucha falta.
+
+/MSG boca_llega
+{i6}«Esta es la cueva de Montesinos»{i7}, dice el primo, que está
+escribiendo un libro de Ovidio español y otro de los inventores de las
+cosas. {i6}«Dicen grandes maravillas de ella. Y es muy honda.»{i7}
+
+/MSG cuervos
+Echas mano a la espada y comienzas a derribar y a cortar aquellas
+malezas. Por el ruido salen por la boca de la cueva una infinidad de
+grandísimos cuervos y grajos, tan espesos y con tanta priesa, que dan
+contigo en el suelo. Si fueras tan agorero como católico, lo tendrías
+a mala señal.
+
+/MSG soga_atada
+Sancho y el primo te atan la soga por la cintura, bien fuerte.
+{i5}«¡Dios te guíe y la Peña de Francia, junto con la Trinidad de
+Gaeta, flor, nata y espuma de los caballeros andantes!»{i7}
+
+/MSG bajar_cueva
+Te encomiendas a Dulcinea y te descuelgas al fondo de la caverna
+espantosa. Sancho y el primo van dando soga, y tú das voces pidiendo
+más y más. Al cabo dejas de dar voces.
+
+/MSG sueno_cueva
+Te echas en la concavidad, cansado de tanta oscuridad, y te sobreviene
+un sueño profundísimo. Cuando despiertas, sin saber cómo ni cómo no,
+te hallas en la mitad del más bello, ameno y deleitoso prado que pueda
+criar la naturaleza.
+
+/MSG montesinos
+{i6}«Luengos tiempos ha, valeroso caballero don Quijote de la Mancha, que
+los que estamos en estas soledades encantados esperamos verte.»{i7}
+
+Montesinos te lleva ante un sepulcro de mármol donde yace tendido el
+caballero Durandarte, flor y espejo de los caballeros enamorados. Por
+encima, en hilera, pasa una procesión de doncellas, y detrás de ellas
+la señora Belerma, con unas ojeras de mal de madre y el corazón de
+Durandarte en las manos, en un lienzo de holanda, que él mismo sacó con
+una daga. Y lo salamos, porque llegara a ella oliendo bien.
+
+{i6}«Paciencia y barajar»{i7}, suspira Durandarte desde la tumba, con
+toda la razón del mundo.
+
+/MSG tres_labradoras_cueva
+Por el prado pasan saltando y brincando como cabras tres labradoras.
+Una de ellas es la sin par Dulcinea del Toboso, encantada, la misma que
+viste a la salida del Toboso. Te llamas a hablarle y ella te vuelve
+las espaldas.
+
+Se acerca una de sus compañeras: {i6}«Mi señora Dulcinea besa a vuestra
+merced las manos y le suplica se sirva de hacerle saber cómo está.
+Y que, por estar en una gran necesidad, suplica a vuestra merced le
+preste sobre este faldellín de cotonía nuevo que traigo, media docena
+de reales.»{i7}
+
+/MSG cuatro_reales
+{i4}«Decid, amiga mía, a vuestra señora que a mí me pesa en el alma de
+sus trabajos, y que yo quisiera ser un Fúcar para remediarlos. Y que no
+tengo más que cuatro reales.»{i7}
+
+Se los das. Ella, en lugar de hacerte una reverencia, hace una
+cabriola, que se levanta dos varas de medio en el aire. El faldellín
+te lo deja a ti.
+
+/MSG sacan_cueva
+Arriba tiran de la soga. Te sacan de la cueva con los ojos cerrados,
+como dormido. {i4}«Dios os lo perdone, amigos, que me habéis quitado de
+la más sabrosa y agradable vida y vista que ningún humano ha visto ni
+pasado.»{i7}
+
+Les cuentas que has estado allá abajo tres días. Sancho jura que ha
+sido poco más de una hora. Y cuando les cuentas lo de los cuatro reales,
+Sancho se da una palmada en la frente, porque fue él quien encantó a
+Dulcinea, y ahora resulta que los encantadores le hacen la competencia.
+
+# =====================================================================
+#  MENSAJES: RETABLO DE MAESE PEDRO Y BARCO ENCANTADO
+# =====================================================================
+/MSG maese_pedro
+{i6}«Este mono habla, pero el amo lo entiende: adivina lo pasado y lo
+presente, aunque de lo por venir no sabe nada.»{i7} Apenas te ve el
+mono, salta al hombro de maese Pedro y le dice algo al oído.
+
+{i6}«¡Oh glorioso resucitador de la ya puesta en olvido andante
+caballería! ¡Oh no jamás como se debe alabado caballero don Quijote de
+la Mancha!»{i7}, exclama maese Pedro, hincándose de rodillas.
+
+/MSG mono_responde
+Preguntas al mono si fue verdad o sueño lo que viste en la cueva de
+Montesinos. El mono salta, chilla y le habla al oído a su amo.
+
+{i6}«Dice el mono que parte de las cosas que vuestra merced vio o pasó
+en la dicha cueva son falsas, y parte verisímiles. Y que más no sabe,
+porque se le ha acabado la virtud.»{i7}
+
+/MSG retablo_funcion
+Te sientas en primera fila. Un muchacho declara la función: {i6}«Esta
+verdadera historia que aquí a vuestras mercedes se representa trata de
+la libertad que dio el señor don Gaiferos a su esposa Melisendra, que
+estaba cautiva en España, en poder de moros, en la ciudad de
+Sansueña.»{i7}
+
+Melisendra se descuelga de la torre a las ancas del caballo de
+Gaiferos, y se van los dos camino de París. Pero el rey Marsilio manda
+tocar alarma, y con tanto ruido de campanas y atabales que parece que
+se hunde la ciudad, sale toda la morisma en su persecución. {i4}Los
+moros van a alcanzarlos.{i7}
+
+/MSG retablo_destrozo
+{i4}«¡No consentiré yo que en mis días y en mi presencia se le haga
+superchería a tan famoso caballero y a tan atrevido enamorado como don
+Gaiferos! ¡Deteneos, mal nacida canalla!»{i7}
+
+Desenvainas la espada y, de un brinco, te pones junto al retablo. Con
+acelerada y nunca vista furia comienzas a llover cuchilladas sobre la
+titerera morisma: derribas a unos, descabezas a otros, estropeas a
+este, destrozas a aquel. Y entre otros muchos, tiras un altibajo tal
+que, si maese Pedro no se abaja, le cercenas la cabeza.
+
+{i6}«¡Deténgase vuesa merced, señor don Quijote, y advierta que estos
+que derriba no son verdaderos moros, sino unas figurillas de
+pasta!»{i7}
+
+/MSG retablo_paga
+{i4}«Ahora acabo de creer que estos encantadores que me persiguen me
+ponen las figuras como ellas son delante de los ojos, y luego me las
+truecan en las que ellos quieren.»{i7}
+
+Maese Pedro tasa los daños, figura por figura: el rey Marsilio,
+descabezado, cuatro reales y medio; Carlomagno, con la corona partida,
+cinco reales y un cuartillo... Sancho paga en todo cuarenta reales y
+tres cuartillos, y dos reales más por el trabajo de buscar al mono, que
+ha huido al tejado. Antes del alba, maese Pedro desaparece. (Era Ginés
+de Pasamonte, que se tapaba el ojo con un parche para que no lo
+reconocieras.)
+
+/MSG barco
+{i4}«Has de saber, Sancho, que este barco que aquí está, derechamente y
+sin poder ser otra cosa en contrario, me está llamando y convidando a
+que entre en él y vaya en él a dar socorro a algún caballero o a otra
+necesitada y principal persona que debe de estar puesta en alguna
+grande cuita.»{i7}
+
+/MSG aceñas
+{i4}«¿Ves? Allí, ¡oh amigo!, se descubre la ciudad, castillo o
+fortaleza donde debe de estar algún caballero oprimido o alguna reina,
+infanta o princesa malparada.»{i7} {i5}«¡Qué diablos de ciudad, fortaleza
+o castillo dice vuesa merced, señor? ¿No echa de ver que aquellas son
+aceñas que están en el río, donde se muele el trigo?»{i7}
+
+Los molineros, enharinados, salen con varas largas: {i6}«¡Demonios de
+hombres! ¿Dónde vais? ¿Venís desesperados? ¿Qué queréis, ahogaros y
+haceros pedazos en estas ruedas?»{i7}
+
+Te pones en pie en el barco y amenazas a los molineros con la espada.
+La corriente mete el barco en el raudal de las ruedas; los molineros
+consiguen detenerlo con sus varas, pero no sin trastornaros a ti y a
+Sancho al agua. Os sacan como a dos gatos mojados. El barco se hace
+pedazos.
+
+Llegan los pescadores, dueños del barco, y Sancho les paga cincuenta
+reales de muy mala gana. {i4}«Dios lo remedie, que todo este mundo es
+máquinas y trazas, contrarias unas de otras. Yo no puedo más.»{i7}
+
+# =====================================================================
+#  MENSAJES: LOS DUQUES, LA DOLORIDA Y CLAVILEÑO
+# =====================================================================
+/MSG embajada
+Sancho se apea del rucio, se hinca de rodillas ante la cazadora y le
+dice: {i5}«Hermosa señora, aquel caballero que allí se parece, llamado
+el Caballero de los Leones, es mi amo, y yo soy un escudero suyo, a
+quien llaman en su casa Sancho Panza.»{i7}
+
+La señora resulta ser duquesa, y además ha leído la Primera Parte de tu
+historia. {i6}«Venga en buena hora a servirse de nosotros, que tenemos
+un castillo aquí cerca.»{i7}
+
+Al apearte, como no hay quien te tenga el estribo, se te queda un pie
+enredado y das con tu cuerpo en el suelo. Los duques disimulan la risa
+lo mejor que pueden.
+
+/MSG castillo_llega
+Antes de que entres, dos lacayos te echan sobre los hombros un gran
+manto de finísima escarlata, y doncellas y dueñas te arrojan pomos de
+aguas olorosas. {i6}«¡Bien sea venido la flor y la nata de los
+caballeros andantes!»{i7} Unos mozos llevan a Rocinante a las
+caballerizas, donde lo tratan mejor que en toda su vida.
+
+/MSG eclesiastico_rine
+El eclesiástico, que ha oído hablar de tus locuras, se levanta de la
+mesa: {i6}«Y a vos, alma de cántaro, ¿quién os ha encajado en el
+celebro que sois caballero andante y que vencéis gigantes y prendéis
+malandrines? Andad enhorabuena, volveos a vuestra casa y criad
+vuestros hijos, si los tenéis, y curad de vuestra hacienda, y dejad de
+andar vagando por el mundo.»{i7}
+
+/MSG respuesta_eclesiastico
+Te levantas, temblando de pies a cabeza como azogado: {i4}«Unos van
+por el ancho campo de la ambición soberbia; otros, por el de la
+adulación servil y baja; otros, por el de la hipocresía engañosa, y
+algunos, por el de la verdadera religión. Pero yo, inclinado de mi
+estrella, voy por la angosta senda de la caballería andante. Caballero
+soy, y caballero he de morir, si place al Altísimo.»{i7}
+
+{i5}«¡Bien, por Dios! No diga más vuestra merced, señor y amo mío»{i7},
+dice Sancho. El eclesiástico se levanta y se va, diciendo que tan loco
+es el amo como el escudero.
+
+/MSG dolorida
+Suena un pífano lúgubre. Entra en el jardín un hombre de luengas barbas
+blancas, Trifaldín el de la Blanca Barba, que anuncia a la condesa
+Trifaldi, por otro nombre la Dueña Dolorida. Tras él, doce dueñas
+enlutadas, y la condesa, con una cola de tres puntas.
+
+Las dueñas alzan los velos: todas tienen barbas, unas rubias, otras
+negras, otras blancas y otras albarrazadas. {i6}«El gigante Malambruno
+nos ha encantado, y no hay quien nos desencante sino el valeroso don
+Quijote, que ha de ir a pelear con él al reino de Candaya, a tres mil
+leguas de aquí, pocas más o menos. ¿Acudirá el caballero?»{i7}
+
+/MSG dolorida_acepta
+{i4}«Yo haré, señora, cuanto pudiere, con la ayuda de Dios.»{i7}
+
+Entran cuatro salvajes vestidos de yedra que traen a hombros un gran
+caballo de madera. {i6}«Este es Clavileño el Alígero, que gobierna una
+clavija que tiene en la frente. Suban caballero y escudero, que ha de
+ir uno en la silla y otro en las ancas. Y han de ir los dos con los
+ojos vendados, que si no, se desvanecerán con la altura.»{i7}
+
+/MSG montar_clavileno
+Montas en Clavileño. Sancho sube a las ancas, quejándose de que no son
+de terciopelo, y se venda los ojos con el pañuelo de una dueña.
+{i5}«Señores, encomiéndennos a Dios, que nosotros vamos a esa
+Candaya.»{i7}
+
+/MSG vuelo
+Tuerces la clavija. Las dueñas y todos los presentes alzan las voces:
+{i6}«¡Dios te guíe, valeroso caballero! ¡Ya, ya vais por esos aires,
+rompiéndolos con más velocidad que una saeta!»{i7}
+
+Con unos grandes fuelles os hacen aire. {i4}«Sin duda alguna, Sancho, ya
+debemos de llegar a la segunda región del aire, donde se engendran el
+granizo y las nieves.»{i7} Luego os calientan la cara con unas estopas
+encendidas en una caña. {i5}«¡Que me maten si no estamos ya en el lugar
+del fuego, porque se me ha chamuscado gran parte de la barba!»{i7}
+
+Al fin, como Clavileño trae la barriga llena de cohetes tronadores, le
+pegan fuego y vuela por los aires con extraño ruido, y da con vosotros
+en el suelo, medio chamuscados. Las dueñas han desaparecido. En el
+jardín hay una lanza hincada con un pergamino: {i6}«El ínclito caballero
+don Quijote de la Mancha feneció y acabó la aventura de la condesa
+Trifaldi, por otro nombre la Dueña Dolorida, con solo intentarla.»{i7}
+
+/MSG consejos
+El duque, muy contento, cumple la palabra que dio: Sancho será
+gobernador de una ínsula. Antes de que parta, te encierras con él y le
+das consejos: {i4}«Primeramente, oh hijo, has de temer a Dios, porque
+en el temerle está la sabiduría. Has de poner los ojos en quien eres,
+procurando conocerte a ti mismo. Haz gala de la humildad de tu linaje.
+Hallen en ti más compasión las lágrimas del pobre, pero no más
+justicia, que las informaciones del rico. No comas ajos ni cebollas,
+porque no saquen por el olor tu villanería.»{i7}
+
+{i5}«Si vuestra merced mira que no soy para este gobierno, desde aquí
+lo suelto, que más quiero ir Sancho al cielo que gobernador al
+infierno.»{i7}
+
+{i4}«Por esas últimas razones que has dicho, juzgo que mereces ser
+gobernador de mil ínsulas.»{i7}
+
+/MSG ahora_sancho
+{i5}Y desde aquí, la historia deja a don Quijote en el castillo y sigue
+a Sancho. Ahora eres Sancho Panza, gobernador.{i7}
+
+# =====================================================================
+#  MENSAJES: BARATARIA (eres Sancho)
+# =====================================================================
+/MSG insula_llega
+Te reciben a son de campanas, con muestras de alegría general. Te
+llevan con mucha pompa a la iglesia mayor a dar gracias a Dios, y
+luego te entregan las llaves del pueblo y te admiten por perpetuo
+gobernador de la ínsula Barataria. Nadie sabe muy bien de qué te ríes.
+
+/MSG pleito
+Entran dos hombres ancianos. Uno trae una cañaheja por báculo. El otro,
+que no lo trae, habla: {i6}«Señor, a este buen hombre le presté días ha
+diez escudos de oro, y se los he pedido muchas veces, y no solo no me
+los vuelve, pero me los niega, y dice que nunca le presté tales diez
+escudos, y que si se los presté, que ya me los ha vuelto.»{i7}
+
+El del báculo, para jurar que se los devolvió, le da el báculo al otro
+para que se lo tenga mientras jura, como si le embarazara mucho. Jura
+sobre la cruz de la vara. Luego el que prestó le devuelve el báculo,
+convencido. El viejo del báculo hace una reverencia y se dispone a
+salir.
+
+/MSG baculo_coger
+{i5}«Dadme, buen hombre, ese báculo, que le he menester.»{i7} El viejo
+te lo da, con una cara que no sabes leer.
+
+/MSG baculo_roto
+Rompes la cañaheja por la mitad. Dentro de ella salen diez escudos en
+oro. Todos se admiran y tienen a su gobernador por un nuevo Salomón.
+{i5}«Quien jura que ha devuelto lo que tiene en la mano, mucho jura y
+poco devuelve.»{i7}
+
+El que prestó se va con su dinero. El que juró, con la vergüenza. El
+cronista lo apunta todo.
+
+/MSG medico_quita
+En cuanto alargas la mano a un plato, el del varilla te lo toca con
+ella, y un paje lo retira con tanta celeridad como si fuera cosa de
+encantamiento. {i6}«Esa fruta es demasiadamente húmeda, y ese otro
+plato es demasiadamente caliente y tiene muchas especias. Y las
+perdices... {i2}omnis saturatio mala, perdices autem pessima{i6}.»{i7}
+
+/MSG medico_huye
+{i5}«Pues, señor doctor Pedro Recio de mal Agüero, natural de
+Tirteafuera, lugar que está a la derecha mano como vamos de Caracuel a
+Almodóvar del Campo, quíteseme luego de delante. Si no, voto al sol que
+tome un garrote, y que a garrotazos, comenzando por él, no me ha de
+quedar médico en toda la ínsula.»{i7}
+
+El doctor se escabulle de la sala con la varilla entre las piernas.
+
+/MSG gobernador_come
+Te sirven un salpicón de vaca con mucha cebolla y unas manos de ternera
+cocidas, algo entradas en días. Comes con más gusto que si te hubieran
+dado francolines de Milán, faisanes de Roma o gansos de Lavajos. Al
+acabar llega una carta del duque: {i6}«Unos enemigos míos y vuestros
+quieren dar un asalto furioso a esa ínsula, no sé qué noche. Conviene
+velar y estar alerta.»{i7}
+
+/MSG ronda_llega
+En una calle topáis con dos hombres que riñen por cosa de una casa de
+juego. Los mandas a uno a su casa y al otro fuera de la ínsula, con el
+cronista apuntando. Más adelante, los corchetes traen presa a una
+moza vestida de hombre, hermosa como mil perlas, que no quiere decir
+quién es.
+
+/MSG doncella
+La moza, llorando, confiesa: {i6}«Yo soy hija de Pedro Pérez Mazorca,
+arrendador de las lanas de este lugar. Mi padre me tiene encerrada
+diez años ha, y yo solo quería ver el mundo, o a lo menos el pueblo
+donde nací.»{i7}
+
+{i5}«Esta es una niñería, y para contar esta necedad no eran menester
+tantas largas.»{i7} La mandas a casa de su padre, con su hermano, que
+también anda por ahí disfrazado de mujer. El cronista no da abasto.
+
+/MSG invasion
+A medianoche te despiertan las campanas y unas voces: {i6}«¡Arma, arma,
+señor gobernador, arma! Que han entrado infinitos enemigos en la
+ínsula, y somos perdidos si vuestra industria y valor no nos
+socorre!»{i7}
+
+Te ponen dos paveses, uno delante y otro detrás, atados con cordeles,
+de modo que quedas emparedado y entablado, derecho como un huso, sin
+poder doblar las rodillas ni menearte un solo paso. {i6}«¡Ande, señor
+gobernador, guíenos y anímenos a todos!»{i7} Das un paso y caes al
+suelo como galápago. Toda la noche pasan por encima de ti, dando
+cuchilladas sobre los paveses, hasta que gritan: {i6}«¡Victoria,
+victoria! ¡Los enemigos van de vencida!»{i7}
+
+Te desatan. Estás molido, y muy pensativo.
+
+/MSG renuncia
+Te vistes en silencio, vas a la caballeriza y abrazas al rucio, y
+le das un beso de paz en la frente. Luego lo ensillas, subes en él y
+te vuelves a todos los que te miran:
+
+{i5}«Abrid camino, señores míos, y dejadme volver a mi antigua
+libertad. Yo no nací para ser gobernador, ni para defender ínsulas ni
+ciudades de los enemigos que quisieren acometerlas. Mejor se me
+entiende a mí de arar y cavar que de dar leyes. Desnudo nací, desnudo
+me hallo: ni pierdo ni gano.»{i7}
+
+Diez días ha durado tu gobierno. Te ofrecen compañía, y no la quieres:
+solo pides un poco de cebada para el rucio y medio queso y medio pan
+para ti.
+
+/MSG sima_cae
+De camino al castillo se os hace de noche, a ti y al rucio, y entre
+unas ruinas caéis los dos a una sima profundísima. No os rompéis nada,
+lo que tienes por milagro, pero ahí abajo no hay quien os oiga.
+
+/MSG vuelve_dq
+{i5}Y aquí la historia deja a Sancho en su sima y vuelve a don Quijote,
+que eres tú otra vez.{i7}
+
+Una mañana sales del castillo a caballo, a ensayarte en lo que habías
+de hacer en el trance de un combate, y por poco Rocinante mete las
+patas en una sima.
+
+/MSG voces_sima
+De la sima salen grandes voces: {i5}«¡Ah de arriba! ¿Hay algún
+cristiano que me escuche, o algún caballero caritativo que se duela de
+un pecador enterrado en vida, de un desdichado desgobernado
+gobernador?»{i7}
+
+/MSG sacas_sancho
+Echas la soga a la sima. Sancho ata al rucio, luego se ata a sí mismo,
+y con ayuda de unos criados del duque que acuden a tus voces sacáis a
+los dos a la luz del día. Sancho, de rodillas, da gracias a Dios. El
+rucio rebuzna.
+
+# =====================================================================
+#  MENSAJES: BARCELONA Y EL CABALLERO DE LA BLANCA LUNA
+# =====================================================================
+/MSG barcelona_llega
+Entráis en Barcelona la víspera de San Juan, en la noche, y por la
+mañana veis el mar por primera vez. Don Antonio Moreno, caballero rico
+y discreto, amigo del bandolero Roque Guinart, te hospeda en su casa y
+te pasea por la ciudad con un rótulo en la espalda que dice: {i6}Este
+es don Quijote de la Mancha.{i7} Tú crees que te reconocen por tu fama.
+
+En una sala de su casa hay una cabeza de bronce, al parecer, sobre una
+mesa de jaspe. Dice don Antonio que responde a cuanto se le pregunta.
+
+/MSG cabeza
+Te acercas a la cabeza y le preguntas al oído: {i4}«¿Fue verdad o fue
+sueño lo que yo cuento que me pasó en la cueva de Montesinos? ¿Serán
+ciertos los azotes de Sancho? ¿Tendrá efecto el desencanto de
+Dulcinea?»{i7}
+
+{i6}«A lo de la cueva hay mucho que decir: de todo tiene. Los azotes de
+Sancho irán despacio. El desencanto de Dulcinea llegará a debida
+ejecución.»{i7}
+
+Sancho pregunta si tendrá otro gobierno. {i6}«Gobernarás en tu casa, y
+si vuelves a ella, verás a tu mujer y a tus hijos.»{i7} {i5}«¡Eso ya me
+lo decía yo!»{i7} (Dentro de la mesa hay un estudiante sobrino de don
+Antonio que habla por un cañón de hojalata. No se lo digas a Sancho.)
+
+/MSG blanca_luna
+Por la playa viene hacia ti un caballero armado de punta en blanco, que
+en el escudo trae pintada una luna resplandeciente.
+
+{i6}«Insigne caballero y jamás como se debe alabado don Quijote de la
+Mancha: yo soy el Caballero de la Blanca Luna. Vengo a contender
+contigo y a probar la fuerza de tus brazos, en razón de hacerte conocer
+y confesar que mi dama, sea quien fuere, es sin comparación más hermosa
+que tu Dulcinea del Toboso. Si peleares y yo te venciere, has de dejar
+las armas y retirarte a tu lugar por tiempo de un año. Y si tú me
+vencieres, quedará a tu discreción mi cabeza, y serán tuyos los
+despojos de mis armas y caballo.»{i7}
+
+/MSG blanca_acepta
+{i4}«Caballero de la Blanca Luna, cuyas hazañas hasta agora no han
+llegado a mi noticia: yo os haré jurar que jamás habéis visto a la
+ilustre Dulcinea. Acepto vuestro desafío, y luego, porque no se pase
+el día que traéis determinado.»{i7}
+
+/MSG derrota
+Volvéis las riendas a un tiempo. El de la Blanca Luna, que es más
+ligero, te sale al encuentro a dos tercios andados de la carrera, y
+allí te encuentra con tan poderosa fuerza, sin tocarte con la lanza
+(que la levanta, al parecer, de propósito), que da con Rocinante y
+contigo por el suelo una peligrosa caída.
+
+Te pone la lanza sobre la visera: {i6}«Vencido sois, caballero, y aun
+muerto, si no confesáis las condiciones de nuestro desafío.»{i7}
+
+Molido y aturdido, sin alzarte la visera, como si hablaras dentro de
+una tumba, con voz debilitada y enferma: {i4}«Dulcinea del Toboso es
+la más hermosa mujer del mundo, y yo el más desdichado caballero de la
+tierra, y no es bien que mi flaqueza defraude esta verdad. Aprieta,
+caballero, la lanza, y quítame la vida, pues me has quitado la
+honra.»{i7}
+
+{i6}«Eso no haré yo, por cierto. Viva, viva en su entereza la fama de la
+hermosura de la señora Dulcinea del Toboso. Que solo me contento con
+que el gran don Quijote se retire a su lugar un año.»{i7} Y lo
+prometes, como caballero puntual y verdadero.
+
+/MSG blanca_sanson
+Don Antonio sigue al vencedor hasta su posada y se entera: el Caballero
+de la Blanca Luna es el bachiller Sansón Carrasco, que, vencido en el
+bosque como Caballero de los Espejos, juró volver para mandarte a casa
+y ver si así te curaban.
+
+Salís de Barcelona. Al pasar por el lugar donde te derribaron, te
+vuelves a mirarlo: {i4}«Aquí fue Troya. Aquí mi desdicha, y no mi
+cobardía, se llevó mis alcanzadas glorias. Aquí cayó mi estrella para
+nunca más levantarse.»{i7} Tus armas van en el rucio, colgadas de un
+árbol a modo de trofeo que se mueve.
+
+# =====================================================================
+#  MENSAJES: LA VUELTA Y LOS DOS FINALES
+# =====================================================================
+/MSG ante_dulcinea
+Todos los personajes que has conocido te llevan ante Dulcinea...
+
+El cura y el barbero, Sansón Carrasco con sus espejos y su luna, el
+ventero castellano, Maritornes, el vizcaíno, el leonero, Basilio y
+Quiteria, Montesinos, maese Pedro con su mono, la Dolorida ya sin
+barbas, los duques y el doctor Recio, que no deja comer a nadie. Hasta
+Rocinante parece que sabe adónde va.
+
+/MSG dulcinea_1989
+{i3}¡¡Acertaste!! Dulcinea es la campesina que está hechizada.{i7}
+
+La joya ha roto el hechizo y los dos vivís felices por los siglos de
+los siglos. Y como don Quijote serás recordado por siempre.
+
+{i5}(Así acababa la aventura de Aventuras Level 10 en 1989. Cervantes
+no lo habría aprobado, pero tampoco la habría terminado nadie.){i7}
+
+/MSG princesa_1989
+Le das la joya a la que parece una princesa. Te has confundido:
+Dulcinea es la otra, pues está hechizada. Las dos se marchan y tú no has
+conseguido terminar esta aventura.
+
+/MSG agueros
+En las eras del lugar, dos muchachos riñen: {i6}«No te canses, Periquillo,
+que no la has de ver en todos los días de tu vida.»{i7} Y una liebre,
+huyendo de unos galgos, se viene a guarecer debajo de los pies del
+rucio.
+
+{i4}«¡Malum signum! ¡Malum signum! Liebre huye, galgos la siguen:
+¡Dulcinea no parece!»{i7}
+
+Sancho coge la liebre, se la da a los muchachos a cambio de una jaula de
+grillos que tienen y te la pone en las manos: {i5}«Esta liebre es
+Dulcinea, y yo la he cogido. ¿Qué mal agüero es este?»{i7}
+
+/MSG calentura
+Te acuestan. Te da una calentura que te tiene seis días en la cama, en
+los cuales te visitan muchas veces el cura, el bachiller y el barbero,
+tus amigos, sin quitarse de tu cabecera Sancho Panza, tu buen
+escudero. Intentan alegrarte: el bachiller ha compuesto una égloga y
+quiere que os hagáis pastores, Sancho será Pancino y tú el pastor
+Quijotiz.
+
+El médico te toma el pulso y dice que, por sí o por no, atiendas a la
+salud de tu alma, porque la del cuerpo corre peligro.
+
+/MSG cuerdo
+Duermes de un tirón, como dicen, más de seis horas. Al despertar das una
+gran voz:
+
+{i4}«¡Bendito sea el poderoso Dios, que tanto bien me ha hecho! Yo
+tengo juicio ya libre y claro, sin las sombras caliginosas de la
+ignorancia que sobre él me puso mi amarga y continua leyenda de los
+detestables libros de las caballerías. Ya conozco sus disparates y sus
+embelecos. Dadme albricias, buenos señores, de que ya yo no soy don
+Quijote de la Mancha, sino Alonso Quijano, a quien mis costumbres me
+dieron renombre de Bueno.»{i7}
+
+Piden que venga un escribano. Quieres hacer testamento.
+
+/MSG sancho_llora
+{i5}«¡Ay! No se muera vuestra merced, señor mío, sino tome mi consejo y
+viva muchos años, porque la mayor locura que puede hacer un hombre en
+esta vida es dejarse morir sin más ni más. Mire no sea perezoso, sino
+levántese desa cama, y vámonos al campo vestidos de pastores, como
+tenemos concertado: quizá tras de alguna mata hallaremos a la señora
+doña Dulcinea desencantada, que no haya más que ver.»{i7}
+
+/MSG testamento
+{i4}«Ítem, es mi voluntad que de ciertos dineros que Sancho Panza, a
+quien en mi locura hice mi escudero, tiene, no se le haga cargo ni se
+le pida cuenta alguna. Y si como estando yo loco fui parte para darle
+el gobierno de la ínsula, pudiera agora, estando cuerdo, darle el de un
+reino, se le diera.
+
+Ítem, mando toda mi hacienda a Antonia Quijana, mi sobrina. Y que si
+quisiere casarse, se case con hombre de quien primero se haya hecho
+información que no sabe qué cosas sean libros de caballerías.»{i7}
+
+/MSG muerte_alonso
+Entre compasiones y lágrimas de los que allí se hallan, das tu espíritu;
+quiero decir que te mueres. El escribano da por testimonio que nunca ha
+leído en ningún libro de caballerías que algún caballero andante haya
+muerto en su lecho tan sosegadamente y tan cristiano como don Quijote.
+
+El bachiller pone en tu sepultura este epitafio:
+
+{i6}Tuvo a todo el mundo en poco,{n}fue el espantajo y el coco{n}del
+mundo, en tal coyuntura,{n}que acreditó su ventura{n}morir cuerdo y
+vivir loco.{i7}
+
+Y la pluma de Cide Hamete Benengeli, colgada de una espetera con un
+hilo de alambre, dice: {i5}«Para mí sola nació don Quijote, y yo para
+él; él supo obrar y yo escribir.»{i7}
+
+{i6}{b1}FIN{b0}{i7}
+
+/MSG muerte_tortuga
+Sin la armadura de los paveses ni la del sentido común, te quedas en la
+calle esperando al enemigo. El enemigo, que es de mentira, no llega. El
+que llega es el frío de la madrugada, y después la vergüenza. Dejas la
+ínsula esa misma noche, y la historia, por no saber qué hacer contigo,
+se acaba aquí.
+
+/MSG creditos2
+{i6}DON QUIJOTE DE LA MANCHA{i7}{n}Segunda Parte{n}(c) AVENTURAS LEVEL 10{n}{n}La Segunda Parte respeta los
+puzles de 1989: el caballero de los Espejos, el león que se duerme con
+una canción y las dos muchachas que dicen ser Dulcinea.

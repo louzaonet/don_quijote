@@ -1,0 +1,1106 @@
+# =====================================================================
+#  PRIMERA PARTE: tablas de proceso
+#  Proceso 0 = respuestas; 1 = tras describir; 2 = cada turno
+#  Subprocesos: 3 Sancho, 4 ventero, 5 Haldudo, 6 mercaderes,
+#  7 vizcaíno, 8 cabreros, 9 Juan Palomeque, 10 galeotes, 11 princesa,
+#  13 ayuda, 14 salidas, 15 ama y sobrina, 17/18 inventario del narrador
+# =====================================================================
+
+# ---------------------------------------------------------------------
+/PRO 1
+# --- pantalla de título y prólogo
+> * _
+AT intro; PICTURE MOLINOS; MESSAGE titulo; ANYKEY; CLS; MESSAGE prologo; ANYKEY; CLS
+MESSAGE ayuda_inicial; ANYKEY; CLS
+LET fuerzas 60; LET rocinante_loc corral; LET sancho_loc limbo; LET maxobj 4
+GOTO biblioteca; DESC
+# --- acompañantes que te siguen
+> * _
+NOTZERO montado; ZERO narrador; COPYFF loc rocinante_loc
+> * _
+NOTZERO llevado_en_rucio; NOTAT venta2_cocina; NOTAT camaranchon; NOTAT corral2; COPYFF loc rocinante_loc
+> * _
+NOTZERO sancho_sigue; ZERO narrador; COPYFF loc sancho_loc
+# --- casa
+> * _
+AT cocina; ZERO tapiada; MESSAGE "El ama y tu sobrina duermen todavía. Es muy temprano."
+> * _
+AT cocina; NOTZERO tapiada; ZERO noche; MESSAGE "El ama, que pasa de los cuarenta, remueve la olla. Tu sobrina, que no llega a los veinte, te mira como se mira a un enfermo."
+> * _
+AT cocina; NOTZERO noche; MESSAGE "La casa duerme. El ama ronca con la llave de la puerta debajo de la almohada."
+> * _
+AT sala; NOTZERO tapiada; MESSAGE "Donde estaba la puerta de tu biblioteca hay ahora una pared lisa y recién encalada."
+> * _
+AT zaguan; NOTZERO noche; MESSAGE "La puerta principal está cerrada con llave."
+> * _
+AT corral; NOTZERO tapiada; MESSAGE "La puerta falsa está clavada con cuatro clavos y una tabla. Cosas del ama."
+> * _
+AT calle; ZERO sancho_sigue; NOTZERO noche; ZERO alforjas_dadas; MESSAGE sancho_calle; SET alforjas_dadas; PLACE alforjas HERE
+# --- primera salida
+> * _
+AT montiel1; ZERO montiel_pensado; SET montiel_pensado; MESSAGE pensamiento_terrible
+> * _
+AT venta_puerta; ZERO venta_vista; SET venta_vista; MESSAGE llegada_venta
+> * _
+AT venta_sala; MESSAGE "El ventero (que tú llamas castellano) está aquí. También las dos mozas, a las que tú llamas doncellas."
+> * _
+AT venta_patio; NOTZERO velando; ZERO armado; MESSAGE "Estás velando las armas junto a la pila."
+> * _
+AT encinar_andres; ZERO andres_libre; MESSAGE andres_escena
+> * _
+AT encinar_andres; NOTZERO andres_libre; MESSAGE "Juan Haldudo y su criado Andrés te miran con cara de que te vayas de una vez."
+> * _
+AT mercaderes; ZERO mercaderes_hablado; MESSAGE "Es la ocasión perfecta para que confiesen la belleza de Dulcinea."
+# --- segunda salida
+> * _
+AT molinos; ZERO molinos_hechos; MESSAGE molinos_sancho
+> * _
+AT molinos; NOTZERO molinos_hechos; MESSAGE "Las aspas giran tan tranquilas, como si nada."
+> * _
+AT puerto_lapice; ZERO frailes_hechos; MESSAGE frailes
+> * _
+AT puerto_lapice; NOTZERO frailes_hechos; ZERO vizcaino_hecho; MESSAGE "El coche de la señora vizcaína está detenido en el camino. Un escudero vizcaíno no te quita ojo."
+> * _
+AT majada; ZERO cabreros_hechos; MESSAGE cabreros
+> * _
+AT prado; ZERO yangueses_hechos; NOTZERO yangueses_vistos; MESSAGE "Los yangüeses siguen apaleando a Rocinante."
+> * _
+AT prado; ZERO yangueses_vistos; SET yangueses_vistos; MESSAGE yangueses_llegan; CLEAR montado; SET rocinante_cojo; COPYFF loc rocinante_loc
+> * _
+AT venta2_puerta; NOTZERO llevado_en_rucio; ZERO llevado_cocina; SET llevado_cocina; MESSAGE venta2_llegada
+> * _
+AT venta2_cocina; MESSAGE "Juan Palomeque, el ventero, anda por aquí con cara de echar cuentas. Maritornes friega una olla."
+> * _
+AT llanura; ZERO ejercito_hecho; MESSAGE ejercitos
+> * _
+AT camino_noche2; ZERO encamisados_hechos; MESSAGE encamisados
+> * _
+AT valle_batanes; ZERO amanecer; MESSAGE "Sancho no se separa de ti ni un palmo."
+> * _
+AT batanes; ZERO batanes_hechos; MESSAGE batanes_risa; SET batanes_hechos; PLUS score 1
+> * _
+AT camino_lluvia; ZERO yelmo_hecho; MESSAGE yelmo_viene
+> * _
+AT camino_real; ZERO galeotes_libres; MESSAGE galeotes
+> * _
+AT sierra1; ZERO rucio_robado; SET rucio_robado; MESSAGE rucio_robado
+> * _
+AT sierra2; ZERO maleta_abierta; MESSAGE "En el suelo, medio podridos, hay un cojín y una maleta asida a él."
+> * _
+AT sierra2; ZERO cardenio_visto; NOTZERO maleta_abierta; MESSAGE "Por los riscos salta un hombre medio desnudo, con la barba negra y espesa y los cabellos muchos y enmarañados."
+> * _
+AT pena_pobre; NOTZERO princesa_llega; ZERO princesa_aceptada; MESSAGE "La princesa Micomicona espera de rodillas a que le otorgues el don que te pide."
+> * _
+AT jaula; MESSAGE jaula_sancho
+# --- objetos y personajes presentes (al final)
+> * _
+LISTOBJ
+> * _
+SAME rocinante_loc loc; ZERO montado; ZERO llevado_en_rucio; NOTAT intro; MESSAGE "Rocinante está aquí."
+> * _
+SAME sancho_loc loc; NOTAT jaula; MESSAGE "Sancho Panza está aquí."
+
+# ---------------------------------------------------------------------
+/PRO 2
+# --- cansancio: andar a pie agota
+> * _
+ZERO montado; ZERO llevado_en_rucio; NOTSAME loc ultima_loc; NOTAT intro; MINUS fuerzas 1; SET tmp
+> * _
+NOTZERO tmp; EQ fuerzas 12; MESSAGE "{i5}Estás agotado de tanto caminar a pie. Un caballero andante va a caballo, por algo será.{i7}"
+> * _
+NOTZERO tmp; EQ fuerzas 4; MESSAGE "{i2}Las piernas ya casi no te sostienen.{i7}"
+> * _
+ZERO fuerzas; NOTAT intro; CLS; MESSAGE muerte_cansancio; TURNS; END
+> * _
+CLEAR tmp; COPYFF loc ultima_loc
+> * _
+NOTZERO montado; LET fuerzas 60
+> * _
+NOTZERO llevado_en_rucio; LET fuerzas 60
+# --- vela de las armas: llegan los arrieros
+> * _
+AT venta_patio; NOTZERO velando; ZERO armado; LT velando 9; PLUS velando 1
+> * _
+AT venta_patio; EQ velando 3; ZERO arriero1; LET arriero1 1; MESSAGE arriero1_llega
+> * _
+AT venta_patio; EQ arriero1 2; ZERO arriero2; GT velando 4; LET arriero2 1; MESSAGE arriero2_llega
+# --- Andrés: lo que pasa cuando te vas
+> * _
+NOTAT encinar_andres; NOTZERO andres_libre; ZERO andres_aviso; SET andres_aviso; MESSAGE andres_despues
+# --- el barbero no espera eternamente
+> * _
+AT camino_lluvia; NOTZERO barbero_timer; ZERO yelmo_hecho; MINUS barbero_timer 1; EQ barbero_timer 0; CLS; MESSAGE muerte_barbero; TURNS; END
+# --- Sierra Morena: vuelve Sancho con la princesa
+> * _
+AT pena_pobre; NOTZERO sancho_fuera; ZERO princesa_llega; NOTZERO rosario_rezado; NOTZERO versos
+ANYKEY; CLS; MESSAGE princesa_llega; SET princesa_llega; CLEAR sancho_fuera; SET sancho_sigue
+LET sancho_loc pena_pobre; LET rocinante_loc pena_pobre; PLUS score 1
+
+# ---------------------------------------------------------------------
+/PRO 0
+# ============================ CONVERSACIONES (genéricas por personaje)
+> DECIR SANCHO
+SAME sancho_loc loc; NOTAT jaula; NOTAT sala; PROCESS 3; DONE
+> EX SANCHO
+SAME sancho_loc loc; MESSAGE examinar_sancho; DONE
+> EX ROCINANTE
+SAME rocinante_loc loc; MESSAGE examinar_rocinante; DONE
+> DECIR ROCINANTE
+SAME rocinante_loc loc; MESSAGE "Rocinante mueve una oreja. Es todo lo que vas a sacar de él."; DONE
+# ============================ ANTES DE NADA: el narrador en Toledo
+> I _
+AT alcana; MES "Llevas: "; LISTAT CARRIED; DONE
+> ATACAR _
+AT alcana; MESSAGE "Eres el narrador, no el caballero. Los narradores no atacan: como mucho, critican."; DONE
+> COMPRAR CARTA
+AT alcana; CARRIED medio_real; DESTROY medio_real; PLACE cartapacios CARRIED; MESSAGE alcana_compra; PLUS score 1; DONE
+> DAR MEDIO
+AT alcana; CARRIED medio_real; DESTROY medio_real; PLACE cartapacios CARRIED; MESSAGE alcana_compra; PLUS score 1; DONE
+> COMPRAR _
+AT alcana; MESSAGE "El muchacho vende cartapacios. Es lo único que vende."; DONE
+> LEER CARTA
+AT alcana; CARRIED cartapacios; MESSAGE "Están escritos en arábigo y tú no sabes arábigo. Haría falta un morisco aljamiado que los leyera."; DONE
+> DAR CARTA
+AT alcana; CARRIED cartapacios; PROCESS 16; DONE
+> DECIR MORISCO
+AT alcana; CARRIED cartapacios; PROCESS 16; DONE
+> DECIR MORISCO
+AT alcana; MESSAGE "El morisco abre un ojo: {i6}«¿Tienes algo que leer, o vienes a darme conversación?»{i7}"; DONE
+> DECIR _
+AT alcana; MESSAGE "Nadie en el Alcaná tiene ganas de charla. Solo de vender."; DONE
+> * _
+AT alcana; LT verb 14; MESSAGE "Toledo está lleno de callejas y tú solo quieres el resto de la historia."; DONE
+
+# ============================ LA CASA
+> LEER LIBRO
+AT biblioteca; ZERO loco; MESSAGE leer_libro; SET loco; PLUS score 2; DONE
+> LEER LIBRO
+AT biblioteca; MESSAGE "Relees por enésima vez el Belianís de Grecia. Las heridas que daba y recibía siguen pareciéndote demasiadas."; DONE
+> LEER LIBRO
+CARRIED librillo; NOTZERO carta_escrita; MESSAGE "«Soberana y alta señora...» Qué bien escribes cuando quieres."; DONE
+> COGER LIBRO
+AT biblioteca; MESSAGE "Son cientos. No podrías con ellos y, además, ¿para qué, si te los sabes de memoria?"; DONE
+> EX LIBRO
+AT biblioteca; MESSAGE "Amadís de Gaula, Las sergas de Esplandián, Belianís de Grecia, Palmerín de Oliva, Tirante el Blanco... Todo lo que un hidalgo necesita para perder el juicio."; DONE
+> COGER CARTON
+AT biblioteca; ISAT carton NOTCREATED; PLACE carton CARRIED; MESSAGE "Arrancas las tapas de cartón de un libro de Feliciano de Silva. Ni lo echará de menos nadie."; DONE
+> ARRANCAR CARTON
+AT biblioteca; ISAT carton NOTCREATED; PLACE carton CARRIED; MESSAGE "Arrancas las tapas de cartón de un libro de Feliciano de Silva. Ni lo echará de menos nadie."; DONE
+> ARRANCAR LIBRO
+AT biblioteca; ISAT carton NOTCREATED; PLACE carton CARRIED; MESSAGE "Arrancas las tapas de cartón de un libro de Feliciano de Silva. Ni lo echará de menos nadie."; DONE
+> EX ASTILLERO
+AT sala; MESSAGE "Un astillero de pared, de los de colgar lanzas. Para eso está."; DONE
+> EX PARED
+AT sala; NOTZERO tapiada; MESSAGE "Una pared lisa, recién encalada, justo donde estaba la puerta de tu biblioteca. Huele a cal y a encantamiento."; DONE
+> O _
+AT sala; NOTZERO tapiada; MESSAGE "Donde estaba la puerta de tu biblioteca hay una pared lisa. Tanteas la pared con las manos. Ni rastro."; DONE
+> BUSCAR LIBRO
+AT sala; NOTZERO tapiada; MESSAGE "Buscas la puerta de tu biblioteca y no la hallas. Quizá el ama o tu sobrina sepan algo."; DONE
+# --- armas del desván
+> EX ARMAS
+AT desvan; MESSAGE "Un coselete, una celada, una espada y unas barras de hierro, todo tomado de orín y lleno de moho."; DONE
+> EX COSELETE
+PRESENT coselete; ZERO armas_limpias; MESSAGE "El coselete de tus bisabuelos, tomado de orín y lleno de moho."; DONE
+> EX COSELETE
+PRESENT coselete; MESSAGE "El coselete de tus bisabuelos, limpio y aderezado. Casi reluce."; DONE
+> LIMPIAR _
+PRESENT coselete; ZERO armas_limpias; SET armas_limpias; MESSAGE "Limpias las armas de tus bisabuelos y las aderezas lo mejor que puedes. Te lleva toda la tarde."; PLUS score 1; DONE
+> LIMPIAR _
+NOTZERO armas_limpias; MESSAGE "Ya relucen todo lo que pueden relucir."; DONE
+> EX CELADA
+PRESENT celada; EQ visera 0; MESSAGE "Es una celada sin encaje: un morrión simple, sin visera. Así no hay quien vaya a ninguna parte."; DONE
+> EX CELADA
+PRESENT celada; EQ visera 1; MESSAGE "Una celada con una visera de cartón. Parece de encaje. Sin probar."; DONE
+> EX CELADA
+PRESENT celada; EQ visera 3; MESSAGE "Una celada con los restos de una visera de cartón hecha trizas."; DONE
+> EX CELADA
+PRESENT celada; MESSAGE "Una celada finísima de encaje, con su visera reforzada por dentro con barras de hierro."; DONE
+> HACER CELADA
+PRESENT celada; EQ visera 0; NOTCARR carton; MESSAGE "Para hacerle una visera necesitas un material fuerte y moldeable. Algo como... cartón."; DONE
+> HACER CELADA
+PRESENT celada; EQ visera 0; DESTROY carton; LET visera 1; MESSAGE "Con el cartón haces una media celada que, encajada con el morrión, hace una apariencia de celada entera."; PLUS score 1; DONE
+> HACER CELADA
+PRESENT celada; EQ visera 3; NOTCARR carton; MESSAGE "Necesitas más cartón."; DONE
+> HACER CELADA
+PRESENT celada; EQ visera 3; NOTCARR barras; MESSAGE "Si la haces igual, se romperá igual. Habría que reforzarla por dentro con algo."; DONE
+> HACER CELADA
+PRESENT celada; EQ visera 3; DESTROY carton; DESTROY barras; LET visera 2; MESSAGE "La vuelves a hacer de nuevo, poniéndole unas barras de hierro por dentro, de tal manera que quedas satisfecho de su fortaleza."; PLUS score 1; DONE
+> HACER CELADA
+PRESENT celada; MESSAGE "Tu celada ya tiene visera."; DONE
+> PROBAR CELADA
+PRESENT celada; EQ visera 1; NOTCARR espada; MESSAGE "¿Con qué la vas a probar? Con una espada, a ser posible."; DONE
+> PROBAR CELADA
+PRESENT celada; EQ visera 1; LET visera 3; MESSAGE "Sacas la espada y le das dos golpes. Con el primero deshaces en un punto lo que habías hecho en una semana."; DONE
+> PROBAR CELADA
+PRESENT celada; EQ visera 2; MESSAGE "No quieres hacer nueva experiencia de ella: la das por celada finísima de encaje."; DONE
+> PROBAR CELADA
+PRESENT celada; MESSAGE "No hay visera que probar."; DONE
+> PONER CELADA
+CARRIED celada; LT visera 1; MESSAGE "¿Así, sin visera? Primero hazle una visera."; DONE
+# --- nombres
+> PENSAR _
+ZERO loco; MESSAGE "Eres Alonso Quijano, hidalgo. ¿Para qué quieres más nombres?"; DONE
+> PENSAR _
+EQ nombres 0; PAUSE 50; MESSAGE nombre1; LET nombres 1; PLUS score 1; DONE
+> PENSAR _
+EQ nombres 1; PAUSE 50; MESSAGE nombre2; LET nombres 2; PLUS score 1; DONE
+> PENSAR _
+EQ nombres 2; PAUSE 50; MESSAGE nombre3; LET nombres 3; PLUS score 1; DONE
+> PENSAR _
+MESSAGE "Ya tienes todos los nombres que necesitas: Rocinante, don Quijote de la Mancha y Dulcinea del Toboso."; DONE
+# --- cocina: la alacena y la rata (como en 1989)
+> ABRIR ALACENA
+AT cocina; NOTZERO tapiada; ZERO noche; MESSAGE "{i6}«¡Las manos quietas, que esa alacena es mía!»{i7}, te dice el ama."; DONE
+> ABRIR ALACENA
+AT cocina; NOTZERO alacena_abierta; MESSAGE "Ya está abierta. La rata no ha vuelto, por suerte."; DONE
+> ABRIR ALACENA
+AT cocina; NOTWORN coselete; MESSAGE rata_muerte; TURNS; END
+> ABRIR ALACENA
+AT cocina; SET alacena_abierta; CREATE llave; MESSAGE rata_vive; PLUS score 1; DONE
+> EX ALACENA
+AT cocina; ZERO alacena_abierta; MESSAGE "En la alacena hay un extraño ruido."; DONE
+> EX OLLA
+AT cocina; MESSAGE "Algo más vaca que carnero. Salpicón las más noches, duelos y quebrantos los sábados, lantejas los viernes. Así se te van las tres partes de la hacienda."; DONE
+> COMER _
+AT cocina; MESSAGE "Comes un poco de salpicón. Tanto leer da hambre."; DONE
+# --- aposento: arca, sábana, ventana
+> ABRIR ARCA
+AT aposento; NOTZERO arca_abierta; MESSAGE "Ya está abierta."; DONE
+> ABRIR ARCA
+AT aposento; NOTCARR llave; MESSAGE "El arca está cerrada con llave. Y la llave, como todas las de la casa, la tiene el ama en su alacena."; DONE
+> ABRIR ARCA
+AT aposento; SET arca_abierta; CREATE bolsa; CREATE camisa; MESSAGE "Abres el arca. Dentro están tus ahorros, en una bolsa, y una camisa limpia."; PLUS score 1; DONE
+> EX ARCA
+AT aposento; MESSAGE "Un arca de pino, con su cerradura."; DONE
+> ROMPER SABANA
+CARRIED sabana; DESTROY sabana; PLACE escala CARRIED; MESSAGE "Rompes la sábana en varios trozos y con ellos haces una escala. Tu sobrina no se pondrá contenta."; PLUS score 1; DONE
+> ROMPER SABANA
+PRESENT sabana; MESSAGE "Mejor si la coges primero."; DONE
+> HACER ESCALA
+CARRIED sabana; DESTROY sabana; PLACE escala CARRIED; MESSAGE "Rompes la sábana en varios trozos y con ellos haces una escala. Tu sobrina no se pondrá contenta."; PLUS score 1; DONE
+> ABRIR VENTANA
+AT aposento; SET ventana_abierta; MESSAGE "Abres la ventana. Entre los barrotes de la reja cabe un hidalgo flaco. Tú, por ejemplo."; DONE
+> EX VENTANA
+AT aposento; MESSAGE "Una ventana con reja que da a la calle. Los barrotes están tan separados que la reja es más decorativa que otra cosa."; DONE
+> ATAR ESCALA
+AT aposento; CARRIED escala; ZERO ventana_abierta; MESSAGE "Con la ventana cerrada, poco vas a colgar."; DONE
+> ATAR ESCALA
+AT aposento; CARRIED escala; DESTROY escala; SET escala_colgada; MESSAGE "Atas la escala a la reja y la dejas caer por la ventana. Llega justo al suelo."; PLUS score 1; DONE
+> TIRAR LANZA
+AT aposento; CARRIED lanza; NOTZERO ventana_abierta; PLACE lanza calle; SET lanza_tirada; MESSAGE "Tiras la lanza por la ventana. Cae en la calle con un ruido que despertaría a un muerto, pero no al ama."; DONE
+> TIRAR ADARGA
+AT aposento; CARRIED adarga; NOTZERO ventana_abierta; PLACE adarga calle; MESSAGE "Tiras la adarga por la ventana. Rebota dos veces."; DONE
+> TIRAR ESPADA
+AT aposento; CARRIED espada; NOTZERO ventana_abierta; PLACE espada calle; MESSAGE "Tiras la espada por la ventana. Clin."; DONE
+> TIRAR BOLSA
+AT aposento; CARRIED bolsa; NOTZERO ventana_abierta; PLACE bolsa calle; MESSAGE "Tiras la bolsa por la ventana. Los ducados tintinean."; DONE
+> TIRAR CAMISA
+AT aposento; CARRIED camisa; NOTZERO ventana_abierta; PLACE camisa calle; MESSAGE "Tiras la camisa por la ventana. Planea un poco."; DONE
+> TIRAR _
+AT aposento; NOTZERO ventana_abierta; MESSAGE "Mejor no tirar eso por la ventana."; DONE
+> TIRAR _
+AT aposento; MESSAGE "Con la ventana cerrada, poco vas a tirar."; DONE
+> BAJAR _
+AT aposento; ZERO escala_colgada; MESSAGE "¿Bajar? ¿Por dónde?"; DONE
+> BAJAR _
+AT aposento; ZERO noche; MESSAGE "¿A plena luz del día? Te verían todos los vecinos y, lo que es peor, el ama."; DONE
+> BAJAR _
+AT aposento; CARRIED lanza; MESSAGE "Con la lanza a cuestas no hay manera de bajar por una escala de sábana. Ni Amadís podría."; DONE
+> BAJAR _
+AT aposento; MESSAGE "Bajas por la escala con más dignidad que agilidad."; GOTO calle; PLUS score 1; DESC
+> SALIR _
+AT aposento; NOTZERO escala_colgada; NOTZERO noche; MESSAGE "Si quieres salir por la ventana, BAJA por la escala."; DONE
+> DORMIR _
+AT aposento; NOTZERO noche; MESSAGE "¿Dormir? Esta noche, ni pensarlo."; DONE
+> DORMIR _
+AT aposento; ZERO tapiada; MESSAGE "No tienes sueño. Tienes libros."; DONE
+> DORMIR _
+AT aposento; ZERO sancho_reclutado; MESSAGE "No tienes sueño: tienes planes. Y te falta un escudero."; DONE
+> DORMIR _
+AT aposento; SET noche; LET sancho_loc calle; LET rocinante_loc calle; MESSAGE noche_cae; DESC
+> ESPERAR _
+AT aposento; NOTZERO sancho_reclutado; ZERO noche; SET noche; LET sancho_loc calle; LET rocinante_loc calle; MESSAGE noche_cae; DESC
+# --- zaguán y corral
+> S _
+AT zaguan; ZERO tapiada; MESSAGE "Es tan temprano que ni los gallos se han levantado. La puerta está cerrada y el ama duerme con la llave."; DONE
+> S _
+AT zaguan; ZERO noche; MESSAGE "El ama se planta en la puerta: {i6}«¿Adónde va vuestra merced? De aquí no sale hasta que esté sano del todo.»{i7}"; DONE
+> S _
+AT zaguan; MESSAGE "La puerta está cerrada con llave. La llave duerme con el ama."; DONE
+> ABRIR PUERTA
+AT zaguan; MESSAGE "La puerta principal está cerrada con llave, y esa llave no está en la alacena: el ama la lleva encima."; DONE
+> ABRIR PUERTA
+AT corral; NOTZERO tapiada; MESSAGE "Está clavada. Ni con la lanza."; DONE
+> ABRIR PUERTA
+AT corral; MESSAGE "La puerta falsa se abre con solo empujarla. Para eso es falsa."; DONE
+> E _
+AT corral; NOTZERO tapiada; MESSAGE "La puerta falsa está clavada a conciencia."; DONE
+> E _
+AT corral; ZERO loco; MESSAGE "¿Salir al campo? ¿Para qué? Tienes libros que leer."; DONE
+> E _
+AT corral; LT nombres 3; MESSAGE "¿Vas a salir al mundo sin nombre, con un rocín sin nombre y sin una dama a quien encomendarte? Ponte a PENSAR."; DONE
+> E _
+AT corral; ZERO armas_limpias; MESSAGE "Tus armas están tomadas de orín. Así no sale un caballero."; DONE
+> E _
+AT corral; NOTWORN coselete; MESSAGE "Ponte el coselete. Un caballero no sale en jubón."; DONE
+> E _
+AT corral; NOTEQ visera 2; MESSAGE "Tu celada no está a punto. Un caballero no sale con la cabeza a medio proteger."; DONE
+> E _
+AT corral; NOTWORN celada; MESSAGE "Ponte la celada."; DONE
+> E _
+AT corral; NOTCARR lanza; MESSAGE "¿Un caballero sin lanza? Está en el astillero de la sala."; DONE
+> E _
+AT corral; NOTCARR adarga; MESSAGE "Te falta la adarga."; DONE
+> E _
+AT corral; ZERO montado; MESSAGE "¿A pie? Monta en Rocinante, que para eso le has puesto nombre."; DONE
+> E _
+AT corral; MESSAGE primera_salida; GOTO montiel1; PLUS score 2; DESC
+
+# ============================ PRIMERA SALIDA
+> DECIR _
+AT montiel1; MESSAGE "Hablas solo, imaginando lo que escribirá el sabio que cuente tus hazañas: {i4}«Apenas había el rubicundo Apolo tendido por la faz de la ancha y espaciosa tierra las doradas hebras de sus hermosos cabellos...»{i7}"; DONE
+> DESMONTAR _
+AT venta_puerta; NOTZERO montado; CLEAR montado; COPYFF loc rocinante_loc; MESSAGE "El ventero te tiene el estribo y te apeas con mucha dificultad y trabajo, como aquel que en todo aquel día no se había desayunado."; DONE
+> E _
+AT venta_puerta; NOTZERO montado; MESSAGE "¡No seas animal! No vas a entrar a caballo."; DONE
+> ENTRAR _
+AT venta_puerta; NOTZERO montado; MESSAGE "¡No seas animal! No vas a entrar a caballo."; DONE
+> S _
+AT venta_puerta; ZERO armado; MESSAGE "No te irás de este castillo sin ser armado caballero."; DONE
+> S _
+AT venta_puerta; ZERO montado; MESSAGE "Monta antes en Rocinante. Un caballero recién armado no se va a pie."; DONE
+> S _
+AT venta_puerta; MESSAGE "Sales de la venta tan contento, tan gallardo, tan alborozado, que el gozo te revienta por las cinchas del caballo."; GOTO lindero; DESC
+> DECIR VENTERO
+AT venta_sala; PROCESS 4; DONE
+> DECIR MOZAS
+AT venta_sala; MESSAGE "Las mozas se ríen de que las llames doncellas, cosa tan fuera de su profesión."; DONE
+> DECIR _
+AT venta_sala; PROCESS 4; DONE
+> IMBECIL _
+AT venta_sala; MESSAGE muerte_ventero; TURNS; END
+> COMER _
+AT venta_sala; ZERO venta_comido; SET venta_comido; MESSAGE "Te ponen una ración de mal remojado y peor cocido bacalao y un pan tan negro y mugriento como tus armas. Como no te quitas la celada, una moza te va metiendo la comida en la boca, y el ventero te da de beber con una caña. Te parece un banquete de castillo."; PLUS score 1; DONE
+> COMER _
+AT venta_sala; MESSAGE "Ya has cenado. Por llamarlo de alguna manera."; DONE
+> VELAR ARMAS
+AT venta_patio; NOTZERO armado; MESSAGE "Ya veló sus armas, y bien veladas."; DONE
+> VELAR ARMAS
+AT venta_patio; NOTZERO velando; MESSAGE "Ya las estás velando."; DONE
+> VELAR ARMAS
+AT venta_patio; ZERO ventero_pedido; MESSAGE "¿Velar armas? Primero tendrás que pedir al castellano que te arme caballero."; DONE
+> VELAR ARMAS
+AT venta_patio; NOTCARR lanza; MESSAGE "Velar armas sin lanza es velar poco."; DONE
+> VELAR ARMAS
+AT venta_patio; NOTCARR adarga; MESSAGE "Te falta la adarga."; DONE
+> VELAR ARMAS
+AT venta_patio; LET velando 1; MESSAGE velar; PLUS score 1; DONE
+> VELAR _
+AT venta_patio; MESSAGE "Se velan las ARMAS."; DONE
+> ATACAR ARRIERO
+AT venta_patio; EQ arriero1 1; LET arriero1 2; MESSAGE arriero1_golpe; DONE
+> ATACAR ARRIERO
+AT venta_patio; EQ arriero2 1; LET arriero2 2; MESSAGE arriero2_golpe; ANYKEY; MESSAGE ceremonia; SET armado; CLEAR velando; PLUS score 5; DONE
+> ATACAR _
+AT venta_patio; EQ arriero1 1; MESSAGE "Es el arriero quien está tocando tus armas."; DONE
+> S _
+AT venta_patio; NOTZERO velando; ZERO armado; MESSAGE "No puedes abandonar la vela de las armas. Sería una vergüenza."; DONE
+# --- Andrés y Juan Haldudo
+> DECIR HALDUDO
+AT encinar_andres; PROCESS 5; DONE
+> DECIR ANDRES
+AT encinar_andres; ZERO andres_libre; MESSAGE "{i6}«¡No lo haré otra vez, señor mío; por la pasión de Dios que no lo haré otra vez!»{i7}, grita el muchacho, que se llama Andrés."; DONE
+> DECIR ANDRES
+AT encinar_andres; MESSAGE "{i6}«Váyase vuestra merced, que con su ayuda ya tengo bastante.»{i7}"; DONE
+> DECIR _
+AT encinar_andres; PROCESS 5; DONE
+> IMBECIL _
+AT encinar_andres; MESSAGE muerte_enano; TURNS; END
+> ATACAR HALDUDO
+AT encinar_andres; ZERO andres_libre; NOTCARR lanza; MESSAGE "Sin lanza, el labrador no se va a impresionar mucho."; DONE
+> ATACAR HALDUDO
+AT encinar_andres; ZERO andres_libre; SET andres_libre; MESSAGE andres_libre; PLUS score 2; DONE
+> ATACAR _
+AT encinar_andres; ZERO andres_libre; MESSAGE "¿A quién? ¿Al LABRADOR?"; DONE
+> DESATAR ANDRES
+AT encinar_andres; ZERO andres_libre; MESSAGE "El labrador te corta el paso: {i6}«Ese mozo es mío, y le estoy dando su merecido.»{i7}"; DONE
+# --- la encrucijada
+> DEJAR ROCINANTE
+AT encrucijada; NOTZERO montado; MESSAGE rocinante_elige; GOTO mercaderes; PLUS score 1; DESC
+> N _
+AT encrucijada; NOTZERO montado; MESSAGE "Tiras de la rienda, pero Rocinante, que tiene su propio criterio, echa por el camino de su caballeriza."; GOTO mercaderes; DESC
+> S _
+AT encrucijada; NOTZERO montado; MESSAGE "Tiras de la rienda, pero Rocinante, que tiene su propio criterio, echa por el camino de su caballeriza."; GOTO mercaderes; DESC
+> E _
+AT encrucijada; NOTZERO montado; MESSAGE "Tiras de la rienda, pero Rocinante, que tiene su propio criterio, echa por el camino de su caballeriza."; GOTO mercaderes; DESC
+> E _
+AT encrucijada; MESSAGE "Un caballero andante no elige camino a pie. Monta en Rocinante."; DONE
+> N _
+AT encrucijada; MESSAGE "Un caballero andante no elige camino a pie. Monta en Rocinante."; DONE
+> S _
+AT encrucijada; MESSAGE "Un caballero andante no elige camino a pie. Monta en Rocinante."; DONE
+# --- los mercaderes toledanos
+> DECIR _
+AT mercaderes; PROCESS 6; DONE
+> ATACAR MERCADERES
+AT mercaderes; ZERO mercaderes_hablado; MESSAGE "Primero hay que darles la ocasión de confesar. Un caballero no ataca sin avisar."; DONE
+> ATACAR MERCADERES
+AT mercaderes; CLS; MESSAGE mercaderes_carga; ANYKEY; CLS; MESSAGE pedro_alonso; ANYKEY; CLS; MESSAGE escrutinio1; ANYKEY; CLS; MESSAGE escrutinio2; ANYKEY; CLS; MESSAGE tapiado; ANYKEY; CLS
+SET tapiada; CLEAR montado; LET rocinante_loc corral; LET sancho_loc sala; PLACE lanza desvan; LET fuerzas 60; PLUS score 2; GOTO aposento; DESC
+> ATACAR _
+AT mercaderes; MESSAGE "¿A los MERCADERES?"; DONE
+> * _
+AT mercaderes; LT verb 14; MESSAGE "No piensas moverte de aquí hasta que confiesen lo que tienen que confesar."; DONE
+
+# ============================ LA CASA, OTRA VEZ
+> DECIR SOBRINA
+AT cocina; ZERO noche; PROCESS 15; DONE
+> DECIR AMA
+AT cocina; ZERO noche; PROCESS 15; DONE
+> DECIR SANCHO
+AT sala; SAME sancho_loc loc; PROCESS 3; DONE
+> DECIR _
+AT sala; SAME sancho_loc loc; PROCESS 3; DONE
+> DECIR _
+AT cocina; ZERO noche; PROCESS 15; DONE
+> E _
+AT calle; ZERO montado; MESSAGE "Monta antes en Rocinante. Lo dicen los libros y lo dice Sancho."; DONE
+> E _
+AT calle; NOTCARR lanza; MESSAGE "Sancho te mira: {i5}«¿Y la lanza, señor? ¿Va a pelear con los gigantes a pescozones?»{i7}"; DONE
+> E _
+AT calle; ISNOTAT bolsa CARRIED; ISNOTAT bolsa alforjas; MESSAGE "Sancho no se mueve: {i5}«¿Y los dineros? Sin blanca no salgo yo del pueblo.»{i7}"; DONE
+> E _
+AT calle; MESSAGE segunda_salida; SET sancho_sigue; GOTO camino_noche; PLUS score 2; DESC
+> N _
+AT calle; MESSAGE "La casa está cerrada. Y mejor así."; DONE
+> ENTRAR _
+AT calle; MESSAGE "La casa está cerrada. Y mejor así."; DONE
+> SUBIR _
+AT calle; MESSAGE "Subir por una escala de sábana es todavía peor que bajar."; DONE
+> O _
+AT camino_noche; MESSAGE "Ya no hay vuelta atrás. Al menos hasta el final de la Primera Parte."; DONE
+
+# ============================ SEGUNDA SALIDA
+> EMPUÑAR LANZA
+NOTCARR lanza; MESSAGE "No tienes lanza."; DONE
+> EMPUÑAR LANZA
+SET empunada; MESSAGE "Empuñas la lanza y la pones en ristre. Ahora sí."; DONE
+> EMPUÑAR _
+CARRIED lanza; SET empunada; MESSAGE "Empuñas la lanza y la pones en ristre. Ahora sí."; DONE
+> ATACAR MOLINOS
+AT molinos; NOTZERO molinos_hechos; MESSAGE "Ya no quedan gigantes, solo molinos. Y algún rencor."; DONE
+> ATACAR MOLINOS
+AT molinos; ZERO montado; MESSAGE "A pie no se acomete a un gigante. Monta en Rocinante."; DONE
+> ATACAR MOLINOS
+AT molinos; NOTCARR lanza; MESSAGE "¿Con qué?"; DONE
+> ATACAR MOLINOS
+AT molinos; ZERO empunada; MESSAGE "Llevas la lanza como quien lleva un palo de escoba. EMPUÑA la lanza primero."; DONE
+> ATACAR MOLINOS
+AT molinos; CLS; MESSAGE molinos_ataque; ANYKEY; MESSAGE molinos_freston; DESTROY lanza; CREATE hierro; CLEAR empunada; SET molinos_hechos; PLUS score 5; DONE
+> S _
+AT molinos; ZERO molinos_hechos; MESSAGE "¿Vas a dar la espalda a treinta gigantes? Ni hablar."; DONE
+> EX MOLINOS
+AT molinos; ZERO molinos_hechos; MESSAGE "Gigantes. Enormes. Con brazos de casi dos leguas. Sancho insiste en que son molinos. Sancho no ha leído nada."; DONE
+> EX MOLINOS
+AT molinos; MESSAGE "Molinos. Ahora. Gracias a Frestón."; DONE
+> ARRANCAR RAMA
+AT encinar; ISAT rama NOTCREATED; PLACE rama CARRIED; MESSAGE "Desgajas de una encina un ramo seco que casi te puede servir de lanza."; PLUS score 1; DONE
+> ARRANCAR ENCINA
+AT encinar; ISAT rama NOTCREATED; PLACE rama CARRIED; MESSAGE "Desgajas de una encina un ramo seco que casi te puede servir de lanza."; PLUS score 1; DONE
+> COGER RAMA
+AT encinar; ISAT rama NOTCREATED; PLACE rama CARRIED; MESSAGE "Desgajas de una encina un ramo seco que casi te puede servir de lanza."; PLUS score 1; DONE
+> PONER HIERRO
+CARRIED hierro; CARRIED rama; DESTROY hierro; DESTROY rama; PLACE lanza CARRIED; MESSAGE lanza_nueva; PLUS score 1; DONE
+> METER HIERRO
+CARRIED hierro; CARRIED rama; DESTROY hierro; DESTROY rama; PLACE lanza CARRIED; MESSAGE lanza_nueva; PLUS score 1; DONE
+> HACER LANZA
+CARRIED hierro; CARRIED rama; DESTROY hierro; DESTROY rama; PLACE lanza CARRIED; MESSAGE lanza_nueva; PLUS score 1; DONE
+> HACER LANZA
+MESSAGE "Para hacer una lanza necesitas un buen palo y un hierro."; DONE
+> E _
+AT encinar; ABSENT lanza; MESSAGE "Sancho te detiene: {i5}«¿Sin lanza, señor? Así no vamos a ninguna parte.»{i7}"; DONE
+# --- frailes y vizcaíno
+> ATACAR FRAILES
+AT puerto_lapice; ZERO frailes_hechos; NOTCARR lanza; MESSAGE "Necesitas la lanza."; DONE
+> ATACAR FRAILES
+AT puerto_lapice; ZERO frailes_hechos; MESSAGE frailes_ataque; SET frailes_hechos; PLUS score 1; DONE
+> DECIR FRAILES
+AT puerto_lapice; ZERO frailes_hechos; MESSAGE "{i4}«Gente endiablada y descomunal, dejad luego al punto las altas princesas que en ese coche lleváis forzadas!»{i7} {i6}«Señor caballero, nosotros no somos endiablados ni descomunales, sino dos religiosos de San Benito»{i7}. Mienten, claro."; DONE
+> DECIR _
+AT puerto_lapice; ZERO frailes_hechos; MESSAGE "La señora no se asoma mientras esos dos encantadores sigan ahí."; DONE
+> DECIR _
+AT puerto_lapice; ZERO vizcaino_hecho; MESSAGE vizcaino_reto; SET vizcaino_pendiente; DONE
+> ATACAR VIZCAINO
+AT puerto_lapice; ZERO frailes_hechos; MESSAGE "Primero, los encantadores."; DONE
+> ATACAR VIZCAINO
+AT puerto_lapice; ZERO vizcaino_pendiente; MESSAGE "El vizcaíno no te ha hecho nada. Todavía. Habla primero con la señora del coche."; DONE
+> ATACAR VIZCAINO
+AT puerto_lapice; ZERO vizcaino_hecho; NOTCARR espada; MESSAGE "Esto se decide a espada, y no la llevas encima."; DONE
+> ATACAR VIZCAINO
+AT puerto_lapice; ZERO vizcaino_hecho; CLS; MESSAGE vizcaino_suspenso; ANYKEY; CLS; PROCESS 17; SET narrador; PLACE medio_real CARRIED; GOTO alcana; DESC
+> E _
+AT puerto_lapice; ZERO vizcaino_hecho; MESSAGE "El coche te cierra el paso. Y hay una princesa que liberar."; DONE
+# --- cabreros
+> COMER _
+AT majada; ZERO cabreros_hechos; MESSAGE edad_dorada; SET cabreros_hechos; CLEAR oreja_herida; PLUS score 1; DONE
+> COMER _
+AT majada; MESSAGE "Una bellota más y empiezas otro discurso. Mejor no."; DONE
+> DECIR _
+AT majada; PROCESS 8; DONE
+> IMBECIL _
+AT majada; CLS; MESSAGE muerte_carneros; TURNS; END
+# --- yangüeses
+> ATACAR YANGUESES
+AT prado; ZERO yangueses_hechos; MESSAGE yangueses_paliza; SET yangueses_hechos; PLUS score 1; DONE
+> ATACAR _
+AT prado; ZERO yangueses_hechos; MESSAGE "¿A los YANGUESES?"; DONE
+> MONTAR RUCIO
+AT prado; NOTZERO yangueses_hechos; ZERO llevado_en_rucio; SET llevado_en_rucio; MESSAGE "Sancho, quejándose a cada paso, te echa atravesado sobre el rucio y ata a Rocinante detrás. Rocinante cojea con mucha dignidad."; PLUS score 1; DONE
+> SUBIR RUCIO
+AT prado; NOTZERO yangueses_hechos; ZERO llevado_en_rucio; SET llevado_en_rucio; MESSAGE "Sancho, quejándose a cada paso, te echa atravesado sobre el rucio y ata a Rocinante detrás. Rocinante cojea con mucha dignidad."; PLUS score 1; DONE
+> E _
+AT prado; ZERO yangueses_hechos; MESSAGE "¿Y dejar a Rocinante a merced de esos bárbaros?"; DONE
+> E _
+AT prado; ZERO llevado_en_rucio; MESSAGE "No puedes dar un paso. Literalmente. Sancho mira a su rucio, luego a ti, luego a su rucio."; DONE
+> O _
+AT prado; NOTZERO llevado_en_rucio; MESSAGE "Sancho no piensa desandar camino contigo a cuestas."; DONE
+> MONTAR ROCINANTE
+NOTZERO rocinante_cojo; MESSAGE "Rocinante está tan molido como tú. No hay quien se suba en él."; DONE
+
+# ============================ LA VENTA DE JUAN PALOMEQUE
+> DORMIR _
+AT camaranchon; NOTZERO princesa_aceptada; ZERO cueros_hechos; MESSAGE gigante_sueno; SET sueno_gigante; DONE
+> DORMIR _
+AT camaranchon; NOTZERO cueros_hechos; ZERO jaula_hecha; CLS; MESSAGE encantamiento; ANYKEY; SET jaula_hecha; CLEAR montado; CLEAR sancho_sigue; LET sancho_loc jaula; PLUS score 2; GOTO jaula; DESC
+> DORMIR _
+AT camaranchon; ZERO paliza_venta; CLS; MESSAGE noche_venta; ANYKEY; SET paliza_venta; PLUS score 1; DESC
+> DORMIR _
+AT camaranchon; MESSAGE "Después de la última noche, no piensas pegar ojo en esa cama."; DONE
+> ATACAR CUEROS
+AT camaranchon; NOTZERO sueno_gigante; ZERO cueros_hechos; CLS; MESSAGE cueros; ANYKEY; SET cueros_hechos; PLUS score 2; DESC
+> ATACAR _
+AT camaranchon; NOTZERO sueno_gigante; ZERO cueros_hechos; CLS; MESSAGE cueros; ANYKEY; SET cueros_hechos; PLUS score 2; DESC
+> DECIR VENTERO
+AT venta2_cocina; PROCESS 9; DONE
+> DECIR MARITORNES
+AT venta2_cocina; MESSAGE "{i6}«Yo soy cristiana vieja y moza de bien, aunque me vea en esta venta.»{i7} Maritornes es mucha Maritornes."; DONE
+> DECIR _
+AT venta2_cocina; PROCESS 9; DONE
+> IMBECIL _
+AT venta2_cocina; CLS; MESSAGE muerte_techo; TURNS; END
+> MEZCLAR _
+AT venta2_cocina; NOTZERO balsamo_hecho; MESSAGE "El bálsamo ya está hecho."; DONE
+> MEZCLAR _
+AT venta2_cocina; ABSENT aceite; MESSAGE "La receta de Fierabrás, según tus libros, lleva aceite, vino, sal y romero. Te falta el aceite."; DONE
+> MEZCLAR _
+AT venta2_cocina; ABSENT vino; MESSAGE "La receta lleva aceite, vino, sal y romero. Te falta el vino."; DONE
+> MEZCLAR _
+AT venta2_cocina; ABSENT sal; MESSAGE "La receta lleva aceite, vino, sal y romero. Te falta la sal."; DONE
+> MEZCLAR _
+AT venta2_cocina; ABSENT romero; MESSAGE "La receta lleva aceite, vino, sal y romero. Te falta el romero."; DONE
+> MEZCLAR _
+AT venta2_cocina; ABSENT alcuza; MESSAGE "Tienes los ingredientes, pero ¿dónde vas a echar el bálsamo? Hace falta un recipiente."; DONE
+> MEZCLAR _
+AT venta2_cocina; DESTROY aceite; DESTROY vino; DESTROY sal; DESTROY romero; DESTROY alcuza; PLACE balsamo CARRIED; SET balsamo_hecho; MESSAGE balsamo_hecho; PLUS score 2; DONE
+> MEZCLAR _
+MESSAGE "Necesitas un fuego donde cocer. Como el de una cocina."; DONE
+> REZAR _
+PRESENT balsamo; ZERO balsamo_bendito; MESSAGE balsamo_rezo; SET balsamo_bendito; PLUS score 1; DONE
+> BEBER BALSAMO
+CARRIED balsamo; ZERO balsamo_bendito; MESSAGE "Sin bendecir, el bálsamo no sirve. Lo dicen todos los libros. Bueno, ninguno, pero tú lo sabes."; DONE
+> BEBER BALSAMO
+CARRIED balsamo; ZERO curado; CLS; MESSAGE balsamo_beber; ANYKEY; SET curado; CLEAR rocinante_cojo; CLEAR llevado_en_rucio; LET rocinante_loc venta2_puerta; PLUS score 2; DESC
+> BEBER BALSAMO
+CARRIED balsamo; MESSAGE "Ya estás curado. Guárdalo para la próxima, que la habrá."; DONE
+> DAR BALSAMO
+CARRIED balsamo; SAME sancho_loc loc; NOTZERO curado; ZERO bebio_sancho; CLS; MESSAGE sancho_balsamo; ANYKEY; SET bebio_sancho; DESTROY balsamo; PLUS score 1; DESC
+> PAGAR _
+ATGT prado; ATLT llanura; ZERO pagado; ZERO manteado; ISNOTAT bolsa CARRIED; ISNOTAT bolsa alforjas; MESSAGE "No tienes con qué pagar."; DONE
+> PAGAR _
+ATGT prado; ATLT llanura; ZERO pagado; ZERO manteado; DESTROY bolsa; SET pagado; MESSAGE "Pagas al ventero la paja, la cebada, la cena y las camas. Te sientes un poco menos caballero, pero Sancho te lo agradece en el alma."; PLUS score 1; DONE
+> E _
+AT venta2_puerta; ZERO curado; MESSAGE "En tu estado no llegas ni a la esquina. Necesitas curarte."; DONE
+> E _
+AT venta2_puerta; ZERO montado; MESSAGE "Monta antes en Rocinante."; DONE
+> E _
+AT venta2_puerta; ZERO pagado; ZERO manteado; CLS; MESSAGE venta2_cuenta; ANYKEY; CLS; MESSAGE manteo; ANYKEY; SET manteado; DESTROY alforjas; PLUS score 1; GOTO llanura; DESC
+> N _
+AT venta2_puerta; NOTZERO montado; MESSAGE "¡No seas animal! No vas a entrar a caballo."; DONE
+> ENTRAR _
+AT venta2_puerta; NOTZERO montado; MESSAGE "¡No seas animal! No vas a entrar a caballo."; DONE
+
+# ============================ LLANURA, NOCHE, BATANES
+> OLER _
+AT llanura; ZERO ejercito_hecho; MESSAGE "Huele a oveja apestosa. Pero tú hueles a gloria."; DONE
+> ATACAR EJERCITO
+AT llanura; ZERO ejercito_hecho; ZERO montado; MESSAGE "Monta en Rocinante, que esto es una batalla campal."; DONE
+> ATACAR EJERCITO
+AT llanura; ZERO ejercito_hecho; NOTCARR lanza; MESSAGE "Sin lanza no se alancea."; DONE
+> ATACAR EJERCITO
+AT llanura; ZERO ejercito_hecho; CLS; MESSAGE ejercito_ataque; ANYKEY; DESTROY balsamo; SET ejercito_hecho; SET muelas; PLUS score 2; DESC
+> ATACAR _
+AT llanura; ZERO ejercito_hecho; MESSAGE "¿Al EJERCITO?"; DONE
+> E _
+AT llanura; ZERO ejercito_hecho; MESSAGE "Las dos polvaredas te cierran el paso. Habrá que pelear."; DONE
+> CONTAR MUELAS
+NOTZERO muelas; MESSAGE muelas; DONE
+> EX MUELAS
+NOTZERO muelas; MESSAGE muelas; DONE
+> ATACAR ENCAMISADOS
+AT camino_noche2; ZERO encamisados_hechos; NOTCARR lanza; MESSAGE "Necesitas la lanza."; DONE
+> ATACAR ENCAMISADOS
+AT camino_noche2; ZERO encamisados_hechos; CLS; MESSAGE encamisados_ataque; ANYKEY; SET encamisados_hechos; SET triste_figura; PLUS score 2; DESC
+> ATACAR _
+AT camino_noche2; ZERO encamisados_hechos; MESSAGE "¿A los ENCAMISADOS?"; DONE
+> E _
+AT camino_noche2; ZERO encamisados_hechos; MESSAGE "Las lumbres avanzan hacia vosotros por el único camino. No hay forma de pasar sin enfrentarse a ellas."; DONE
+> E _
+AT valle_batanes; ZERO amanecer; ZERO atado; SET atado; MESSAGE batanes_ruido; DONE
+> E _
+AT valle_batanes; ZERO amanecer; MESSAGE "Rocinante no se mueve sino a saltos. Sancho silba mirando a las estrellas, que no se ven."; DONE
+> ESPERAR _
+AT valle_batanes; ZERO amanecer; PLUS esperas 1; LT esperas 3; MESSAGE "Esperas. El ruido no para. Sancho tampoco: no se separa de ti ni un palmo."; DONE
+> ESPERAR _
+AT valle_batanes; ZERO amanecer; MESSAGE amanece; SET amanecer; PLUS score 1; DONE
+> OLER _
+AT valle_batanes; MESSAGE "Algo huele, y no a ámbar. Sancho, que no se ha apartado de tu lado en toda la noche, mira para otro lado."; DONE
+> DORMIR _
+AT valle_batanes; ZERO amanecer; MESSAGE "Con ese estruendo no duerme ni un lirón."; DONE
+# --- yelmo de Mambrino
+> ATACAR BARBERO
+AT camino_lluvia; ZERO yelmo_hecho; ZERO montado; MESSAGE "Monta en Rocinante para la carga."; DONE
+> ATACAR BARBERO
+AT camino_lluvia; ZERO yelmo_hecho; NOTCARR lanza; MESSAGE "Necesitas la lanza."; DONE
+> ATACAR BARBERO
+AT camino_lluvia; ZERO yelmo_hecho; MESSAGE yelmo_ataque; CREATE bacia; SET yelmo_hecho; PLUS score 2; DONE
+> ATACAR _
+AT camino_lluvia; ZERO yelmo_hecho; MESSAGE "¿Al caballero del yelmo? Es decir, ¿al BARBERO?"; DONE
+> DECIR BARBERO
+AT camino_lluvia; ZERO yelmo_hecho; LET barbero_timer 4; MESSAGE "El barbero se aferra a su bacía: {i6}«¿Qué yelmo? Esto es una bacía, y es mía. Como dé un paso más, verá vuestra merced lo que hace un barbero con una navaja.»{i7}"; DONE
+> DECIR _
+AT camino_lluvia; ZERO yelmo_hecho; LET barbero_timer 4; MESSAGE "El barbero se aferra a su bacía: {i6}«¿Qué yelmo? Esto es una bacía, y es mía. Como dé un paso más, verá vuestra merced lo que hace un barbero con una navaja.»{i7}"; DONE
+> E _
+AT camino_lluvia; ZERO yelmo_hecho; MESSAGE "¿Vas a dejar escapar el yelmo de Mambrino?"; DONE
+> PONER BACIA
+CARRIED bacia; WORN celada; MESSAGE "Primero quítate la celada. Una cabeza, un yelmo."; DONE
+> PONER BACIA
+CARRIED bacia; WEAR bacia; MESSAGE "Sancho se aguanta la risa como puede. Te queda grande, y le falta la mitad. {i4}«Este famoso yelmo debió de caer en manos de quien lo fundió para aprovecharse del precio y, de la otra mitad, hizo esto que parece bacía de barbero.»{i7}"; PLUS score 1; DONE
+# --- galeotes
+> DECIR GALEOTES
+AT camino_real; ZERO galeotes_libres; MESSAGE galeotes_hablan; SET galeotes_hablado; PLUS score 1; DONE
+> DECIR GINES
+AT camino_real; ZERO galeotes_libres; MESSAGE galeotes_hablan; SET galeotes_hablado; PLUS score 1; DONE
+> DECIR GUARDAS
+AT camino_real; ZERO galeotes_libres; MESSAGE "{i6}«Esta es gente forzada del rey, que va a las galeras. No hay más que decir.»{i7}"; DONE
+> DECIR _
+AT camino_real; ZERO galeotes_libres; MESSAGE galeotes_hablan; SET galeotes_hablado; PLUS score 1; DONE
+> ATACAR GUARDAS
+AT camino_real; ZERO galeotes_libres; ZERO galeotes_hablado; MESSAGE "Antes de nada, querrás saber por qué los llevan así. Pregunta a los GALEOTES."; DONE
+> ATACAR GUARDAS
+AT camino_real; ZERO galeotes_libres; NOTCARR lanza; MESSAGE "Necesitas la lanza."; DONE
+> ATACAR GUARDAS
+AT camino_real; ZERO galeotes_libres; CLS; MESSAGE galeotes_ataque; ANYKEY; SET galeotes_libres; SET galeotes_apedreado; PLUS score 2; DESC
+> ATACAR _
+AT camino_real; ZERO galeotes_libres; MESSAGE "¿A los GUARDAS?"; DONE
+> DESATAR GALEOTES
+AT camino_real; ZERO galeotes_libres; MESSAGE "Los guardas no te van a dejar así como así."; DONE
+> S _
+AT camino_real; ZERO galeotes_libres; MESSAGE "Aquella cadena de desdichados pide a gritos un caballero andante."; DONE
+
+# ============================ SIERRA MORENA
+> ABRIR MALETA
+AT sierra2; ZERO maleta_abierta; SET maleta_abierta; CREATE librillo; MESSAGE maleta; PLUS score 1; DONE
+> EX MALETA
+AT sierra2; ZERO maleta_abierta; SET maleta_abierta; CREATE librillo; MESSAGE maleta; PLUS score 1; DONE
+> ABRIR MALETA
+AT sierra2; MESSAGE "Ya no queda nada de provecho. Sancho se ha encargado."; DONE
+> COGER CAMISA
+AT sierra2; NOTZERO maleta_abierta; ISAT camisa NOTCREATED; PLACE camisa CARRIED; MESSAGE "Coges una de las camisas de holanda de la maleta."; DONE
+> COGER CAMISA
+AT sierra2; NOTZERO maleta_abierta; ISNOTAT camisa CARRIED; ISNOTAT camisa alforjas; PLACE camisa CARRIED; MESSAGE "Coges una de las camisas de holanda de la maleta."; DONE
+> DECIR CARDENIO
+AT sierra2; NOTZERO maleta_abierta; ZERO cardenio_visto; SET cardenio_visto; MESSAGE "El Roto de la Mala Figura te cuenta sus desdichas de amor. Cuando, al hilo de la historia, defiendes la honra de la reina Madásima, te arroja una piedra al pecho y se pierde entre los riscos."; PLUS score 1; DONE
+> DECIR _
+AT sierra2; NOTZERO maleta_abierta; ZERO cardenio_visto; SET cardenio_visto; MESSAGE "El Roto de la Mala Figura te cuenta sus desdichas de amor. Cuando, al hilo de la historia, defiendes la honra de la reina Madásima, te arroja una piedra al pecho y se pierde entre los riscos."; PLUS score 1; DONE
+> HACER PENITENCIA
+AT pena_pobre; ZERO penitencia; MESSAGE penitencia; SET penitencia; PLUS score 1; DONE
+> DESNUDARSE _
+AT pena_pobre; ZERO penitencia; MESSAGE penitencia; SET penitencia; PLUS score 1; DONE
+> HACER PENITENCIA
+AT pena_pobre; MESSAGE "Ya has hecho bastante. Sancho todavía no se ha recuperado."; DONE
+> ESCRIBIR VERSOS
+AT pena_pobre; ZERO versos; MESSAGE versos; SET versos; PLUS score 1; DONE
+> ESCRIBIR ARBOL
+AT pena_pobre; ZERO versos; MESSAGE versos; SET versos; PLUS score 1; DONE
+> ESCRIBIR CARTA
+NOTCARR librillo; MESSAGE "¿En qué? Aquí no hay papel. Ni en toda la sierra."; DONE
+> ESCRIBIR CARTA
+ZERO carta_escrita; MESSAGE carta; SET carta_escrita; PLUS score 1; DONE
+> ESCRIBIR LIBRILLO
+CARRIED librillo; ZERO carta_escrita; MESSAGE carta; SET carta_escrita; PLUS score 1; DONE
+> ESCRIBIR _
+AT pena_pobre; MESSAGE "¿Una CARTA? ¿VERSOS?"; DONE
+> DAR LIBRILLO
+AT pena_pobre; SAME sancho_loc loc; ZERO carta_escrita; MESSAGE "El librillo está en blanco. Escribe antes la carta."; DONE
+> DAR LIBRILLO
+AT pena_pobre; SAME sancho_loc loc; ZERO penitencia; MESSAGE "Sancho no se va: {i5}«Espere vuestra merced, que tengo que ver alguna locura para jurar con buena conciencia que se la he visto hacer.»{i7}"; DONE
+> DAR LIBRILLO
+AT pena_pobre; SAME sancho_loc loc; MESSAGE sancho_se_va; SET sancho_fuera; CLEAR sancho_sigue; CLEAR montado; LET sancho_loc limbo; LET rocinante_loc limbo; PLUS score 1; DONE
+> DAR CARTA
+AT pena_pobre; SAME sancho_loc loc; CARRIED librillo; ZERO carta_escrita; MESSAGE "El librillo está en blanco. Escribe antes la carta."; DONE
+> DAR CARTA
+AT pena_pobre; SAME sancho_loc loc; CARRIED librillo; ZERO penitencia; MESSAGE "Sancho no se va: {i5}«Espere vuestra merced, que tengo que ver alguna locura para jurar con buena conciencia que se la he visto hacer.»{i7}"; DONE
+> DAR CARTA
+AT pena_pobre; SAME sancho_loc loc; CARRIED librillo; MESSAGE sancho_se_va; SET sancho_fuera; CLEAR sancho_sigue; CLEAR montado; LET sancho_loc limbo; LET rocinante_loc limbo; PLUS score 1; DONE
+> ROMPER CAMISA
+CARRIED camisa; DESTROY camisa; PLACE tira CARRIED; MESSAGE rosario; PLUS score 1; DONE
+> HACER TIRA
+CARRIED camisa; DESTROY camisa; PLACE tira CARRIED; MESSAGE rosario; PLUS score 1; DONE
+> REZAR _
+AT pena_pobre; NOTCARR tira; MESSAGE "Amadís rezaba con un rosario. Tú no tienes. Algo de tela y unos nudos bastarían."; DONE
+> REZAR _
+AT pena_pobre; ZERO rosario_rezado; MESSAGE "Rezas un millón de avemarías con tu rosario de once nudos. O casi."; SET rosario_rezado; PLUS score 1; DONE
+> DECIR PRINCESA
+NOTZERO princesa_llega; ZERO princesa_aceptada; PROCESS 11; DONE
+> DECIR _
+AT pena_pobre; NOTZERO princesa_llega; ZERO princesa_aceptada; PROCESS 11; DONE
+> O _
+AT pena_pobre; NOTZERO princesa_llega; ZERO princesa_aceptada; MESSAGE "La princesa sigue de rodillas. No puedes irte sin contestarle."; DONE
+> O _
+AT pena_pobre; NOTZERO sancho_fuera; MESSAGE "Si te vas, Sancho no sabrá dónde encontrarte."; DONE
+
+# ============================ LA JAULA
+> SALIR _
+AT jaula; MESSAGE "Los encantados no salen de las jaulas. Lo dicen todos los libros. Si acaso, esperan."; DONE
+> ROMPER JAULA
+AT jaula; MESSAGE "Los encantados no rompen jaulas. Esperan."; DONE
+> DECIR _
+AT jaula; MESSAGE "{i4}«Ten paciencia, Sancho, que los encantamientos se acaban cuando se acaban.»{i7}"; DONE
+> ESPERAR _
+AT jaula; CLS; PLUS score 2; MESSAGE fin_parte1; ANYKEY; PROCESS 21; DESC
+> DORMIR _
+AT jaula; CLS; PLUS score 2; MESSAGE fin_parte1; ANYKEY; PROCESS 21; DESC
+> * _
+AT jaula; LT verb 14; MESSAGE "Vas en una jaula, sobre un carro. Los bueyes deciden por ti."; DONE
+
+
+# ---------------------------------------------------------------------
+# Sancho
+/PRO 3
+> * _
+PARSE; MESSAGE "Sancho te mira esperando. (Háblale así: DECIR A SANCHO \"HOLA\")"; DONE
+> HOLA _
+MESSAGE "{i5}«Buenas, señor.»{i7}"; DONE
+> AYUDA _
+PROCESS 13; DONE
+> * INSULA
+AT sala; ZERO sancho_reclutado; MESSAGE sancho_recluta; SET sancho_reclutado; LET sancho_loc limbo; PLUS score 2; DONE
+> * INSULA
+MESSAGE "{i5}«Eso, eso: la ínsula. ¿Para cuándo?»{i7}"; DONE
+> SEGUIR _
+AT sala; ZERO sancho_reclutado; MESSAGE "{i5}«¿Y qué saco yo de todo eso, señor? Porque yo tengo mujer e hijos.»{i7}"; DONE
+> SEGUIR _
+MESSAGE "{i5}«Ya le sigo, señor, ¿no lo ve? Como una sombra. Una sombra con hambre.»{i7}"; DONE
+> CONTAR CUENTO
+AT valle_batanes; ZERO amanecer; MESSAGE cuento_cabras; MESSAGE amanece; SET amanecer; PLUS score 1; DONE
+> * CUENTO
+AT valle_batanes; ZERO amanecer; MESSAGE cuento_cabras; MESSAGE amanece; SET amanecer; PLUS score 1; DONE
+> ADIOS _
+MESSAGE "{i5}«¡Ah, no, no pienso dejarle solo!»{i7}"; DONE
+> * NOMBRE
+MESSAGE "{i5}«Pero ¿no se acuerda vuestra merced? Soy Sancho Panza.»{i7}"; DONE
+> IMBECIL _
+MESSAGE "{i5}«Eso a mí no me lo dice ni mi mujer. Bueno, mi mujer sí.»{i7}"; DONE
+> * _
+AT sala; ZERO sancho_reclutado; MESSAGE "{i5}«¿Y qué saco yo de todo eso, señor?»{i7}, pregunta Sancho, rascándose la cabeza."; DONE
+> * _
+MESSAGE "Sancho se rasca la cabeza: {i5}«Si vuestra merced lo dice...»{i7}"; DONE
+
+# ---------------------------------------------------------------------
+# El ventero de la primera venta
+/PRO 4
+> * _
+PARSE; MESSAGE "El ventero asiente con mucha socarronería, aunque no ha entendido nada. (Habla así: DECIR AL VENTERO \"HOLA\")"; DONE
+> HOLA _
+MESSAGE "{i6}«Si vuestra merced, señor caballero, busca posada, amén del lecho (porque en esta venta no hay ninguno), todo lo demás se hallará en ella en mucha abundancia.»{i7}"; DONE
+> IMBECIL _
+MESSAGE muerte_ventero; TURNS; END
+> * CABALLERO
+NOTZERO armado; MESSAGE "{i6}«Ya sois armado caballero, y de los buenos. Ahora id con Dios, y no volváis por aquí en una temporada.»{i7}"; DONE
+> * CABALLERO
+ZERO ventero_pedido; MESSAGE "Te hincas de rodillas ante él: {i4}«No me levantaré jamás de donde estoy, valeroso caballero, fasta que la vuestra cortesía me otorgue un don.»{i7}"; MESSAGE ventero_armar; SET ventero_pedido; SET consejo_ventero; PLUS score 1; DONE
+> * CABALLERO
+MESSAGE "{i6}«Primero velad las armas en el patio, que así lo manda la orden.»{i7}"; DONE
+> ARMAR _
+NOTZERO armado; MESSAGE "{i6}«Ya sois armado caballero, y de los buenos. Ahora id con Dios.»{i7}"; DONE
+> ARMAR _
+ZERO ventero_pedido; MESSAGE "Te hincas de rodillas ante él: {i4}«No me levantaré jamás de donde estoy, valeroso caballero, fasta que la vuestra cortesía me otorgue un don.»{i7}"; MESSAGE ventero_armar; SET ventero_pedido; SET consejo_ventero; PLUS score 1; DONE
+> ARMAR _
+MESSAGE "{i6}«Primero velad las armas en el patio, que así lo manda la orden.»{i7}"; DONE
+> * NOMBRE
+MESSAGE "{i6}«Castellano me llama vuestra merced, y castellano me quedo.»{i7}"; DONE
+> * BOLSA
+MESSAGE "{i6}«Dineros, camisas limpias y ungüentos. Y un escudero. Eso es lo que lleva un caballero como Dios manda.»{i7}"; DONE
+> * _
+MESSAGE "El ventero asiente con mucha socarronería: {i6}«Lo que vuestra merced mande.»{i7}"; DONE
+
+# ---------------------------------------------------------------------
+# Juan Haldudo
+/PRO 5
+> * _
+PARSE; MESSAGE "El labrador no te hace caso. (Habla así: DECIR AL LABRADOR \"HOLA\")"; DONE
+> IMBECIL _
+MESSAGE muerte_enano; TURNS; END
+> DESATAR _
+ZERO andres_libre; MESSAGE "{i6}«Es mi criado y le pegaré cuando estime conveniente.»{i7}"; DONE
+> * NOMBRE
+MESSAGE "{i6}«Juan Haldudo el rico, vecino del Quintanar. Y este es Andrés, mi criado, que me pierde una oveja cada día.»{i7}"; DONE
+> PAGAR _
+MESSAGE "{i6}«Le debo nueve meses, a siete reales cada mes. Pero le he descontado tres pares de zapatos y dos sangrías.»{i7} {i4}«Los zapatos se los pagan los azotes que le habéis dado sin culpa.»{i7}"; DONE
+> * BOLSA
+MESSAGE "{i6}«Le debo nueve meses, a siete reales cada mes. Pero le he descontado tres pares de zapatos y dos sangrías.»{i7} {i4}«Los zapatos se los pagan los azotes que le habéis dado sin culpa.»{i7}"; DONE
+> * _
+ZERO andres_libre; MESSAGE "{i6}«No se meta vuesa merced donde no la llaman.»{i7}"; DONE
+> * _
+MESSAGE "{i6}«Sí, sí, le pagaré. Váyase vuestra merced tranquilo.»{i7}"; DONE
+
+# ---------------------------------------------------------------------
+# Mercaderes toledanos
+/PRO 6
+> * _
+PARSE; MESSAGE "Los mercaderes esperan. (Prueba: DECIR A LOS MERCADERES \"CONFESAD QUE DULCINEA ES LA MAS BELLA\")"; DONE
+> * _
+ZERO mercaderes_hablado; MESSAGE mercaderes_dulcinea; SET mercaderes_hablado; PLUS score 1; DONE
+> * _
+MESSAGE "{i6}«Ya le hemos dicho que nos enseñe el retrato.»{i7}"; DONE
+
+# ---------------------------------------------------------------------
+# Cabreros
+/PRO 8
+> * _
+PARSE; MESSAGE "Los cabreros te miran con educación. (Habla así: DECIR A LOS CABREROS \"HOLA\")"; DONE
+> * SAL
+ZERO sal_dada; SET sal_dada; PLACE sal CARRIED; MESSAGE "{i6}«Tome vuestra merced, que de sal andamos sobrados.»{i7} Un cabrero te da un puñado de sal."; PLUS score 1; DONE
+> * SAL
+MESSAGE "{i6}«Ya le dimos, señor. ¿Tanta come?»{i7}"; DONE
+> * ROMERO
+MESSAGE "{i6}«Coja vuestra merced todo el que quiera, que por aquí sobra.»{i7}"; DONE
+> IMBECIL _
+CLS; MESSAGE muerte_carneros; TURNS; END
+> * _
+MESSAGE "{i6}«Mañana entierran a Grisóstomo, el estudiante que murió de amores por la pastora Marcela. Si vuestra merced quiere, puede venir.»{i7} Los cabreros, de lo demás, no saben nada."; DONE
+
+# ---------------------------------------------------------------------
+# Juan Palomeque, ventero
+/PRO 9
+> * _
+PARSE; MESSAGE "Juan Palomeque se encoge de hombros. (Habla así: DECIR AL VENTERO \"HOLA\")"; DONE
+> HOLA _
+MESSAGE "{i6}«Bienvenido, señor caballero. Ya hablaremos de cuentas.»{i7}"; DONE
+> IMBECIL _
+CLS; MESSAGE muerte_techo; TURNS; END
+> * ACEITE
+ZERO aceite_dado; SET aceite_dado; CREATE aceite; CREATE vino; MESSAGE "{i6}«Ahí tiene vuestra merced aceite y vino. Sal y romero no me quedan, que se lo llevan todo los arrieros.»{i7}"; PLUS score 1; DONE
+> * VINO
+ZERO aceite_dado; SET aceite_dado; CREATE aceite; CREATE vino; MESSAGE "{i6}«Ahí tiene vuestra merced aceite y vino. Sal y romero no me quedan, que se lo llevan todo los arrieros.»{i7}"; PLUS score 1; DONE
+> * BALSAMO
+ZERO aceite_dado; SET aceite_dado; CREATE aceite; CREATE vino; MESSAGE "{i6}«¿Bálsamo? Aceite y vino le puedo dar. Sal y romero no me quedan, que se lo llevan todo los arrieros.»{i7}"; PLUS score 1; DONE
+> * INGREDIENTES
+ZERO aceite_dado; SET aceite_dado; CREATE aceite; CREATE vino; MESSAGE "{i6}«Ahí tiene vuestra merced aceite y vino. Sal y romero no me quedan, que se lo llevan todo los arrieros.»{i7}"; PLUS score 1; DONE
+> * SAL
+MESSAGE "{i6}«No me queda. Pregunte a los cabreros, que esos tienen de todo.»{i7}"; DONE
+> * ROMERO
+MESSAGE "{i6}«Romero aquí no crece, señor. Donde los cabreros, sí.»{i7}"; DONE
+> * ALCUZA
+MESSAGE "{i6}«Ahí tiene una alcuza, junto al fuego. Úsela, pero no me la pierda.»{i7}"; DONE
+> PAGAR _
+MESSAGE "{i6}«Eso, eso. Págueme vuestra merced y aquí paz y después gloria.»{i7}"; DONE
+> * _
+MESSAGE "{i6}«Si vuestra merced lo dice...»{i7}, dice Juan Palomeque, echando cuentas de cabeza."; DONE
+
+# ---------------------------------------------------------------------
+# La princesa Micomicona
+/PRO 11
+> * _
+PARSE; MESSAGE "La princesa espera tu respuesta. (Habla así: DECIR A LA PRINCESA \"SI\")"; DONE
+> OTORGAR _
+CLS; MESSAGE princesa_acepta; ANYKEY; SET princesa_aceptada; LET sancho_loc venta2_puerta; LET rocinante_loc venta2_puerta; CLEAR montado; PLUS score 2; GOTO venta2_puerta; DESC
+> SI _
+CLS; MESSAGE princesa_acepta; ANYKEY; SET princesa_aceptada; LET sancho_loc venta2_puerta; LET rocinante_loc venta2_puerta; CLEAR montado; PLUS score 2; GOTO venta2_puerta; DESC
+> NO _
+MESSAGE "{i6}«¿Cómo que no? ¿No sois vos el famoso don Quijote, el que defiende a las doncellas menesterosas?»{i7} Pues sí. Lo eres."; DONE
+> * _
+MESSAGE "{i6}«Solo os pido que me otorguéis el don que os pido.»{i7}"; DONE
+
+# ---------------------------------------------------------------------
+# Ayuda: pistas según el avance
+/PRO 13
+> * _
+MES "{i5}Cide Hamete Benengeli te susurra:{i7} "
+> * _
+ZERO loco; MESSAGE "«Los libros de tu biblioteca no se leen solos.»"; DONE
+> * _
+LT nombres 3; MESSAGE "«Un caballero, su caballo y su dama necesitan nombres. Ponte a PENSAR.»"; DONE
+> * _
+ZERO armas_limpias; MESSAGE "«Las armas de tus bisabuelos, en el desván, están tomadas de orín.»"; DONE
+> * _
+EQ visera 0; MESSAGE "«Una celada sin visera es medio morrión. Las tapas de los libros son de buen cartón.»"; DONE
+> * _
+EQ visera 1; MESSAGE "«Una celada sin probar es una celada sin probar. ¿Tienes espada?»"; DONE
+> * _
+EQ visera 3; MESSAGE "«Hazla otra vez, reforzada por dentro. En el desván hay barras de hierro.»"; DONE
+> * _
+ZERO montiel_pensado; MESSAGE "«Sal al campo por la puerta falsa del corral: armado, con lanza y adarga, y a lomos de Rocinante.»"; DONE
+> * _
+ZERO ventero_pedido; MESSAGE "«Pide al castellano de este castillo que te arme caballero.»"; DONE
+> * _
+ZERO armado; MESSAGE "«Vela tus armas en el patio. Y defiéndelas de quien las toque.»"; DONE
+> * _
+ZERO andres_libre; MESSAGE "«Alguien se queja en el bosque. Un caballero no pasa de largo.»"; DONE
+> * _
+ZERO tapiada; MESSAGE "«Deja que Rocinante elija el camino. Y defiende la belleza de Dulcinea ante quien sea.»"; DONE
+> * _
+ZERO freston; MESSAGE "«Pregunta en la cocina por tu biblioteca.»"; DONE
+> * _
+ZERO sancho_reclutado; MESSAGE "«Tu vecino Sancho necesita un buen motivo para seguirte. Una ínsula, por ejemplo.»"; DONE
+> * _
+ZERO arca_abierta; MESSAGE "«Tus ahorros están en el arca de tu aposento. La llave, en la alacena del ama. Y en la alacena hay algo que muerde: protégete.»"; DONE
+> * _
+ZERO noche; MESSAGE "«Espera a la noche: DORMIR en tu aposento.»"; DONE
+> * _
+ZERO escala_colgada; MESSAGE "«La puerta está cerrada; la ventana no. Una sábana rota da para una escala.»"; DONE
+> * _
+ZERO sancho_sigue; MESSAGE "«Sancho te espera en la calle. Ojo: con una lanza en la mano no se baja por una escala, pero sí se puede tirar por la ventana.»"; DONE
+> * _
+ZERO molinos_hechos; MESSAGE "«A los gigantes se les acomete a caballo y con la lanza bien empuñada.»"; DONE
+> * _
+ISAT lanza NOTCREATED; MESSAGE "«Un ramo seco de encina y el hierro de la lanza rota hacen una lanza nueva.»"; DONE
+> * _
+ZERO frailes_hechos; MESSAGE "«Esos dos frailes son encantadores que llevan presa a una princesa. Está clarísimo.»"; DONE
+> * _
+ZERO vizcaino_pendiente; MESSAGE "«Habla con la señora del coche.»"; DONE
+> * _
+NOTZERO narrador; MESSAGE "«Busca quien te venda el resto del manuscrito. Y luego, quien te lo traduzca.»"; DONE
+> * _
+ZERO vizcaino_hecho; MESSAGE "«El vizcaíno se pelea a espada.»"; DONE
+> * _
+ZERO cabreros_hechos; MESSAGE "«Los cabreros te ofrecen de comer. No les hagas un feo.»"; DONE
+> * _
+ZERO sal_dada; MESSAGE "«Los cabreros curan con romero y sal. Pídeles sal y coge romero: te harán falta.»"; DONE
+> * _
+ZERO yangueses_hechos; MESSAGE "«¿Vas a dejar que apaleen a Rocinante?»"; DONE
+> * _
+ZERO llevado_en_rucio; MESSAGE "«No puedes ni moverte. Súbete al rucio de Sancho.»"; DONE
+> * _
+ZERO paliza_venta; MESSAGE "«Necesitas descansar. Hay una cama en el camaranchón. Por llamarla de alguna manera.»"; DONE
+> * _
+ZERO balsamo_hecho; MESSAGE "«El bálsamo de Fierabrás lleva aceite, vino, sal y romero, y se cuece en la cocina. Pide al ventero lo que te falte y busca una alcuza.»"; DONE
+> * _
+ZERO balsamo_bendito; MESSAGE "«Un bálsamo sin rezar no sirve de nada.»"; DONE
+> * _
+ZERO curado; MESSAGE "«Bébete el bálsamo. Ya verás qué bien sienta. Al principio no.»"; DONE
+> * _
+ZERO ejercito_hecho; MESSAGE "«Dos ejércitos se enfrentan en la llanura. Aunque huelen raro.»"; DONE
+> * _
+ZERO encamisados_hechos; MESSAGE "«Esas lumbres no te dejarán pasar si no las acometes.»"; DONE
+> * _
+ZERO amanecer; MESSAGE "«De noche y con Rocinante atado, poco puedes hacer. ESPERA al alba, o pide a Sancho que te cuente un cuento.»"; DONE
+> * _
+ZERO yelmo_hecho; MESSAGE "«Ese yelmo de oro tiene que ser tuyo. Al galope y con la lanza.»"; DONE
+> * _
+ZERO galeotes_hablado; MESSAGE "«Pregunta a los galeotes por qué van presos.»"; DONE
+> * _
+ZERO galeotes_libres; MESSAGE "«Un caballero andante no consiente que lleven así a la gente. Los GUARDAS sobran.»"; DONE
+> * _
+ZERO maleta_abierta; MESSAGE "«En la sierra hay una maleta abandonada.»"; DONE
+> * _
+ZERO penitencia; MESSAGE "«En la Peña Pobre, Amadís hizo penitencia. Tú puedes hacer lo mismo. Y desnudarte, ya puestos.»"; DONE
+> * _
+ZERO carta_escrita; MESSAGE "«Escribe una carta a Dulcinea. En el librillo de la maleta.»"; DONE
+> * _
+ZERO sancho_fuera; ZERO princesa_llega; MESSAGE "«Da el librillo a Sancho para que lleve la carta al Toboso.»"; DONE
+> * _
+ZERO rosario_rezado; ZERO princesa_llega; MESSAGE "«Haz un rosario con una tira de camisa, y reza.»"; DONE
+> * _
+ZERO versos; ZERO princesa_llega; MESSAGE "«Escribe versos en los árboles, como todo enamorado que se precie.»"; DONE
+> * _
+ZERO princesa_aceptada; MESSAGE "«La princesa te pide un don. Otórgaselo.»"; DONE
+> * _
+ZERO sueno_gigante; MESSAGE "«Duerme en el camaranchón. Y que tus sueños te guíen.»"; DONE
+> * _
+ZERO cueros_hechos; MESSAGE "«¡El gigante! ¡Atácalo!»"; DONE
+> * _
+ZERO jaula_hecha; MESSAGE "«Vuelve a dormir. Lo que venga, vendrá.»"; DONE
+> * _
+MESSAGE "«Espera tu destino con paciencia. Los encantados esperan.»"; DONE
+
+# ---------------------------------------------------------------------
+# Ama y sobrina
+/PRO 15
+> * _
+PARSE; MESSAGE "El ama y tu sobrina te miran con lástima. (Habla así: DECIR A LA SOBRINA \"HOLA\")"; DONE
+> * _
+NOTZERO tapiada; ZERO freston; MESSAGE freston; SET freston; PLUS score 1; DONE
+> * _
+NOTZERO tapiada; MESSAGE "{i6}«¡Ay, señor tío! Ni libros ni bibliotecas, que todo eso es cosa de encantadores.»{i7}"; DONE
+> * _
+MESSAGE "{i6}«¡Ay, señor tío, deje ya esos libros, que le van a secar el juicio!»{i7}"; DONE
+
+# ---------------------------------------------------------------------
+# El morisco de Toledo traduce los cartapacios
+/PRO 16
+> * _
+CLS; MESSAGE alcana_traduce; ANYKEY; CLS; MESSAGE vizcaino_combate; ANYKEY; DESTROY cartapacios; PROCESS 18; CLEAR narrador; SET vizcaino_hecho; SET oreja_herida; PLUS score 5; GOTO puerto_lapice; DESC
+
+# ---------------------------------------------------------------------
+# Guardar y recuperar el inventario cuando pasas a ser el narrador
+/PRO 17
+> * _
+CARRIED lanza; PLACE lanza limbo
+> * _
+CARRIED adarga; PLACE adarga limbo
+> * _
+CARRIED espada; PLACE espada limbo
+> * _
+CARRIED alforjas; PLACE alforjas limbo
+> * _
+CARRIED bolsa; PLACE bolsa limbo
+> * _
+CARRIED camisa; PLACE camisa limbo
+> * _
+CARRIED hierro; PLACE hierro limbo
+> * _
+CARRIED rama; PLACE rama limbo
+> * _
+CARRIED escala; PLACE escala limbo
+> * _
+CARRIED llave; PLACE llave limbo
+> * _
+CARRIED carton; PLACE carton limbo
+> * _
+CARRIED barras; PLACE barras limbo
+/PRO 18
+> * _
+ISAT lanza limbo; PLACE lanza CARRIED
+> * _
+ISAT adarga limbo; PLACE adarga CARRIED
+> * _
+ISAT espada limbo; PLACE espada CARRIED
+> * _
+ISAT alforjas limbo; PLACE alforjas CARRIED
+> * _
+ISAT bolsa limbo; PLACE bolsa CARRIED
+> * _
+ISAT camisa limbo; PLACE camisa CARRIED
+> * _
+ISAT hierro limbo; PLACE hierro CARRIED
+> * _
+ISAT rama limbo; PLACE rama CARRIED
+> * _
+ISAT escala limbo; PLACE escala CARRIED
+> * _
+ISAT llave limbo; PLACE llave CARRIED
+> * _
+ISAT carton limbo; PLACE carton CARRIED
+> * _
+ISAT barras limbo; PLACE barras CARRIED

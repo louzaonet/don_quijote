@@ -1,0 +1,167 @@
+# =====================================================================
+#  English text of the common responses (comun.paw)
+# =====================================================================
+/STR 92a9941c raw
+"A good pair of Sancho's saddlebags. Inside there is: "
+/STR 7a5859a5
+A long lance, old and fearsome, in that order.
+/STR 6ec5e1be
+An old leather buckler, to cover yourself from the blows you fail to dodge.
+/STR d125c91e
+Your great-grandfathers' sword. It cuts, if you insist.
+/STR 66d3b2c9
+Some iron bars, thin and strong. They would do to strengthen something.
+/STR 6bf37a2c
+The covers of a book by Feliciano de Silva. Good printer's pasteboard.
+/STR 7202e8b7
+A small key, the kind for a chest.
+/STR 86ad91d6
+Your savings: a few ducats you scraped together by selling one thing and pawning another.
+/STR 6b7fb63d
+A clean shirt. The innkeeper said knights carried them.
+/STR a25704cf
+A linen sheet, long and strong. Your niece embroidered it.
+/STR 4b37ff6d
+A ladder made of strips of sheet. It will hold. Probably.
+/STR 783e1f85
+The iron tip of your lance. The only thing that survived the giant.
+/STR 6a87b5ab
+A dry oak branch, long and almost straight. With a tip, it would be a lance.
+/STR 5e6da8d5
+Notebooks written in Arabic characters. There is a drawing of a very thin knight and a very fat squire.
+/STR f61fcfc0
+Rosemary. It smells of hillside and of remedy.
+/STR 58c47d31
+Salt. Salty.
+/STR 206f049d
+Olive oil. Good stuff, for an inn.
+/STR e009a0e2
+Red wine. Or so the innkeeper says.
+/STR 2f555679
+A tin flask, the kind for keeping oil in.
+/STR f3c58e01
+The balsam of Fierabras. A single drop, your books say, cures every wound. It smells awful.
+/STR d2d4eb70
+The helmet of Mambrino. It is of gold (or of brass), half the headpiece is missing and it has a notch for the beard. Sancho says it is a barber's basin. Sancho knows nothing about helmets.
+/STR ef2ffcb0
+A richly bound memorandum book. Good for writing in.
+/STR 83cc8571
+A strip of shirt with eleven knots, one bigger than the rest. Your rosary.
+/STR c7f36475
+You see nothing special.
+/STR c28d8686
+Where? The only thing you can put things into is the SADDLEBAGS.
+/STR 694408c0
+You have nothing to take it out of.
+/STR 89c8380d
+The dapple is Sancho's. And Sancho is very particular about it.
+/STR bc47ebd2
+You are already mounted. As far as you know.
+/STR c41b23e6
+Rocinante is not here.
+/STR 4289bb2b
+Mount a nameless nag? No knight errant would. First think of a name worthy of him.
+/STR b6844d61
+In your state, you couldn't even climb onto a chair.
+/STR d5ace7c2
+You mount Rocinante. He sighs; so do you, but with joy.
+/STR a29f1e7a
+You are not mounted.
+/STR 78ddf5aa
+You dismount from Rocinante, who is grateful.
+/STR 2a30e058
+You insult the air. The air, luckily, carries no sword.
+/STR 9c825724
+You talk to yourself, as usual. (To talk to someone: SAY TO SANCHO "HELLO")
+/STR 35b5a9c6
+It smells of La Mancha: of thyme, of dust and of garlic.
+/STR 8b337c51
+This is no time to sleep. A knight errant sleeps little and badly.
+/STR 0649069c
+You have nothing to eat. Knights errant, according to your books, hardly eat.
+/STR 417ba175
+You have nothing to drink. Sancho has the wineskin, but he keeps an eye on it.
+/STR 6759f599
+There is nobody here worthy of your lance. For now.
+/STR ccad703d
+You have no lance to wield.
+/STR c36c0a7e
+You commend yourself to your lady Dulcinea. She, in El Toboso, has no idea.
+/STR a9744364
+There is nothing to read here. More's the pity.
+/STR 861b0cb2
+You can't open that.
+/STR f5b72678
+There is no need to close anything.
+/STR a1b97633
+You cut two capers in the air. Nobody applauds.
+/STR 03bc2254
+You hear the wind of La Mancha. And Sancho, chewing something.
+/STR 13aafd0a
+You search and don't find. Like nearly everybody.
+/STR 9b3ad048
+You are already up. More or less.
+/STR b762882c
+Better not.
+/STR f9f00070
+Sancho doesn't want it. He wants islands.
+/STR 682bf0fc
+There is nobody to give it to.
+/STR e68a7c7a
+There is nobody here to pay. So much the better for you.
+/STR 63a6b697
+Nothing is sold here.
+/STR 3ea27fdb
+You don't know how to make that.
+/STR 087782bf
+There is no need to test that.
+/STR 51812e4f
+Better not break that.
+/STR 3c0ebb4e
+There is nowhere to tie that.
+/STR 3be2bbbe
+There is nothing to untie.
+/STR be9936e8
+You have nothing to write in, or on.
+/STR 8f56d3d6
+One, two, three... You lose count.
+/STR 7ef71d21
+Not here. There is a place for every madness.
+/STR b2400350
+That is as clean as it is ever going to be.
+/STR 5f8415ec
+Arms are watched in a chapel. Or in a yard, if the chapel has been pulled down.
+/STR e0d1eef2
+You think. It hurts a little.
+/STR 6d388cce
+There is nothing to cut.
+/STR 58f1cc48
+You are already awake. Or so you think.
+/STR 19f46bc9
+Who are you saying it to? (Talk like this: SAY TO SANCHO "HELLO")
+/STR 2e9d6fc3
+Who are you saying it to? (Talk like this: SAY TO SANCHO "GOODBYE")
+/STR c95c6db1 raw
+"{i5}Visible exits:{i7} "
+/STR 969b162c raw
+"north "
+/STR b5ec9fbf raw
+"south "
+/STR 4a85b26a raw
+"east "
+/STR f4e0942a raw
+"west "
+/STR 0a079be2 raw
+"northeast "
+/STR 90395746 raw
+"southwest "
+/STR 400cad4c raw
+"up "
+/STR 4460c6ab raw
+"down "
+/STR 2980ec98 raw
+"in "
+/STR 9aad85e6 raw
+"out "
+/STR f90637e7 raw
+"none that you can see"

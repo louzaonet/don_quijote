@@ -1,0 +1,328 @@
+# =====================================================================
+#  DON QUIJOTE DE LA MANCHA - Remake 2026
+#  (c) Aventuras Level 10 - Jorge Louzao Penalva
+#  Base: configuración, vocabulario, mensajes de sistema y flags
+# =====================================================================
+
+/CONFIG
+start = intro
+maxobj = 4
+maxweight = 20
+# la puntuación se muestra en tanto por ciento sobre este máximo (las dos partes)
+maxscore = 200
+
+# ---------------------------------------------------------------------
+# Vocabulario. Las palabras se recortan a 5 letras, como en PAW.
+# Direcciones con número fijo (<20 = se pueden usar como verbo).
+# ---------------------------------------------------------------------
+/VOC
+DIR 2 S SUR
+DIR 3 E ESTE
+DIR 4 O OESTE
+DIR 5 NE NORESTE
+DIR 6 NOROESTE
+DIR 7 SURESTE
+DIR 8 SO SUROESTE
+DIR 9 SUBIR SUBE SUBO ARRIBA
+DIR 10 BAJAR BAJA BAJO ABAJO DESCIENDE DESCENDER
+DIR 11 ENTRAR ENTRA ENTRO PASAR PASA ADENTRO
+DIR 12 SALIR SALGO SALTE FUERA
+DIR 13 N NORTE
+DIR 14 I INVENTARIO INV
+# --- verbos
+V COGER COGE COJO TOMA TOMAR AGARRA AGARRAR RECOGE RECOGER PILLA
+V DEJAR DEJA DEJO SUELTA SOLTAR
+V PONER PON PONTE PONERSE PONGO VESTIR VISTE CALZA COLOCA
+V QUITAR QUITA QUITATE QUITO DESVESTIR
+V EXAMINAR EXAMINA EX X MIRA REGISTRA REGISTRAR OBSERVA INSPECCIONA
+V MIRAR M LOOK DESCRIBIR
+V LEER LEE LEO HOJEAR HOJEA
+V ABRIR ABRE ABRO
+V CERRAR CIERRA
+V METER METE METO GUARDA GUARDAR INTRODUCE
+V SACAR SACA SACO EXTRAER
+V DAR DA DOY DALE DAME DADME DEME ENTREGA ENTREGAR OFRECE OFRECER REGALA
+V DECIR DI DIGO HABLAR HABLA HABLO PREGUNTAR PREGUNTA GRITAR GRITA RESPONDE RESPONDER CONTESTA CONTESTAR
+V ATACAR ATACA ATACO ARREMETE ARREMETER ACOMETE ACOMETER EMBISTE EMBESTIR LUCHAR LUCHA PEGAR PEGA MATAR MATA GOLPEA GOLPEAR ALANCEA ALANCEAR ACUCHILLA ACUCHILLAR AMENAZA AMENAZAR
+V EMPUÑAR EMPUÑA EMPUNAR EMPUNA ENRISTRA ENRISTRAR BLANDE BLANDIR
+V MONTAR MONTA MONTO
+V DESMONTAR DESMONTA DESMONTO APEARSE APEATE APEA
+V VELAR VELA VELO
+V LIMPIAR LIMPIA LIMPIO PULIR PULE ADEREZA ADEREZAR
+V HACER HAZ HAGO FABRICA FABRICAR CONSTRUYE CONSTRUIR
+V PROBAR PRUEBA PRUEBO
+V PENSAR PIENSA PIENSO BAUTIZAR BAUTIZA IMAGINAR IMAGINA
+V ROMPER ROMPE ROMPO RASGAR RASGA
+V ATAR ATA AMARRA AMARRAR COLGAR CUELGA ENGANCHA ENGANCHAR ANUDA
+V TIRAR TIRA ARROJAR ARROJA ECHAR ECHA
+V DORMIR DUERME DUERMO ACOSTARSE ACUESTATE DESCANSAR DESCANSA REPOSAR
+V ESPERAR ESPERA ESPERO AGUARDAR AGUARDA Z
+V COMER COME COMO
+V BEBER BEBE BEBO TRAGAR
+V MEZCLAR MEZCLA COCER CUECE COCINAR COCINA PREPARAR PREPARA REMOVER REMUEVE
+V REZAR REZA REZO ORAR ORA SANTIGUARSE
+V ESCRIBIR ESCRIBE ESCRIBO
+V DESATAR DESATA LIBERAR LIBERA
+V COMPRAR COMPRA COMPRO
+V PAGAR PAGA PAGO
+V OLER HUELE OLFATEAR OLISQUEAR SNIFF
+V CANTAR CANTA CANTO
+V ARRANCAR ARRANCA DESGAJAR DESGAJA CORTAR CORTA PARTIR
+V CONTAR CUENTA
+V DESNUDARSE DESNUDATE DESNUDAR
+V BUSCAR BUSCA
+V LEVANTARSE LEVANTATE LEVANTAR
+V SEGUIR SIGUE SIGUEME SEGUIDME
+V GRABAR SALVAR SAVE
+V CARGAR LOAD
+V RGRABAR RSAVE RAMSAVE
+V RCARGAR RLOAD RAMLOAD
+V PUNTOS PUNTUACION SCORE
+V TURNOS
+V FIN ABANDONAR ABANDONO RENDIRSE QUIT
+V AYUDA AYUDAME SOCORRO PISTA
+V SALIDAS
+V LEVEL CREDITOS
+V HOLA SALUDOS BUENOS BUENAS SALUDA SALUDAR
+V ADIOS VALE
+V SI CLARO
+V NO NUNCA JAMAS
+V ARMAR ARMA ARMAD ARMEN
+V OTORGAR OTORGO OTORGA CONCEDO CONCEDER ACEPTO ACEPTAR PROMETO PROMETER JURO JURAR
+V CONFESAR CONFESAD CONFIESA CONFIESEN RECONOCED
+V TRADUCIR TRADUCE TRADUCID
+V IMBECIL IDIOTA CERDO CABRON JODER PUTA BELLACO BRIBON MALANDRIN MENTECATO MAJADERO CANALLA BESUGO GILIPOLLAS
+V DESPERTAR DESPIERTA
+V SALTAR SALTA BRINCAR
+V ESCUCHAR ESCUCHA OIR OYE
+V TRAER TRAE TRAED
+# --- nombres
+N TODO TODOS TODAS
+N LIBRO LIBROS VOLUMEN NOVELA NOVELAS BIBLIOTECA
+N CARTON CARTONES TAPAS PASTAS
+N LANZA PICA
+N ADARGA ESCUDO RODELA
+N COSELETE ARMADURA PETO
+N CELADA MORRION VISERA
+N ESPADA TIZONA
+N BARRAS BARRA
+N ARMAS
+N LLAVE LLAVES
+N ALACENA ESTANTES ESTANTE ARMARIO
+N ARCA BAUL COFRE
+N BOLSA DINERO DINEROS DUCADOS MONEDAS BLANCA REALES
+N CAMISA CAMISAS
+N SABANA SABANAS
+N ESCALA ESCALERA
+N VENTANA VENTA VENTANO
+N REJA BARROTES
+N CAMA LECHO
+N PUERTA PORTON PUERTAS
+N PARED MURO TAPIA
+N ASTILLERO
+N OLLA PUCHERO
+N RATA
+N AMA
+N SOBRINA
+N CURA LICENCIADO
+N BARBERO
+N ROCINANTE ROCIN JAMELGO PENCO RIENDA RIENDAS
+N SANCHO PANZA
+N RUCIO ASNO BURRO JUMENTO
+N ALFORJAS
+N DULCINEA ALDONZA
+N NOMBRE NOMBRES LLAMAS LLAMO
+N INSULA ISLA BARATARIA
+N VENTERO VENTERA POSADERO CASTELLANO
+N MOZAS MOZA DONCELLAS DONCELLA TOLOSA
+N PILA ABREVADERO
+N POZO
+N ARRIERO ARRIEROS
+N CABALLERO CABALLERIA CAVALLERO
+N ANDRES MUCHACHO CRIADO CHICO NIÑO
+N HALDUDO LABRADOR AMO HOMBRE
+N ENCINA ARBOL ARBOLES ENCINAS
+N MERCADERES MERCADER TOLEDANOS
+N MOLINOS MOLINO GIGANTES GIGANTE ASPAS
+N HIERRO PUNTA
+N RAMA RAMO PALO
+N FRAILES FRAILE BENITOS MONJES
+N SEÑORA DAMA COCHE
+N VIZCAINO
+N MEDIO REAL
+N CARTA CARTAPACIOS CARTAPACIO PAPELES LEGAJOS
+N MORISCO TRADUCTOR
+N CABREROS CABRERO PASTOR PASTORES
+N BELLOTAS BELLOTA QUESO TASAJO
+N ROMERO
+N SAL
+N OREJA
+N YANGUESES YANGUES
+N JACAS YEGUAS
+N ACEITE
+N VINO BOTA
+N INGREDIENTES INGREDIENTE RECETA
+N ALCUZA
+N BALSAMO FIERABRAS
+N MARITORNES ASTURIANA
+N EJERCITO EJERCITOS OVEJAS OVEJA CARNEROS REBAÑO REBAÑOS POLVAREDA
+N MUELAS DIENTES
+N ENCAMISADOS LUCES ANTORCHAS LITERA BACHILLER
+N CUENTO HISTORIA CABRAS
+N BATANES BATAN RUIDO GOLPES
+N BACIA YELMO MAMBRINO BACIYELMO
+N GALEOTES GALEOTE CADENA PRESOS
+N GUARDAS GUARDIAS COMISARIO
+N GINES PASAMONTE PEDRO MAESE
+N TOBOSO
+N MALETA COJIN VALIJA
+N LIBRILLO CUADERNO LIBRETA
+N VERSOS POEMA POESIA
+N TIRA ROSARIO NUDOS
+N PENITENCIA
+N PRINCESA MICOMICONA DOROTEA
+N CUEROS ODRES PELLEJOS
+N JAULA CARRO
+N CARDENIO ROTO LOCO
+N MESA COMIDA CENA PLATO PLATOS MANJARES FRUTA PERDICES SALPICON
+N SOL
+N CAMINO CAMINOS SENDA
+N CUADRA CORRAL ESTABLO
+N FRESTON MUÑATON ENCANTADOR
+N CUERDA CABESTRO SOGA SOGAS
+N NOCHE DIA
+# --- adjetivos
+A FALSA TRASERA
+A PRINCIPAL
+A LIMPIA LIMPIAS
+A SECA SECO
+# --- preposiciones
+P A AL
+P EN DENTRO SOBRE ENCIMA
+P CON
+P DE DEL DESDE
+P POR
+P PARA
+# --- conjunciones (separan frases)
+CONJ Y LUEGO DESPUES ENTONCES
+# --- pronombres
+PRON LO LA LOS LAS LE LES ELLO
+
+# ---------------------------------------------------------------------
+# Mensajes del sistema (mismos números que PAW)
+# ---------------------------------------------------------------------
+/SYS 0
+"Está demasiado oscuro para ver nada.\n"
+/SYS 1
+"Puedes ver "
+/SYS 6
+"No entiendo lo que dices. Prueba con otras palabras.\n"
+/SYS 7
+"No puedes ir en esa dirección.\n"
+/SYS 8
+"No puedes hacer eso.\n"
+/SYS 9
+"Llevas:\n"
+/SYS 10
+" (puesto)"
+/SYS 11
+"Absolutamente nada.\n"
+/SYS 12
+"¿Seguro que quieres abandonar? Cide Hamete Benengeli se va a llevar un disgusto. (S/N) "
+/SYS 13
+"\n{i5}¿Quieres intentarlo otra vez? Pulsa ENTER.{i7}\n"
+/SYS 15
+"Vale.\n"
+/SYS 16
+"Pulsa una tecla para continuar"
+/SYS 17
+"Has hecho "
+/SYS 18
+" movimiento"
+/SYS 19
+"s"
+/SYS 20
+".\n"
+/SYS 21
+"Has completado el "
+/SYS 22
+" por ciento de la aventura.\n"
+/SYS 23
+"No llevas puesto eso.\n"
+/SYS 24
+"Primero tendrías que quitarte _.\n"
+/SYS 25
+"Ya tienes _.\n"
+/SYS 26
+"No ves eso por aquí.\n"
+/SYS 27
+"No puedes llevar más cosas. Ni Sancho podría.\n"
+/SYS 28
+"No tienes eso.\n"
+/SYS 29
+"Ya llevas puesto _.\n"
+/SYS 30
+"S"
+/SYS 31
+"N"
+/SYS 35
+"El tiempo pasa...\n"
+/SYS 36
+"Ahora tienes _.\n"
+/SYS 37
+"Te pones _.\n"
+/SYS 38
+"Te quitas _.\n"
+/SYS 39
+"Dejas _.\n"
+/SYS 40
+"No puedes ponerte _.\n"
+/SYS 42
+"No puedes quitarte _: llevas las manos llenas.\n"
+/SYS 43
+"Te pesa demasiado _.\n"
+/SYS 44
+"Metes _ en "
+/SYS 45
+"No hay _ en "
+/SYS 46
+", "
+/SYS 47
+" y "
+/SYS 48
+".\n"
+/SYS 51
+".\n"
+/SYS 52
+"No ves eso dentro de "
+/SYS 53
+"nada.\n"
+/SYS 54
+"No se ha podido grabar la partida.\n"
+/SYS 55
+"No hay ninguna partida grabada.\n"
+
+# ---------------------------------------------------------------------
+# Flags del juego (se numeran desde el 64)
+# ---------------------------------------------------------------------
+/FLAGS
+# estado del caballero
+loco armas_limpias visera nombres armado montado fuerzas ultima_loc
+# acompañantes
+rocinante_loc sancho_loc sancho_sigue rucio_robado rocinante_cojo
+# casa
+alacena_abierta arca_abierta tapiada freston sancho_reclutado noche ventana_abierta escala_colgada
+lanza_tirada consejo_ventero sancho_casa
+# primera salida
+montiel_pensado venta_vista ventero_pedido velando arriero1 arriero2 venta_comido
+andres_libre andres_aviso encrucijada_vista mercaderes_hablado
+# segunda salida
+empunada molinos_hechos frailes_hechos vizcaino_pendiente vizcaino_hecho narrador cartapacios_traducidos
+oreja_herida cabreros_hechos sal_dada yangueses_hechos llevado_en_rucio
+paliza_venta balsamo_hecho balsamo_bendito curado aceite_dado vino_dado pagado manteado
+ejercito_hecho muelas encamisados_hechos triste_figura atado batanes_hechos cuento_contado esperas
+yelmo_hecho galeotes_hablado galeotes_libres galeotes_apedreado maleta_abierta cardenio_visto
+penitencia carta_escrita sancho_fuera versos rosario_rezado princesa_llega princesa_aceptada
+cueros_hechos jaula_hecha fin_parte1 escrutinio_hecho
+# auxiliares
+tmp tmp2 salidas_hay contador amanecer barbero_timer ventero2_visto llevado_cocina sancho_ve_locura bebio_sancho alforjas_dadas sueno_gigante yangueses_vistos

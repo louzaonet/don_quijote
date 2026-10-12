@@ -1,0 +1,174 @@
+# --- Home: losing your wits and getting ready
+read book
+think name
+think name
+think name
+get pasteboard
+e
+get lance
+get buckler
+up
+clean arms
+get corselet
+wear corselet
+make visor
+get sword
+test helmet
+get bars
+down
+w
+get pasteboard
+e
+up
+make visor
+get helmet
+wear helmet
+down
+s
+e
+mount rocinante
+e
+# --- First sally
+e
+e
+dismount
+e
+say to the innkeeper "dub me a knight"
+eat
+w
+n
+watch arms
+wait
+attack carrier
+wait
+attack carrier
+s
+mount rocinante
+s
+e
+say to the farmer "hello"
+attack farmer
+e
+drop reins
+say to the merchants "confess that dulcinea is the fairest"
+attack merchants
+# --- Home again
+s
+say to sancho "I promise you an island"
+e
+say to the niece "where are my books"
+w
+n
+sleep
+s
+e
+open cupboard
+get key
+w
+up
+get lance
+down
+n
+open chest
+drop key
+open window
+throw lance through the window
+get purse
+throw purse through the window
+get shirt
+throw shirt through the window
+get sheet
+tear sheet
+tie ladder to grating
+down
+get saddlebags
+get lance
+put sword in saddlebags
+get purse
+put purse in saddlebags
+get shirt
+put shirt in saddlebags
+mount rocinante
+e
+# --- Second sally
+e
+e
+wield lance
+attack giants
+get iron
+s
+cut branch
+put iron on branch
+e
+attack friars
+say to the lady "go to el toboso"
+take sword out of saddlebags
+attack biscayan
+buy papers
+give papers to the morisco
+e
+eat acorns
+say to the goatherds "give me salt"
+put salt in saddlebags
+put sword in saddlebags
+get rosemary
+put rosemary in saddlebags
+e
+attack yanguesans
+mount dapple
+e
+n
+up
+sleep
+down
+say to the innkeeper "give me oil"
+drop lance
+drop buckler
+take salt out of saddlebags
+take rosemary out of saddlebags
+mix ingredients
+pray
+drink balsam
+get lance
+get buckler
+pay
+s
+mount rocinante
+e
+smell
+attack army
+e
+attack mourners
+e
+e
+say to sancho "tell me a story"
+e
+e
+attack barber
+put buckler in saddlebags
+get basin
+remove helmet
+drop helmet
+wear basin
+e
+say to the convicts "why are you prisoners"
+attack guards
+s
+s
+open valise
+get notebook
+e
+do penance
+write letter
+give notebook to sancho
+take shirt out of saddlebags
+tear shirt
+pray
+write verses
+say to the princess "yes"
+n
+up
+sleep
+attack giant
+sleep
+wait

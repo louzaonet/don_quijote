@@ -1,0 +1,124 @@
+# --- SEGUNDA PARTE con el final de 1989: la joya y las dos muchachas
+ex cama
+coger reales
+coger coselete
+poner coselete
+coger yelmo
+poner yelmo
+coger espada
+s
+decir a sanson "hola"
+decir a sancho "hola"
+decir a sancho "no"
+coger alforjas
+meter espada en alforjas
+meter reales en alforjas
+coger lanza
+coger adarga
+s
+montar rocinante
+e
+e
+n
+s
+e
+decir al labrador "donde esta el palacio de dulcinea"
+decir a sancho "que hacemos"
+o
+s
+esperar
+arrodillarse
+montar rocinante
+e
+decir a la muerte "quienes sois"
+montar rocinante
+e
+decir al caballero "hola"
+decir al caballero "no"
+atacar caballero
+e
+decir al leonero "que llevas"
+desmontar
+abrir jaula
+cantar
+coger joya
+meter joya en alforjas
+montar rocinante
+e
+comer
+n
+decir a camacho "deja que se casen"
+decir a todos "tened"
+coger soga
+s
+e
+meter adarga en alforjas
+sacar espada de alforjas
+cortar zarzas
+meter espada en alforjas
+desmontar
+atar soga
+bajar
+bajar
+e
+n
+dormir
+decir a montesinos "hola"
+sacar reales de alforjas
+dar reales a la campesina
+esperar
+montar rocinante
+e
+decir al mono "fue verdad lo de la cueva"
+ver retablo
+sacar espada de alforjas
+atacar moros
+meter espada en alforjas
+pagar
+e
+desmontar
+atar rocinante
+desatar barco
+entrar
+atacar molinos
+montar rocinante
+e
+decir a sancho "habla con la duquesa"
+montar rocinante
+e
+n
+decir al eclesiastico "soy caballero"
+coger pañuelo
+s
+e
+decir a la dolorida "si"
+poner pañuelo
+montar clavileño
+torcer clavija
+n
+decir al viejo "dame el baculo"
+romper baculo
+s
+e
+comer
+amenazar al medico
+comer
+o
+o
+decir a la moza "quien eres"
+e
+e
+n
+dormir
+renunciar
+echar soga
+e
+decir a la cabeza "fue verdad lo de la cueva"
+s
+decir al caballero "acepto"
+atacar caballero
+o
+n
+sacar joya de alforjas
+ex campesina
+dar joya a la campesina

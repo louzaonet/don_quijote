@@ -1,0 +1,174 @@
+# --- Casa: perder el juicio y prepararse
+leer libro
+pensar nombre
+pensar nombre
+pensar nombre
+coger carton
+e
+coger lanza
+coger adarga
+subir
+limpiar armas
+coger coselete
+poner coselete
+hacer visera
+coger espada
+probar celada
+coger barras
+bajar
+o
+coger carton
+e
+subir
+hacer visera
+coger celada
+poner celada
+bajar
+s
+e
+montar rocinante
+e
+# --- Primera salida
+e
+e
+desmontar
+e
+decir al ventero "armame caballero"
+comer
+o
+n
+velar armas
+esperar
+atacar arriero
+esperar
+atacar arriero
+s
+montar rocinante
+s
+e
+decir al labrador "hola"
+atacar labrador
+e
+soltar rienda
+decir a los mercaderes "confesad que dulcinea es la mas bella"
+atacar mercaderes
+# --- En casa otra vez
+s
+decir a sancho "te dare una insula"
+e
+decir a la sobrina "donde estan mis libros"
+o
+n
+dormir
+s
+e
+abrir alacena
+coger llave
+o
+subir
+coger lanza
+bajar
+n
+abrir arca
+dejar llave
+abrir ventana
+tirar lanza por la ventana
+coger bolsa
+tirar bolsa por la ventana
+coger camisa
+tirar camisa por la ventana
+coger sabana
+romper sabana
+atar escala a la reja
+bajar
+coger alforjas
+coger lanza
+meter espada en alforjas
+coger bolsa
+meter bolsa en alforjas
+coger camisa
+meter camisa en alforjas
+montar rocinante
+e
+# --- Segunda salida
+e
+e
+empuñar lanza
+atacar gigantes
+coger hierro
+s
+arrancar rama
+poner hierro en rama
+e
+atacar frailes
+decir a la señora "id al toboso"
+sacar espada de alforjas
+atacar vizcaino
+comprar cartapacios
+dar cartapacios al morisco
+e
+comer bellotas
+decir a los cabreros "dame sal"
+meter sal en alforjas
+meter espada en alforjas
+coger romero
+meter romero en alforjas
+e
+atacar yangueses
+subir al rucio
+e
+n
+subir
+dormir
+bajar
+decir al ventero "dame aceite"
+dejar lanza
+dejar adarga
+sacar sal de alforjas
+sacar romero de alforjas
+mezclar ingredientes
+rezar
+beber balsamo
+coger lanza
+coger adarga
+pagar
+s
+montar rocinante
+e
+oler
+atacar ejercito
+e
+atacar encamisados
+e
+e
+decir a sancho "cuenta un cuento"
+e
+e
+atacar barbero
+meter adarga en alforjas
+coger bacia
+quitar celada
+dejar celada
+poner bacia
+e
+decir a los galeotes "por que vais presos"
+atacar guardas
+s
+s
+abrir maleta
+coger librillo
+e
+hacer penitencia
+escribir carta
+dar librillo a sancho
+sacar camisa de alforjas
+romper camisa
+rezar
+escribir versos
+decir a la princesa "si"
+n
+subir
+dormir
+atacar gigante
+dormir
+esperar

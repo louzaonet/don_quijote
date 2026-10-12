@@ -1,0 +1,240 @@
+# =====================================================================
+#  Respuestas genéricas (van al final del proceso 0)
+# =====================================================================
+/PRO 0
+> I _
+INVEN
+> MIRAR _
+DESC
+# --- examinar objetos
+> EX ALFORJAS
+PRESENT alforjas; MES "Unas alforjas de Sancho, de las buenas. Dentro hay: "; LISTAT alforjas; DONE
+> EX LANZA
+PRESENT lanza; MESSAGE "Una lanza larga, vieja y temible, por este orden."; DONE
+> EX ADARGA
+PRESENT adarga; MESSAGE "Una adarga antigua, de cuero, con la que te cubres de los golpes que no esquivas."; DONE
+> EX ESPADA
+PRESENT espada; MESSAGE "La espada de tus bisabuelos. Corta, si se le insiste."; DONE
+> EX BARRAS
+PRESENT barras; MESSAGE "Unas barras de hierro, finas y fuertes. Valdrían para reforzar algo."; DONE
+> EX CARTON
+PRESENT carton; MESSAGE "Las tapas de un libro de Feliciano de Silva. Buen cartón, de imprenta."; DONE
+> EX LLAVE
+PRESENT llave; MESSAGE "Una llave pequeña, de las de arca."; DONE
+> EX BOLSA
+PRESENT bolsa; MESSAGE "Tus ahorros: unos ducados que juntaste vendiendo una cosa y empeñando otra."; DONE
+> EX CAMISA
+PRESENT camisa; MESSAGE "Una camisa limpia. El ventero dijo que los caballeros las llevaban."; DONE
+> EX SABANA
+PRESENT sabana; MESSAGE "Una sábana de lienzo, larga y resistente. Tu sobrina la bordó."; DONE
+> EX ESCALA
+PRESENT escala; MESSAGE "Una escala hecha con tiras de sábana. Aguantará. Seguramente."; DONE
+> EX HIERRO
+PRESENT hierro; MESSAGE "La punta de hierro de tu lanza. Lo único que sobrevivió al gigante."; DONE
+> EX RAMA
+PRESENT rama; MESSAGE "Un ramo seco de encina, largo y casi recto. Con una punta, sería lanza."; DONE
+> EX CARTA
+PRESENT cartapacios; MESSAGE "Cartapacios escritos en caracteres arábigos. Hay un dibujo de un caballero muy flaco y de un escudero muy gordo."; DONE
+> EX ROMERO
+PRESENT romero; MESSAGE "Romero. Huele a monte y a remedio."; DONE
+> EX SAL
+PRESENT sal; MESSAGE "Sal. Sala."; DONE
+> EX ACEITE
+PRESENT aceite; MESSAGE "Aceite de oliva. Del bueno, para ser de venta."; DONE
+> EX VINO
+PRESENT vino; MESSAGE "Vino tinto. O eso dice el ventero."; DONE
+> EX ALCUZA
+PRESENT alcuza; MESSAGE "Una alcuza de hoja de lata, de las de guardar aceite."; DONE
+> EX BALSAMO
+PRESENT balsamo; MESSAGE "El bálsamo de Fierabrás. Con una sola gota, dicen tus libros, se curan todas las heridas. Huele fatal."; DONE
+> EX BACIA
+PRESENT bacia; MESSAGE "El yelmo de Mambrino. Es de oro (o de azófar), le falta media celada y tiene un hueco para la barba. Sancho dice que es una bacía de barbero. Sancho no entiende de yelmos."; DONE
+> EX LIBRILLO
+PRESENT librillo; MESSAGE "Un librillo de memoria ricamente guarnecido. Sirve para escribir."; DONE
+> EX TIRA
+PRESENT tira; MESSAGE "Una tira de camisa con once nudos, uno más gordo que los demás. Tu rosario."; DONE
+> EX _
+MESSAGE "No ves nada especial."; DONE
+# --- coger, dejar, poner, quitar, meter, sacar
+> COGER _
+NOUN2 ALFORJAS; PRESENT alforjas; AUTOT alforjas; DONE
+> QUITAR _
+NOUN2 ALFORJAS; PRESENT alforjas; AUTOT alforjas; DONE
+> COGER TODO
+DOALL HERE
+> COGER _
+AUTOG; DONE
+> METER TODO
+NOUN2 ALFORJAS; PRESENT alforjas; DOALL CARRIED
+> PONER TODO
+NOUN2 ALFORJAS; PRESENT alforjas; DOALL CARRIED
+> DEJAR TODO
+DOALL CARRIED
+> DEJAR _
+AUTOD; DONE
+> METER _
+NOUN2 ALFORJAS; PRESENT alforjas; AUTOP alforjas; DONE
+> PONER _
+NOUN2 ALFORJAS; PRESENT alforjas; AUTOP alforjas; DONE
+> METER _
+MESSAGE "¿Dónde? Lo único donde se pueden meter cosas son las ALFORJAS."; DONE
+> SACAR _
+PRESENT alforjas; AUTOT alforjas; DONE
+> SACAR _
+MESSAGE "No tienes de dónde sacarlo."; DONE
+> PONER _
+AUTOW; DONE
+> QUITAR _
+AUTOR; DONE
+# --- Rocinante
+> MONTAR RUCIO
+MESSAGE "El rucio es de Sancho. Y Sancho es muy suyo."; DONE
+> MONTAR _
+NOTZERO montado; MESSAGE "Ya vas montado. Que tú sepas."; DONE
+> MONTAR _
+NOTSAME rocinante_loc loc; MESSAGE "Rocinante no está aquí."; DONE
+> MONTAR _
+NOTZERO rocinante_cojo; MESSAGE "Rocinante está tan molido como tú. No hay quien se suba en él."; DONE
+> MONTAR _
+LT nombres 1; MESSAGE "¿Montar en un rocín sin nombre? Ningún caballero andante lo haría. Piensa antes un nombre digno de él."; DONE
+> MONTAR _
+NOTZERO llevado_en_rucio; MESSAGE "En tu estado, ni subirte a una silla."; DONE
+> MONTAR _
+SET montado; MESSAGE "Montas en Rocinante. Él suspira; tú también, pero de gozo."; DONE
+> DESMONTAR _
+ZERO montado; MESSAGE "No vas montado."; DONE
+> DESMONTAR _
+CLEAR montado; COPYFF loc rocinante_loc; MESSAGE "Desmontas de Rocinante, que te lo agradece."; DONE
+# --- sistema
+> GRABAR _
+SAVE
+> CARGAR _
+LOAD
+> RGRABAR _
+RAMSAVE; OK
+> RCARGAR _
+RAMLOAD; DESC
+> PUNTOS _
+SCORE; DONE
+> TURNOS _
+TURNS; DONE
+> FIN _
+QUIT; TURNS; END
+> AYUDA _
+PROCESS 13; DONE
+> SALIDAS _
+PROCESS 14; DONE
+> LEVEL _
+MESSAGE creditos; DONE
+# --- verbos sin respuesta concreta aquí
+> ESPERAR _
+SYSMESS 35; DONE
+> IMBECIL _
+MESSAGE "Insultas al aire. El aire, por suerte, no lleva espada."; DONE
+> DECIR _
+MESSAGE "Hablas solo, como de costumbre. (Para hablar con alguien: DECIR A SANCHO \"HOLA\")"; DONE
+> OLER _
+MESSAGE "Huele a Mancha: a tomillo, a polvo y a ajo."; DONE
+> CANTAR _
+MESSAGE "No creo que sea el momento más adecuado."; DONE
+> DORMIR _
+MESSAGE "No es momento de dormir. Un caballero andante duerme poco y mal."; DONE
+> COMER _
+MESSAGE "No tienes nada que comer. Los caballeros andantes, según tus libros, apenas comen."; DONE
+> BEBER _
+MESSAGE "No tienes nada que beber. Sancho tiene la bota, pero la vigila."; DONE
+> ATACAR _
+MESSAGE "No hay nadie digno de tu lanza por aquí. Por ahora."; DONE
+> EMPUÑAR _
+MESSAGE "No tienes lanza que empuñar."; DONE
+> REZAR _
+MESSAGE "Te encomiendas a tu señora Dulcinea. Ella, desde el Toboso, no se entera."; DONE
+> LEER _
+MESSAGE "No hay nada que leer aquí. Por desgracia."; DONE
+> ABRIR _
+MESSAGE "No puedes abrir eso."; DONE
+> CERRAR _
+MESSAGE "No hace falta cerrar nada."; DONE
+> SALTAR _
+MESSAGE "Das dos zapatetas en el aire. Nadie aplaude."; DONE
+> ESCUCHAR _
+MESSAGE "Oyes el viento de la Mancha. Y a Sancho, que masca algo."; DONE
+> BUSCAR _
+MESSAGE "Buscas y no encuentras. Como casi todo el mundo."; DONE
+> LEVANTARSE _
+MESSAGE "Ya estás levantado. Más o menos."; DONE
+> TIRAR _
+MESSAGE "Mejor no."; DONE
+> DAR _
+SAME sancho_loc loc; MESSAGE "Sancho no lo quiere. Él quiere ínsulas."; DONE
+> DAR _
+MESSAGE "No hay nadie a quien dárselo."; DONE
+> PAGAR _
+MESSAGE "Aquí no hay a quién pagar. Mejor para ti."; DONE
+> COMPRAR _
+MESSAGE "Aquí no se vende nada."; DONE
+> HACER _
+MESSAGE "No sabes cómo hacer eso."; DONE
+> PROBAR _
+MESSAGE "No hace falta probar eso."; DONE
+> ROMPER _
+MESSAGE "Mejor no romper eso."; DONE
+> ATAR _
+MESSAGE "No hay donde atar eso."; DONE
+> DESATAR _
+MESSAGE "No hay nada que desatar."; DONE
+> ESCRIBIR _
+MESSAGE "No tienes en qué escribir, ni sobre qué."; DONE
+> MEZCLAR _
+MESSAGE "Necesitas un fuego donde cocer. Como el de una cocina."; DONE
+> CONTAR _
+MESSAGE "Uno, dos, tres... Pierdes la cuenta."; DONE
+> DESNUDARSE _
+MESSAGE "Aquí no. Hay un sitio para cada locura."; DONE
+> LIMPIAR _
+MESSAGE "Eso ya está todo lo limpio que va a estar."; DONE
+> VELAR _
+MESSAGE "Las armas se velan en una capilla. O en un patio, si la capilla está derribada."; DONE
+> PENSAR _
+MESSAGE "Piensas. Te duele un poco."; DONE
+> ARRANCAR _
+MESSAGE "No hay nada que arrancar."; DONE
+> SEGUIR _
+MESSAGE "¿A quién?"; DONE
+> DESPERTAR _
+MESSAGE "Ya estás despierto. Eso crees."; DONE
+> HOLA _
+MESSAGE "¿A quién se lo dices? (Habla así: DECIR A SANCHO \"HOLA\")"; DONE
+> ADIOS _
+MESSAGE "¿A quién se lo dices? (Habla así: DECIR A SANCHO \"ADIOS\")"; DONE
+
+# =====================================================================
+#  Salidas visibles
+# =====================================================================
+/PRO 14
+> * _
+MES "{i5}Salidas visibles:{i7} "; CLEAR salidas_hay
+> * _
+COPYFF loc tmp; LET verb 13; MOVE tmp; MES "norte "; SET salidas_hay
+> * _
+COPYFF loc tmp; LET verb 2; MOVE tmp; MES "sur "; SET salidas_hay
+> * _
+COPYFF loc tmp; LET verb 3; MOVE tmp; MES "este "; SET salidas_hay
+> * _
+COPYFF loc tmp; LET verb 4; MOVE tmp; MES "oeste "; SET salidas_hay
+> * _
+COPYFF loc tmp; LET verb 5; MOVE tmp; MES "noreste "; SET salidas_hay
+> * _
+COPYFF loc tmp; LET verb 8; MOVE tmp; MES "suroeste "; SET salidas_hay
+> * _
+COPYFF loc tmp; LET verb 9; MOVE tmp; MES "arriba "; SET salidas_hay
+> * _
+COPYFF loc tmp; LET verb 10; MOVE tmp; MES "abajo "; SET salidas_hay
+> * _
+COPYFF loc tmp; LET verb 11; MOVE tmp; MES "entrar "; SET salidas_hay
+> * _
+COPYFF loc tmp; LET verb 12; MOVE tmp; MES "salir "; SET salidas_hay
+> * _
+ZERO salidas_hay; MES "ninguna, que tú veas"
+> * _
+NEWLINE; DONE

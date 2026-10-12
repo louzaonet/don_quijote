@@ -1,0 +1,1208 @@
+# =====================================================================
+#  PART TWO: THE INGENIOUS KNIGHT - English text
+#  Locations, objects and long messages (same names as parte2_mundo.paw)
+# =====================================================================
+
+# ------------------------------------------------------------- the house
+/LOC alcoba2
+Your bedchamber. You have spent nearly a month in this bed, so dried
+up and withered that you look like nothing so much as a mummy. The
+door leads south, to the hall.
+
+/LOC sala2
+The hall of your house. On the rack, as always, there is room for a
+lance. To the north is your bedchamber and to the south the way out to
+the yard. Where the library used to be, the whitewashed wall is still
+there.
+
+/LOC corral3
+The yard of your house. Rocinante, who has put on a little weight this
+month, is feeling it in his soul. The back door, unnailed long ago,
+opens onto the fields to the east. The hall lies to the north.
+
+# ------------------------------------------------------------- El Toboso
+/LOC camino_toboso
+The road to El Toboso. The two of you ride alone, unseen: you talking
+of Dulcinea and Sancho trembling, because he has never seen her in his
+life and he knows it. To the east a huddle of houses can be seen.
+
+/LOC toboso
+The great city of El Toboso, at midnight. Nothing is heard in the
+whole place but the barking of dogs, which deafens the ears: now and
+then an ass brays, pigs grunt and cats mew. To the north rises a great
+building; to the east a narrow lane runs off; to the south, outside the
+town, there is an oak grove. The road goes back to the west.
+
+/LOC iglesia
+A great tower casting its shadow in the middle of the night. You were
+looking for a palace. This is the parish church. The square lies to
+the south.
+
+/LOC callejuela
+A narrow, dark blind alley. There are no palaces or alcazars here,
+only the low houses of farm folk. The square lies to the west.
+
+/LOC encinar_toboso
+An oak grove half a league from El Toboso. It is daytime. From here
+you can see the town, to the north, and the road that goes on to the
+east.
+
+# ------------------------------------------------------------- on the road
+/LOC camino_carreta
+A broad road between vineyards. The road goes back to the west, to the
+oak grove, and on to the east.
+
+/LOC bosque_espejos
+A dark night under some tall, shadowy trees. You have dismounted to
+sleep. Very close, at the foot of a tree, someone is sighing for love
+and tuning a lute. The road goes on to the east.
+
+/LOC camino_leones
+A highroad, within sight of the house of the Knight of the Green
+Coat, Don Diego de Miranda, who is riding with you. Along it comes a
+cart flying the king's flags. The road goes on to the east.
+
+/LOC prado_bodas
+A meadow at the edge of a village, turned into a kitchen. There is a
+whole bullock spitted on an elm trunk, six pots as big as wine jars and
+mountains of white bread. It all belongs to Camacho the rich, who is
+getting married today. To the north, under a bower, the wedding is
+being held. The road goes on to the east.
+
+/LOC enramada
+A bower of trees decorated as for a feast. Here are the bride and
+groom, the priest and half the village. The meadow with the pots lies
+to the south.
+
+# ------------------------------------------------------------- the cave
+/LOC boca_cueva
+The mouth of the cave of Montesinos, wide and spacious, but full of
+boxthorn, wild fig, brambles and briars, so thick and tangled that
+they completely blind and cover it. The road goes back to the west, to
+the wedding, and on to the east.
+
+/LOC cueva1
+It is as dark as a wolf's mouth. You hang from the rope, which Sancho
+and the cousin are paying out little by little. You can keep going
+down.
+
+/LOC cueva2
+A black, damp passage. The echo gives you back your own voice, calling
+for Dulcinea. There are galleries in every direction.
+
+/LOC cueva3
+Another passage, as black as the last. Or it is the same one. There
+are galleries in every direction.
+
+/LOC cueva4
+A hollow in one side of the cave, big enough to hold a cart with its
+mules. A little light comes in through some cracks. There are
+galleries in every direction.
+
+/LOC palacio_cristal
+A meadow, the loveliest that nature could create. In the middle of it
+rises a royal and splendid palace whose walls seem to be built of
+clear crystal. Out of its doors comes a venerable old man in a hooded
+cloak of purple baize: Montesinos.
+
+# ------------------------------------------------------------- to the Ebro
+/LOC venta_retablo
+An inn, which this time, by some miracle, you take for an inn. In the
+yard Master Pedro, a puppeteer with a patch of green taffeta covering
+half his face, has set up his show. On his shoulder he carries a
+tailless ape. The road goes on to the east.
+
+/LOC orilla_ebro
+The banks of the Ebro, with gentle, plentiful waters. By the bank,
+tied to the trunk of a tree, there is a small boat without oars or any
+other tackle. The road goes on to the east.
+
+/LOC barco_rio
+You are in the enchanted boat, drifting slowly downstream, without oars
+or sails. You say you have sailed seven or eight hundred leagues.
+Sancho says he can still see Rocinante and the dapple on the bank.
+Ahead, some great watermills stand in the middle of the river.
+
+# ------------------------------------------------------------- the dukes
+/LOC prado_caza
+A green meadow at the edge of a wood, at sunset. There is a hunting
+party: a gallant lady on a snow-white palfrey, with a hawk on her left
+hand. A great lady. The road goes on to the east, to a castle.
+
+/LOC castillo_patio
+The courtyard of the dukes' castle. This is the first time you know
+and believe yourself to be a real knight errant, and not an imaginary
+one. To the north is the great hall and to the east the garden. The
+road leaves to the south.
+
+/LOC castillo_salon
+A great hall hung with very rich cloth of gold and brocade. The table
+is laid. The dukes are dining with a grave ecclesiastic, one of those
+who rule the households of princes. The courtyard lies to the south.
+
+/LOC jardin
+The castle garden, as evening falls. Fountains, mazes of myrtle and a
+few servants who hide their laughter very badly. The courtyard lies to
+the west.
+
+# ------------------------------------------------------------- Barataria
+/LOC barataria
+The island of Barataria, which is a town of about a thousand souls,
+one of the best the duke owns. As for being an island, it isn't much
+of one: it has no sea. To the north is the courthouse, to the east the
+governor's palace and to the west the streets of the town.
+
+/LOC juzgado
+The courtroom. They seat you in the judge's chair. On the wall there
+are letters saying that on such a day the lord Don Sancho Panza took
+possession of this island. The way out is to the south.
+
+/LOC comedor
+A room in the palace, with a royal and spotless table. Beside you,
+standing, is a personage with a whalebone wand in his hand: Doctor
+Pedro Recio de Agüero, native of Tirteafuera. To the north is your
+bedchamber and to the west the square.
+
+/LOC alcoba_gob
+The governor's bedchamber: a soft bed, so soft you don't trust it. The
+way out is to the south.
+
+/LOC ronda
+The streets of the island, at night. You are making the rounds with
+the steward, the secretary, the head carver and a chronicler who writes
+everything down. The square lies to the east.
+
+# ------------------------------------------------------------- the pit and Barcelona
+/LOC camino_sima
+A road half a league from the dukes' castle. On one side a deep, dark
+pit opens up. The castle lies to the north and the road goes on to the
+east, towards Barcelona.
+
+/LOC ciudad
+Barcelona: the treasure house of courtesy, the shelter of strangers,
+the refuge of the poor, the home of the valiant. You are staying with
+Don Antonio Moreno, a rich and discreet gentleman, in his house. To the
+south is the way down to the beach.
+
+/LOC playa
+The beach of Barcelona. You see the sea, which you had never seen
+before: it seems to you vast and wide, far bigger than the lakes of
+Ruidera. In the harbour there are galleys with pennants and streamers.
+The city lies to the north.
+
+# ------------------------------------------------------------- the way home
+/LOC camino_vuelta
+The road back to La Mancha. You ride unarmed and as a traveller;
+Sancho goes on foot, because the dapple carries your armour, like a
+trophy in reverse. The road goes on to the west.
+
+/LOC vuelta_toboso
+A crossroads within sight of El Toboso. From here you can see the tower
+of the church you came upon that night. To the north, among olive
+trees, runs the road to El Toboso; to the west, the road to your
+village.
+
+/LOC dos_muchachas
+You find yourself before two girls: one richly dressed, like a
+princess; the other is a peasant. Both say they are Dulcinea del
+Toboso.
+
+/LOC aldea2
+The edge of your village. Some boys are quarrelling on the threshing
+floors, and a hare runs past, fleeing from some greyhounds, and hides
+under the dapple. Your house is to the north.
+
+# =====================================================================
+#  OBJECTS
+# =====================================================================
+/OBJ reales
+the four reals
+/OBJ soga
+the hundred-fathom rope
+/OBJ joya
+the jewel
+/OBJ panuelo
+a holland handkerchief
+/OBJ baculo
+the old man's staff
+
+# =====================================================================
+#  MESSAGES: THE HOUSE AND THE THIRD SALLY
+# =====================================================================
+/MSG segunda_parte
+{i6}{b1}        PART TWO{b0}{i7}{n}{n}{i5}  The ingenious knight{n}  Don Quixote of La Mancha{i7}
+
+/MSG visita_cura
+Nearly a month goes by without the curate and the barber visiting you,
+so as not to bring past events back to your memory. At last they come.
+You talk with them of statecraft and modes of government with such
+good sense that they believe you entirely cured.
+
+Until the curate, to test you, brings up the news that the Turk is
+coming down with a mighty fleet. {i4}"What his majesty should do is
+order all the knights errant who roam about Spain to assemble at court
+on a fixed day, for even if no more than half a dozen came, there
+might be one among them able by himself to destroy the whole power of
+the Turk."{i7}
+
+The barber sighs. The curate crosses himself. And they leave.
+
+/MSG sancho_noticia
+Just then voices are heard in the entrance: the housekeeper and the
+niece won't let Sancho in, though he has come to see his master. Sancho
+comes in anyway.
+
+{i5}"Last night Bartolomé Carrasco's son came back from his studies at
+Salamanca, a bachelor now, and he told me your worship's history is
+already in a book, called {i6}The Ingenious Gentleman Don Quixote of La
+Mancha{i5}. And that they mention me in it by my own name of Sancho
+Panza, and the lady Dulcinea del Toboso, and other things that
+happened to us when we were alone, so that I crossed myself in wonder
+at how the historian could know them."{i7}
+
+And off he runs to fetch the bachelor.
+
+/MSG sanson_habla
+The bachelor Samson Carrasco is not very big in body, but a very great
+wag, sallow of complexion, but of very good understanding. He goes down
+on his knees before you: {i6}"Give me your hands, Señor Don Quixote of
+La Mancha."{i7}
+
+He tells you that more than twelve thousand copies of your history are
+in print: in Portugal, in Barcelona, in Valencia, and even in Antwerp.
+That children turn its leaves, young people read it, grown men
+understand it and old folk praise it. And that some find fault with
+it: that the author forgot to tell who stole Sancho's dapple, and that
+later, without saying how, Sancho turns up riding the very same ass.
+
+{i5}"That was Ginés de Pasamonte!"{i7} shouts Sancho. {i6}"And they say
+there will be a second part,"{i7} adds the bachelor. {i6}"My advice is
+that your worship should go to Saragossa, to the jousts in honour of
+Saint George."{i7} As he leaves, without your seeing it, he winks at
+the curate.
+
+/MSG pide_salario
+Sancho plants himself in front of you and scratches the back of his
+neck: {i5}"Teresa says I should tie my finger well with your worship,
+for a bird in the hand is worth two in the bush. So I'd like your
+worship to fix me a known wage, of what you'll give me each month for
+as long as I serve you."{i7}
+
+/MSG sin_salario
+{i4}"Look, Sancho: I have read all or most of the histories of knights
+errant, and I do not remember ever reading that any knight errant
+fixed a known wage for his squire. If thou wilt not come with me on
+trust, God be with thee, for I shall not want for squires."{i7}
+
+Sancho is taken aback, and more so when the bachelor, who is passing
+by, offers himself as your squire. His eyes cloud over: {i5}"Here I
+am, sir, to serve you faithfully and loyally, as well as and better
+than any squire who ever served a knight errant in times past or
+present."{i7} And he leaves a new pair of saddlebags on the floor for
+you.
+
+/MSG tercera_salida
+At nightfall, without anyone knowing but the bachelor, who rides half
+a league with you, you set off on the road to El Toboso. You on your
+good Rocinante and Sancho on his old dapple, the saddlebags well
+furnished with things to eat. Samson embraces you both, wishes you a
+good journey and goes back to the village. He smiles more than he
+should.
+
+Rocinante neighs and the dapple brays, which you both take for a good
+omen.
+
+# =====================================================================
+#  MESSAGES: EL TOBOSO
+# =====================================================================
+/MSG toboso_llega
+{i4}"Sancho, my son, lead on to Dulcinea's palace, for perhaps we may
+find her awake."{i7}
+
+{i5}"What palace am I to lead to, body of the sun, when the one I saw
+her highness in was nothing but a very little house?"{i7}
+
+Sancho has never seen Dulcinea in his life, and neither have you,
+though you often forget the latter.
+
+/MSG iglesia
+You head for the great mass casting its shadow and come upon a tall
+tower. {i4}"It is the church we have come upon, Sancho."{i7}
+
+{i5}"So I see, and God grant we don't come upon our graves, for it's
+no good sign to wander in churchyards at such hours."{i7}
+
+/MSG labrador_toboso
+Along the lane comes a farmer with two mules, going out to plough very
+early, singing the ballad of {i6}"Ill went it with you, Frenchmen, at
+Roncesvalles"{i7}.
+
+/MSG labrador_responde
+{i6}"Sir, I'm a stranger here and it's only a few days since I came to
+this town, to work the land for a rich farmer. There's no princess
+here at all. Plenty of fine ladies, yes, for each one can be a
+princess in her own house."{i7}
+
+And off he goes, urging on his mules, without waiting for more
+questions.
+
+/MSG sancho_busca
+{i5}"Sir, the day is coming on, and it won't be wise to let the sun
+find us in the street. Better we go out of the city, and your worship
+hide in some wood near here, and I'll come back by day and leave no
+corner in this whole place where I don't look for my lady's house,
+alcazar or palace."{i7}
+
+Sancho goes into the town. As he leaves, you hear him talking to
+himself: {i5}"This master of mine, by a thousand signs I've seen, is a
+madman fit to be tied... And being so, it won't be very hard to make
+him believe that a country girl, the first I come across here, is the
+lady Dulcinea."{i7}
+
+/MSG tres_labradoras
+After a good while Sancho comes running back: {i5}"Good news, sir!
+There's nothing to be done but for your worship to spur Rocinante and
+come out into the open to see the lady Dulcinea del Toboso, who is
+coming to see your worship with two of her damsels."{i7}
+
+Along the road come three country girls on three young asses. All you
+see is three country girls on three donkeys. Sancho sees three
+princesses on three piebald hackneys.
+
+/MSG encantada
+You go down on your knees beside Sancho before one of them, who is
+round-faced, snub-nosed and rather chubby. {i6}"Get out of the way, bad
+luck to you, and let us pass, for we are in a hurry!"{i7} says the
+country girl.
+
+She prods her donkey, which throws her to the ground. Without waiting
+for anyone, she takes a little run, puts her hands on the donkey's
+haunches and lands, lighter than a hawk, on the pack saddle. And off
+the three of them go at full speed. A smell of raw garlic reaches you
+that turns your stomach and poisons your soul.
+
+{i4}"Seest thou, Sancho, how the enchanters hate me? See how far their
+malice reaches: they have changed my Dulcinea into a country
+girl."{i7} Sancho covers his mouth so as not to laugh.
+
+{i6}Dulcinea is enchanted. And the peasant girl is Dulcinea.{i7}
+
+# =====================================================================
+#  MESSAGES: THE PARLIAMENT OF DEATH, THE MIRRORS AND THE LIONS
+# =====================================================================
+/MSG carreta
+Across the road comes a cart loaded with the most varied and strange
+figures. The one driving the mules is an ugly demon. The cart is open
+to the sky: the first figure is Death himself, with a human face;
+beside him, an angel with large painted wings; to one side, an emperor
+with a crown, apparently of gold, and at Death's feet the god Cupid,
+without his blindfold, but with his bow and quiver.
+
+/MSG cortes
+{i6}"Sir, we are players of the company of Angulo el Malo. This morning
+we performed the play {i5}The Parliament of Death{i6}, and we are to
+perform it this afternoon in that village you can see from here. And
+as it is so near, we came dressed in the very costumes we act in."{i7}
+
+{i4}"Go with God, good people, and hold your festival."{i7}
+
+Just then one of the company comes up dressed as a jester, with a lot
+of bells and three blown-up cow bladders on the end of a stick. He
+shakes the bladders next to Rocinante, who takes fright and throws you
+to the ground. The demon from the cart jumps on the dapple and gallops
+off towards the village. A little later the dapple throws him and comes
+back by himself to his master.
+
+/MSG piedras
+The people of the cart, seeing you coming, jump down and line up, with
+stones in their hands: Death, the emperor, the demon driver, the
+angel, the queen and the god Cupid.
+
+{i5}"Look, sir, among all those people there, though they look like
+kings, princes and emperors, there isn't a single knight errant. And
+your worship mustn't lay hand to sword against anyone who hasn't been
+dubbed a knight."{i7}
+
+/MSG muerte_piedras
+You charge again. The players are not knights, but they aim as if they
+were. A shower of pebbles leaves you lying under the cart, and Death,
+very much in character, closes your eyes. {i2}You are dead, and this
+time it isn't theatre.{i7}
+
+/MSG espejos_llega
+At the foot of a tree another knight is singing a sonnet to his lady
+to the sound of a lute: {i6}"Grant me, lady, a fixed term to
+follow..."{i7} He wears a surcoat that seems to be of the finest gold,
+sown with many little moons of shining mirrors. There is another
+knight here beside his mount.
+
+/MSG espejos_hola
+{i6}"I am the Knight of the Mirrors."{i7}
+
+{i6}"Tell me, your worship: is not Casildea de Vandalia the most
+beautiful maiden? Answer me."{i7}
+
+/MSG espejos_no
+{i6}"What, no? Prepare yourself for combat!!"{i7}
+
+Down come the visors. Your squire and the squire of the Mirrors, who
+has a frightful nose, withdraw to a prudent distance.
+
+/MSG espejos_si
+{i6}"I knew well you would not fight, your worship is a coward."{i7}
+
+You repent of your cowardice and decide to leave the order of
+chivalry. You go back home and stay there weeping over your decision.
+
+/MSG espejos_gana
+You strike the knight in the chest with your lance and unhorse him.
+
+{i6}"I yield. I know your glorious deeds: the most beautiful is without
+doubt Dulcinea del Toboso."{i7}
+
+You take off his helmet to see whether he is alive and you find... the
+very face, the very figure, the very look, the very features, the very
+likeness of the bachelor Samson Carrasco. His squire takes off his
+nose, which was made of pasteboard, and turns out to be Tomé Cecial,
+Sancho's neighbour and crony.
+
+{i4}"Enchanters! They have taken on the bachelor's form to rob me of
+the glory of my victory."{i7} Sancho doesn't know what to think. You
+do.
+
+/MSG espejos_huye
+You try to escape and the Knight of the Mirrors runs you through the
+back with his lance. {i2}You are dead.{i7}
+
+/MSG espejos_vence
+The Knight of the Mirrors defeats you. You go back to your village and
+leave the order of chivalry.
+
+/MSG leones_llega
+Along the road comes a cart crowned with royal flags. Sancho, who had
+bought some curds from some shepherds, doesn't know where to put them
+when you call him in a hurry, and puts them in your helmet, which you
+had taken off for a moment because of the heat.
+
+/MSG requesones
+You clap the helmet on and the whey begins to run all over your face
+and beard. {i4}"What can this be, Sancho, for it seems as if my skull
+were softening, or my brains melting, or that I am sweating from head
+to foot?"{i7}
+
+/MSG leonero
+The carter, who is the lion keeper, explains: {i6}"In the cart there are
+two fierce lions in cages, which the general of Oran is sending to
+court as a present for his majesty. Hungry, for they haven't eaten
+today."{i7}
+
+{i4}"Lion whelps to me? To me lion whelps, and at such a time? Then, by
+God, those gentlemen who send them here shall see if I am a man to be
+frightened by lions. Open those cages."{i7}
+
+/MSG jaula_abierta
+The lion keeper, trembling, flings the first cage wide open. Don Diego
+de Miranda spurs his mare, Sancho his dapple and the carter his mules,
+and they take refuge far away.
+
+The lion turns round in the cage, stretches out a paw, stretches
+himself, opens his mouth and yawns very slowly. Then he puts his head
+out and looks all around with eyes like live coals. There is a lion
+here with a hungry look on his face.
+
+/MSG cantar_leon
+{i2}"La donna è mobile qual piuma al vento..."{i7}
+
+The lion begins to fall asleep and goes off to look for a more
+comfortable place to have a nap. You can see a jewel on the ground.
+
+/MSG caballero_leones
+The lion keeper shuts the cage. They all come back and you give the
+keeper two gold crowns to tell his majesty what he has seen. {i4}"If
+his majesty should ask who performed it, thou shalt say the Knight of
+the Lions, for from this time forward I mean that this name shall
+replace, change, transform and alter the one I have borne until now,
+of the Knight of the Rueful Countenance."{i7}
+
+/MSG leon_come
+The lion eats you and puts an end to your glorious career as a knight.
+
+/MSG leon_mata
+You attack the lion, but his strength is greater than yours and he
+kills you. {i2}You are dead and devoured.{i7}
+
+/MSG joya_coger
+A gold jewel with a stone that shines like a piece of the sun. You keep
+it: it is worthy of Dulcinea. Of the old one, the one who didn't smell
+of garlic.
+
+# =====================================================================
+#  MESSAGES: CAMACHO'S WEDDING AND THE CAVE OF MONTESINOS
+# =====================================================================
+/MSG bodas_prado
+Sancho stares at the pots like a child at a shop window. From the elms
+hang hares already skinned and hens already plucked. There are more
+than fifty cooks, all clean, all busy and all cheerful.
+
+/MSG espuma
+Sancho goes up to one of the cooks and begs him, in courteous and
+hungry terms, to let him dip a crust of bread in one of those pots.
+{i6}"Brother, this is not one of those days over which hunger has any
+jurisdiction. Skim off a hen or two, and much good may they do
+you."{i7}
+
+The cook takes a ladle, plunges it into one of the jars and brings out
+three hens and two geese. Sancho sits down to eat with more appetite
+than in the whole of Part One.
+
+/MSG boda
+The bride and groom arrive. Quiteria is radiant, with her corals and
+her velvet. Camacho, rich and pleased. Then in comes a man dressed in
+black, with a wreath of mournful cypress and a great staff in his
+hands: it is Basilio, the poor shepherd who has loved Quiteria since
+they were children.
+
+{i6}"Thou knowest well, ungrateful Quiteria, that thou didst promise to
+be my wife. Well, my death will clear the way to thy happiness."{i7} He
+drives the staff into the ground; hidden inside it was a short sword,
+and he throws himself upon it. He falls bathed in blood.
+
+With what voice he has left, he asks that Quiteria give him her hand
+as his wife before he dies. Camacho doesn't know what to say.
+
+/MSG camacho_consiente
+{i4}"It is just and reasonable, Señor Camacho, what this youth asks.
+And your worship will be as much honoured in receiving Quiteria as the
+widow of so valiant a husband as if you received her from her father's
+side."{i7}
+
+Camacho, thinking the wounded man will die before you can say two
+credos, consents. The priest marries them. And no sooner has Quiteria
+said yes than Basilio springs to his feet and pulls the sword out of
+his body, which went into an iron tube full of prepared blood. {i6}"No
+miracle, miracle, but trick, trick!"{i7}
+
+Camacho's friends lay hand to their swords.
+
+/MSG bodas_paz
+You place yourself between them, on horseback, with your lance on your
+arm: {i4}"Hold, sirs, hold, for it is not right to take vengeance for
+the wrongs that love does to us. Quiteria was Basilio's, and Basilio
+Quiteria's, by the just and favourable disposition of heaven. And
+those whom God has joined, let no man put asunder."{i7}
+
+Camacho, seeing that Quiteria doesn't love him, decides his pots are
+worth more to him. The wedding goes on as if nothing had happened.
+Basilio thanks you with a cousin of his, a famous student and great
+humanist, who offers to guide you to the cave of Montesinos. And he
+gives you a rope of a hundred fathoms, for going down a cave you need
+one badly.
+
+/MSG boca_llega
+{i6}"This is the cave of Montesinos,"{i7} says the cousin, who is
+writing a book of the Spanish Ovid and another of the inventors of
+things. {i6}"They tell great marvels about it. And it's very deep."{i7}
+
+/MSG cuervos
+You draw your sword and begin to cut down and hack away the brambles.
+At the noise, out of the mouth of the cave fly countless enormous crows
+and jackdaws, so thick and in such haste that they knock you to the
+ground. Were you as superstitious as you are Catholic, you would take
+it for an evil omen.
+
+/MSG soga_atada
+Sancho and the cousin tie the rope round your waist, good and tight.
+{i5}"God guide you, and the Rock of France, together with the Trinity
+of Gaeta, flower, cream and skimmings of knights errant!"{i7}
+
+/MSG bajar_cueva
+You commend yourself to Dulcinea and let yourself down into the
+depths of the dreadful cavern. Sancho and the cousin pay out the rope,
+and you call out for more and more. In the end you stop calling.
+
+/MSG sueno_cueva
+You lie down in the hollow, tired of so much darkness, and a very deep
+sleep comes over you. When you wake, without knowing how or why, you
+find yourself in the middle of the most beautiful, pleasant and
+delightful meadow that nature could create.
+
+/MSG montesinos
+{i6}"Long ages have we who are enchanted in these solitudes been
+waiting to see thee, valiant knight Don Quixote of La Mancha."{i7}
+
+Montesinos leads you before a marble tomb on which lies the knight
+Durandarte, flower and mirror of lovelorn knights. Above, in a line,
+passes a procession of damsels, and behind them the lady Belerma, with
+dark rings under her eyes and Durandarte's heart in her hands, in a
+cloth of holland, which he himself cut out with a dagger. And we
+salted it, so that it would reach her smelling sweet.
+
+{i6}"Patience, and shuffle the cards,"{i7} sighs Durandarte from the
+tomb, quite rightly.
+
+/MSG tres_labradoras_cueva
+Across the meadow, leaping and skipping like goats, come three country
+girls. One of them is the peerless Dulcinea del Toboso, enchanted, the
+same one you saw outside El Toboso. You call to her and she turns her
+back on you.
+
+One of her companions comes up: {i6}"My lady Dulcinea kisses your
+worship's hands and begs you to let her know how you are. And, being in
+great need, she begs your worship to lend her half a dozen reals on
+this new cotton petticoat I have here."{i7}
+
+/MSG cuatro_reales
+{i4}"Tell your lady, my friend, that her troubles grieve me to the soul,
+and that I would I were a Fugger to remedy them. And that I have no
+more than four reals."{i7}
+
+You give them to her. Instead of making you a curtsey, she cuts a
+caper that lifts her two yards into the air. The petticoat she leaves
+with you.
+
+/MSG sacan_cueva
+Up above they pull on the rope. They bring you out of the cave with
+your eyes closed, as if asleep. {i4}"God forgive you, friends, for you
+have taken me away from the sweetest and most delightful existence and
+spectacle that ever human being enjoyed or beheld."{i7}
+
+You tell them you have been down there three days. Sancho swears it
+was little more than an hour. And when you tell them about the four
+reals, Sancho slaps his forehead, because it was he who enchanted
+Dulcinea, and now it turns out the enchanters are competing with him.
+
+# =====================================================================
+#  MESSAGES: MASTER PEDRO'S PUPPET SHOW AND THE ENCHANTED BOAT
+# =====================================================================
+/MSG maese_pedro
+{i6}"This ape talks, but his master understands him: he divines the
+past and the present, though of the future he knows nothing."{i7} The
+moment the ape sees you, he jumps onto Master Pedro's shoulder and
+whispers something in his ear.
+
+{i6}"O glorious reviver of knight-errantry, now so forgotten! O never
+duly praised knight Don Quixote of La Mancha!"{i7} cries Master Pedro,
+falling on his knees.
+
+/MSG mono_responde
+You ask the ape whether what you saw in the cave of Montesinos was
+real or a dream. The ape jumps, chatters and talks into his master's
+ear.
+
+{i6}"The ape says that some of the things your worship saw or went
+through in that cave are false, and some likely. And that he knows no
+more, because his powers have run out."{i7}
+
+/MSG retablo_funcion
+You sit in the front row. A boy announces the show: {i6}"This true
+story here presented to your worships tells how Señor Don Gaiferos
+set free his wife Melisendra, who was a captive in Spain, in the hands
+of the Moors, in the city of Sansueña."{i7}
+
+Melisendra lets herself down from the tower onto the crupper of
+Gaiferos' horse, and off the two of them go on the road to Paris. But
+King Marsilio has the alarm sounded, and with such a din of bells and
+kettledrums that the city seems to be falling down, all the Moorish
+host rides out in pursuit. {i4}The Moors are about to catch
+them.{i7}
+
+/MSG retablo_destrozo
+{i4}"Never, while I live, will I permit foul play to be practised in my
+presence on so famous a knight and so daring a lover as Don Gaiferos!
+Halt, ill-born rabble!"{i7}
+
+You draw your sword and with one bound you are beside the show. With
+swift and unheard-of fury you begin to rain slashes on the puppet
+Moors: you knock some down, behead others, maim this one, demolish
+that one. And among many others you deal such a downstroke that, had
+Master Pedro not ducked, you would have cut off his head.
+
+{i6}"Stop, your worship, Señor Don Quixote, and mind that those you
+are knocking down are not real Moors, but little figures made of
+paste!"{i7}
+
+/MSG retablo_paga
+{i4}"Now I truly believe that these enchanters who persecute me put
+figures before my eyes as they really are, and then change them into
+whatever they please."{i7}
+
+Master Pedro values the damage, figure by figure: King Marsilio,
+beheaded, four and a half reals; Charlemagne, with his crown split, five
+reals and a quarter... Sancho pays forty reals and three-quarters in
+all, and two reals more for the trouble of catching the ape, which has
+fled to the roof. Before dawn, Master Pedro disappears. (He was Ginés
+de Pasamonte, who covered his eye with a patch so you wouldn't
+recognise him.)
+
+/MSG barco
+{i4}"Thou must know, Sancho, that this boat here, plainly and beyond
+all possibility of doubt, is calling and inviting me to embark in it
+and go in it to give aid to some knight or other person of rank in
+distress, who must be in some great trouble."{i7}
+
+/MSG aceñas
+{i4}"Seest thou? There, O friend, stands revealed the city, castle or
+fortress where some oppressed knight or some queen, infanta or princess
+in distress must be."{i7} {i5}"What the devil city, fortress or castle
+does your worship mean? Can't you see that those are watermills in the
+river, where they grind the wheat?"{i7}
+
+The millers, covered in flour, come out with long poles: {i6}"Devils of
+men! Where are you going? Have you gone mad? Do you want to drown and
+be smashed to pieces in these wheels?"{i7}
+
+You stand up in the boat and threaten the millers with your sword. The
+current carries the boat into the race of the wheels; the millers
+manage to stop it with their poles, but not without tipping you and
+Sancho into the water. They fish you out like two wet cats. The boat
+is smashed to pieces.
+
+The fishermen who own the boat arrive, and Sancho pays them fifty reals
+very much against his will. {i4}"God help us, for this whole world is
+nothing but schemes and contrivances, each against the other. I can do
+no more."{i7}
+
+# =====================================================================
+#  MESSAGES: THE DUKES, THE DOLORIDA AND CLAVILEÑO
+# =====================================================================
+/MSG embajada
+Sancho gets off the dapple, kneels before the huntress and says:
+{i5}"Fair lady, that knight you see over there, called the Knight of
+the Lions, is my master, and I am a squire of his, whom they call at
+home Sancho Panza."{i7}
+
+The lady turns out to be a duchess, and what's more, she has read Part
+One of your history. {i6}"Let him come, and welcome, to make use of us,
+for we have a castle near here."{i7}
+
+As you dismount, with nobody to hold your stirrup, your foot gets
+caught and you come down full length on the ground. The dukes hide
+their laughter as best they can.
+
+/MSG castillo_llega
+Before you go in, two lackeys throw over your shoulders a great mantle
+of the finest scarlet, and damsels and duennas sprinkle you with flasks
+of scented water. {i6}"Welcome to the flower and cream of knights
+errant!"{i7} Some grooms take Rocinante to the stables, where they treat
+him better than ever in his life.
+
+/MSG eclesiastico_rine
+The ecclesiastic, who has heard of your follies, rises from the table:
+{i6}"And you, numskull, who has stuck it into your brain that you are a
+knight errant, that you vanquish giants and capture malefactors? Go
+your way, and go home, and bring up your children if you have any, and
+look after your property, and stop wandering about the world."{i7}
+
+/MSG respuesta_eclesiastico
+You rise, trembling from head to foot like a man full of quicksilver:
+{i4}"Some go by the broad road of proud ambition; others by that of
+mean and servile flattery; others by that of deceitful hypocrisy, and
+some by that of true religion. But I, led by my star, follow the narrow
+path of knight-errantry. A knight I am, and a knight I will die, if it
+be the will of the Most High."{i7}
+
+{i5}"Well said, by God! Say no more, your worship, sir and master
+mine,"{i7} says Sancho. The ecclesiastic gets up and leaves, saying the
+master is as mad as the squire.
+
+/MSG dolorida
+A doleful fife sounds. Into the garden comes a man with a long white
+beard, Trifaldin of the White Beard, who announces the Countess
+Trifaldi, otherwise called the Distressed Duenna. Behind him come twelve
+duennas in mourning, and the countess, with a train in three points.
+
+The duennas raise their veils: they all have beards, some fair, some
+black, some white and some grizzled. {i6}"The giant Malambruno has
+enchanted us, and no one can disenchant us but the valiant Don Quixote,
+who must go and fight him in the kingdom of Candaya, three thousand
+leagues from here, give or take a few. Will the knight come?"{i7}
+
+/MSG dolorida_acepta
+{i4}"I will do, lady, all that I can, with the help of God."{i7}
+
+In come four wild men dressed in ivy carrying a great wooden horse on
+their shoulders. {i6}"This is Clavileño the Swift, who is steered by a
+peg in his forehead. Knight and squire must mount, one in the saddle
+and the other on the crupper. And both must go with their eyes
+blindfolded, for otherwise they will grow giddy with the height."{i7}
+
+/MSG montar_clavileno
+You mount Clavileño. Sancho climbs onto the crupper, complaining that
+it is not made of velvet, and blindfolds himself with a duenna's
+handkerchief. {i5}"Sirs, commend us to God, for we're off to this
+Candaya."{i7}
+
+/MSG vuelo
+You turn the peg. The duennas and everyone present raise their voices:
+{i6}"God guide thee, valiant knight! Now, now you are going through the
+air, cleaving it swifter than an arrow!"{i7}
+
+With some great bellows they blow wind at you. {i4}"Without a doubt,
+Sancho, we must be reaching the second region of the air, where the
+hail and the snow are formed."{i7} Then they warm your faces with
+lighted tow on the end of a cane. {i5}"Kill me if we aren't in the
+region of fire already, for a good part of my beard has been
+singed!"{i7}
+
+At last, as Clavileño's belly is full of crackers, they set fire to him
+and he flies through the air with a strange noise, and drops you both
+on the ground, half singed. The duennas have vanished. In the garden
+there is a lance stuck in the ground with a parchment: {i6}"The
+illustrious knight Don Quixote of La Mancha ended and achieved the
+adventure of the Countess Trifaldi, otherwise called the Distressed
+Duenna, by merely attempting it."{i7}
+
+/MSG consejos
+The duke, delighted, keeps the promise he made: Sancho shall be
+governor of an island. Before he leaves, you shut yourself in with him
+and give him advice: {i4}"First of all, my son, thou must fear God, for
+in the fear of Him is wisdom. Thou must keep in view what thou art,
+striving to know thyself. Take pride in the humbleness of thy lineage.
+Let the tears of the poor man find more compassion, but not more
+justice, than the pleadings of the rich. Eat not garlic nor onions,
+lest they find out thy boorish origin by the smell."{i7}
+
+{i5}"If your worship thinks I'm not fit for this government, I give it
+up here and now, for I'd sooner go to heaven as Sancho than to hell as
+a governor."{i7}
+
+{i4}"For those last words thou hast spoken, I judge thou deservest to
+be governor of a thousand islands."{i7}
+
+/MSG ahora_sancho
+{i5}And from here the history leaves Don Quixote at the castle and
+follows Sancho. Now you are Sancho Panza, governor.{i7}
+
+# =====================================================================
+#  MESSAGES: BARATARIA (you are Sancho)
+# =====================================================================
+/MSG insula_llega
+You are received with the ringing of bells and every sign of general
+rejoicing. They lead you with great pomp to the great church to give
+thanks to God, and then they hand you the keys of the town and accept
+you as perpetual governor of the island of Barataria. Nobody quite
+knows what you are smiling about.
+
+/MSG pleito
+Two old men come in. One carries a cane for a staff. The other, who
+has none, speaks: {i6}"Sir, some days ago I lent this good man ten gold
+crowns, and I've asked him for them many times, and not only does he
+not give them back, but he denies it, and says I never lent him any ten
+crowns, and that if I did, he has already returned them."{i7}
+
+The one with the staff, in order to swear that he returned them, gives
+the staff to the other to hold while he swears, as if it were in his
+way. He swears on the cross of the wand. Then the lender gives him
+back his staff, convinced. The old man with the staff bows and gets
+ready to leave.
+
+/MSG baculo_coger
+{i5}"Give me that staff, good man, for I have need of it."{i7} The old
+man gives it to you, with a face you can't read.
+
+/MSG baculo_roto
+You break the cane in half. Out of it fall ten crowns in gold. Everyone
+is amazed and takes their governor for a new Solomon. {i5}"He who swears
+he has returned what he holds in his hand swears a great deal and
+returns very little."{i7}
+
+The lender goes off with his money. The one who swore, with his shame.
+The chronicler writes it all down.
+
+/MSG medico_quita
+As soon as you reach out for a dish, the man with the wand touches it,
+and a page whisks it away as swiftly as if it were enchantment.
+{i6}"That fruit is too moist, and that other dish is too hot and has
+too many spices. And the partridges... {i2}omnis saturatio mala,
+perdices autem pessima{i6}."{i7}
+
+/MSG medico_huye
+{i5}"Well then, Señor Doctor Pedro Recio of Bad Omen, native of
+Tirteafuera, a place on the right-hand side as we go from Caracuel to
+Almodóvar del Campo, get out of my sight at once. If not, I swear by
+the sun I'll take a cudgel and, cudgelling away, beginning with him,
+I'll not leave a doctor in the whole island."{i7}
+
+The doctor slinks out of the room with his wand between his legs.
+
+/MSG gobernador_come
+They serve you a hash of beef with plenty of onion and some boiled
+calves' feet, somewhat past their best. You eat with more relish than
+if they had given you francolins of Milan, pheasants of Rome or geese
+of Lavajos. When you have finished, a letter arrives from the duke:
+{i6}"Certain enemies of mine and yours mean to make a furious assault
+on that island, I know not on what night. It is advisable to keep
+watch and be on the alert."{i7}
+
+/MSG ronda_llega
+In one street you come upon two men quarrelling over a gaming house.
+You send one home and the other out of the island, with the chronicler
+writing it all down. Further on, the constables bring in a girl dressed
+as a man, as lovely as a thousand pearls, who won't say who she is.
+
+/MSG doncella
+The girl, weeping, confesses: {i6}"I am the daughter of Pedro Pérez
+Mazorca, who farms the wool tax of this town. My father has kept me
+shut up for ten years, and I only wanted to see the world, or at least
+the town where I was born."{i7}
+
+{i5}"This is a piece of childishness, and to tell such nonsense there
+was no need for so much beating about the bush."{i7} You send her home
+to her father, with her brother, who is also wandering about disguised
+as a woman. The chronicler can't keep up.
+
+/MSG invasion
+At midnight you are woken by the bells and by voices: {i6}"To arms, to
+arms, señor governor, to arms! Countless enemies have entered the
+island, and we are lost unless your skill and valour come to our
+aid!"{i7}
+
+They fit you with two big shields, one in front and one behind, tied
+with cords, so that you are boarded up and planked in, as straight as
+a spindle, unable to bend your knees or move a single step. {i6}"Come
+on, señor governor, lead us and encourage us all!"{i7} You take one
+step and fall to the ground like a tortoise. All night long they run
+over you, slashing at the shields, until they shout: {i6}"Victory,
+victory! The enemy is in retreat!"{i7}
+
+They untie you. You are battered, and very thoughtful.
+
+/MSG renuncia
+You dress in silence, go to the stable and embrace the dapple, and give
+him a kiss of peace on the forehead. Then you saddle him, mount, and
+turn to all those watching you:
+
+{i5}"Make way, gentlemen, and let me go back to my old freedom. I was
+not born to be a governor, or to defend islands or cities from the
+enemies who want to attack them. Ploughing and digging I understand
+better than giving laws. Naked I was born, naked I find myself: I
+neither lose nor gain."{i7}
+
+Your government has lasted ten days. They offer you company, and you
+don't want it: you ask only for a little barley for the dapple and
+half a cheese and half a loaf for yourself.
+
+/MSG sima_cae
+On the way to the castle night falls upon you and the dapple, and among
+some ruins the two of you fall into a very deep pit. You break nothing,
+which you take for a miracle, but down there nobody can hear you.
+
+/MSG vuelve_dq
+{i5}And here the history leaves Sancho in his pit and goes back to Don
+Quixote, who is you once more.{i7}
+
+One morning you ride out of the castle to practise what you would have
+to do in the event of a combat, and Rocinante very nearly puts his feet
+into a pit.
+
+/MSG voces_sima
+Great cries come out of the pit: {i5}"Hallo up there! Is there any
+Christian who hears me, or any charitable knight who will take pity on
+a sinner buried alive, on a wretched ungoverned governor?"{i7}
+
+/MSG sacas_sancho
+You let the rope down into the pit. Sancho ties the dapple, then
+himself, and with the help of some of the duke's servants who come at
+your shouts you bring the two of them out into the light of day.
+Sancho, on his knees, gives thanks to God. The dapple brays.
+
+# =====================================================================
+#  MESSAGES: BARCELONA AND THE KNIGHT OF THE WHITE MOON
+# =====================================================================
+/MSG barcelona_llega
+You enter Barcelona on Midsummer Eve, at night, and in the morning you
+see the sea for the first time. Don Antonio Moreno, a rich and discreet
+gentleman, a friend of the bandit Roque Guinart, lodges you in his
+house and walks you through the city with a placard on your back that
+says: {i6}This is Don Quixote of La Mancha.{i7} You believe they
+recognise you by your fame.
+
+In one room of his house there is a head, apparently of bronze, on a
+jasper table. Don Antonio says it answers whatever it is asked.
+
+/MSG cabeza
+You go up to the head and ask it in its ear: {i4}"Was it truth or
+was it a dream, what I say happened to me in the cave of Montesinos?
+Will Sancho's lashes come true? Will Dulcinea's disenchantment take
+effect?"{i7}
+
+{i6}"As for the cave, there is much to be said: it has something of
+everything. Sancho's lashes will go slowly. Dulcinea's disenchantment
+will be duly accomplished."{i7}
+
+Sancho asks whether he will have another government. {i6}"Thou shalt
+govern in thy house, and if thou return to it, thou shalt see thy wife
+and children."{i7} {i5}"I could have told you that myself!"{i7} (Inside
+the table there is a student, Don Antonio's nephew, who speaks through
+a tin tube. Don't tell Sancho.)
+
+/MSG blanca_luna
+Along the beach a knight comes towards you, armed from head to foot,
+with a shining moon painted on his shield.
+
+{i6}"Illustrious knight and never sufficiently extolled Don Quixote of
+La Mancha: I am the Knight of the White Moon. I come to do battle with
+thee and prove the might of thy arm, to the end that I make thee
+acknowledge and confess that my lady, whoever she may be, is
+incomparably fairer than thy Dulcinea del Toboso. If thou fightest and
+I vanquish thee, thou shalt lay down thine arms and retire to thy
+village for the space of a year. And if thou vanquish me, my head shall
+be at thy disposal, and the spoils of my arms and horse shall be
+thine."{i7}
+
+/MSG blanca_acepta
+{i4}"Knight of the White Moon, whose achievements have never yet come to
+my knowledge: I will make thee swear that thou hast never seen the
+illustrious Dulcinea. I accept thy challenge, and at once, so that the
+day thou hast fixed may not pass."{i7}
+
+/MSG derrota
+You both wheel your horses at the same moment. The Knight of the White
+Moon, being swifter, meets you two-thirds of the way along the course,
+and there he encounters you with such mighty force, without touching
+you with his lance (for he raises it, it seems, on purpose), that he
+brings Rocinante and you to the ground in a perilous fall.
+
+He sets his lance against your visor: {i6}"Vanquished you are, knight,
+and dead too, if you do not confess the conditions of our
+challenge."{i7}
+
+Bruised and stunned, without raising your visor, as if speaking from
+inside a tomb, in a weak and feeble voice: {i4}"Dulcinea del Toboso is
+the fairest woman in the world, and I the most unfortunate knight on
+earth; it is not fitting that this truth should suffer by my
+feebleness. Drive thy lance home, sir knight, and take my life, since
+thou hast taken away my honour."{i7}
+
+{i6}"That will I not, in sooth. Live the fame of the lady Dulcinea
+del Toboso's beauty undimmed as ever. I am satisfied that the great
+Don Quixote should retire to his own home for a year."{i7} And you
+promise it, as a punctilious and true knight.
+
+/MSG blanca_sanson
+Don Antonio follows the victor to his inn and finds out: the Knight of
+the White Moon is the bachelor Samson Carrasco, who, defeated in the
+wood as the Knight of the Mirrors, swore to come back to send you home
+and see whether that might cure you.
+
+You leave Barcelona. As you pass the spot where you were overthrown,
+you turn to look at it: {i4}"Here Troy was. Here my ill fortune, not
+my cowardice, robbed me of all the glory I had won. Here my star fell
+never to rise again."{i7} Your armour rides on the dapple, hung from a
+tree like a trophy that moves.
+
+# =====================================================================
+#  MESSAGES: THE WAY HOME AND THE TWO ENDINGS
+# =====================================================================
+/MSG ante_dulcinea
+All the characters you have met lead you before Dulcinea...
+
+The curate and the barber, Samson Carrasco with his mirrors and his
+moon, the innkeeper castellan, Maritornes, the Biscayan, the lion
+keeper, Basilio and Quiteria, Montesinos, Master Pedro with his ape,
+the Distressed Duenna without her beard, the dukes, and Doctor Recio,
+who won't let anyone eat. Even Rocinante seems to know where he is
+going.
+
+/MSG dulcinea_1989
+{i3}You got it right!! Dulcinea is the peasant girl who is
+bewitched.{i7}
+
+The jewel has broken the spell and the two of you live happily for
+ever and ever. And as Don Quixote you will be remembered for ever.
+
+{i5}(That is how the Aventuras Level 10 adventure ended in 1989.
+Cervantes would not have approved, but then again nobody would have
+finished it.){i7}
+
+/MSG princesa_1989
+You give the jewel to the one who looks like a princess. You have got
+it wrong: Dulcinea is the other one, for she is bewitched. The two of
+them go away and you have not managed to finish this adventure.
+
+/MSG agueros
+On the threshing floors of the village, two boys are quarrelling:
+{i6}"Don't tire yourself, Periquillo, you'll never see it in all the
+days of your life."{i7} And a hare, fleeing from some greyhounds, comes
+to take shelter under the dapple's feet.
+
+{i4}"Malum signum! Malum signum! Hare flies, greyhounds chase: Dulcinea
+appears not!"{i7}
+
+Sancho picks up the hare, gives it to the boys in exchange for a cage
+of crickets they have, and puts it in your hands: {i5}"This hare is
+Dulcinea, and I've caught her. What bad omen is that?"{i7}
+
+/MSG calentura
+They put you to bed. A fever comes on you that keeps you in bed for six
+days, during which you are visited many times by the curate, the
+bachelor and the barber, your friends, while Sancho Panza, your good
+squire, never leaves your bedside. They try to cheer you up: the
+bachelor has written an eclogue and wants you all to become shepherds,
+Sancho as Pancino and you as the shepherd Quixotiz.
+
+The doctor takes your pulse and says that, to be on the safe side, you
+should attend to the health of your soul, for that of your body is in
+danger.
+
+/MSG cuerdo
+You sleep at a stretch, as they say, for more than six hours. When you
+wake you give a loud cry:
+
+{i4}"Blessed be Almighty God, who has shown me such goodness! My reason
+is now free and clear, rid of the dark shadows of ignorance that my
+unhappy constant study of those detestable books of chivalry cast over
+it. Now I see through their absurdities and deceptions. Congratulate
+me, good sirs, that I am no longer Don Quixote of La Mancha, but Alonso
+Quijano, whose way of life won for him the name of Good."{i7}
+
+They send for a notary. You want to make your will.
+
+/MSG sancho_llora
+{i5}"Ah! Don't die, master, but take my advice and live many years, for
+the greatest madness a man can commit in this life is to let himself
+die without more ado. Don't be lazy, but get up from that bed, and let
+us go out into the fields dressed as shepherds, as we agreed: perhaps
+behind some bush we'll find the lady Dulcinea disenchanted, as fine as
+fine can be."{i7}
+
+/MSG testamento
+{i4}"Item, it is my will that, touching certain moneys in the hands of
+Sancho Panza, whom in my madness I made my squire, no account be
+demanded of him. And if, as when I was mad I had a share in giving him
+the government of the island, I could now, being in my senses, give
+him that of a kingdom, it should be his.
+
+Item, I leave all my estate to Antonia Quijana, my niece. And if she
+should wish to marry, let her marry a man of whom it has first been
+ascertained that he does not know what books of chivalry are."{i7}
+
+/MSG muerte_alonso
+Amid the tears and lamentations of those present, you give up the
+ghost; that is to say, you die. The notary testifies that he has never
+read in any book of chivalry of any knight errant having died in his
+bed so calmly and so like a Christian as Don Quixote.
+
+The bachelor places this epitaph upon your tomb:
+
+{i6}He held the world as nothing;{n}its scarecrow and its
+bogey,{n}and so it was that, in the end,{n}his fortune proved it best{n}
+to live a madman, die a sage.{i7}
+
+And the pen of Cide Hamete Benengeli, hung up by a brass wire on a
+rack, says: {i5}"For me alone was Don Quixote born, and I for him; it
+was his to act, mine to write."{i7}
+
+{i6}{b1}THE END{b0}{i7}
+
+/MSG muerte_tortuga
+Without the armour of the shields or of common sense, you stay in the
+street waiting for the enemy. The enemy, being make-believe, never
+comes. What comes is the cold of dawn, and then shame. You leave the
+island that same night, and the history, not knowing what to do with
+you, ends here.
+
+/MSG creditos2
+{i6}DON QUIXOTE OF LA MANCHA{i7}{n}Part Two{n}(c) AVENTURAS LEVEL 10{n}{n}Part Two keeps the
+puzzles of 1989: the Knight of the Mirrors, the lion who falls asleep
+to a song and the two girls who both say they are Dulcinea.

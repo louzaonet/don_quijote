@@ -1,0 +1,124 @@
+# --- PART TWO with the 1989 ending: the jewel and the two girls
+examine bed
+get reals
+get corselet
+wear corselet
+get helmet
+wear helmet
+get sword
+s
+say to samson "hello"
+say to sancho "hello"
+say to sancho "no"
+get saddlebags
+put sword in saddlebags
+put reals in saddlebags
+get lance
+get buckler
+s
+mount rocinante
+e
+e
+n
+s
+e
+say to the farmer "where is the palace of dulcinea"
+say to sancho "what now"
+w
+s
+wait
+kneel
+mount rocinante
+e
+say to death "who are you"
+mount rocinante
+e
+say to the knight "hello"
+say to the knight "no"
+attack knight
+e
+say to the keeper "what are you carrying"
+dismount
+open cage
+sing
+get jewel
+put jewel in saddlebags
+mount rocinante
+e
+eat
+n
+say to camacho "let them marry"
+say to all "hold"
+get rope
+s
+e
+put buckler in saddlebags
+take sword out of saddlebags
+cut brambles
+put sword in saddlebags
+dismount
+tie rope
+down
+down
+e
+n
+sleep
+say to montesinos "hello"
+take reals out of saddlebags
+give reals to the peasant
+wait
+mount rocinante
+e
+say to the ape "was the cave true"
+see show
+take sword out of saddlebags
+attack moors
+put sword in saddlebags
+pay
+e
+dismount
+tie rocinante
+untie boat
+enter
+attack mills
+mount rocinante
+e
+say to sancho "talk to the duchess"
+mount rocinante
+e
+n
+say to the clergyman "a knight I am"
+get handkerchief
+s
+e
+say to the dolorida "yes"
+wear handkerchief
+mount clavileno
+turn peg
+n
+say to the old man "give me the staff"
+break staff
+s
+e
+eat
+threaten the doctor
+eat
+w
+w
+say to the girl "who are you"
+e
+e
+n
+sleep
+resign
+throw rope
+e
+say to the head "was the cave true"
+s
+say to the knight "i accept"
+attack knight
+w
+n
+take jewel out of saddlebags
+examine peasant
+give jewel to the peasant
