@@ -103,7 +103,7 @@ p.flags = Object.entries(db.names.flags).filter(([, n]) => n >= 64).map(([name, 
 const light = p.processes.find((x) => x.id === 'principal' || x.id === 'main');
 light.source = light.source.replace('AT intro ', 'AT arranque').replace(/ABSENT (linterna|torch)/, `ABSENT ${p.objects[0].id}`);
 const ini = p.processes.find((x) => x.id === 'inicio' || x.id === 'init');
-ini.source = ini.source.replace('DESC intro ', 'DESC intro ').replace(/GOTO (entrada|start)\b/, 'GOTO biblioteca')
+ini.source = ini.source.replace(/GOTO (entrada|start)\b/, 'GOTO biblioteca')
   .replace('LET fStrength 10', `LET fStrength ${db.config.maxweight}`).replace('LET fMaxCarr 4', `LET fMaxCarr ${db.config.maxobj}`);
 p.messages = [];
 // Mensajes del sistema: los del remake (en segunda persona) donde significan lo
